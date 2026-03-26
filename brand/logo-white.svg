@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260" role="img" aria-labelledby="title desc">
+  <title id="title">Sell Smart Austin white logo</title>
+  <desc id="desc">Primary logo in white for dark backgrounds.</desc>
+  <rect width="980" height="260" fill="none"/>
+  <g transform="translate(40 34)">
+    <g transform="translate(0 10)">
+      <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M13 47 66 4l53 43" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M66 86V52" fill="none" stroke="#E8621A" stroke-width="8" stroke-linecap="round"/>
+      <path d="M47 86H85" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+      <path d="M56 52h20" fill="none" stroke="#E8621A" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(170 18)">
+      <text x="0" y="62" fill="#FFFFFF" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="3">SELL SMART AUSTIN</text>
+      <text x="2" y="108" fill="#FFFFFF" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="1.2">Sell Smart. Close Fast.</text>
+      <path d="M2 124h260" fill="none" stroke="#E8621A" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

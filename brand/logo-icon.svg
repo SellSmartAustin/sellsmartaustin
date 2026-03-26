@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Sell Smart Austin icon</title>
+  <desc id="desc">Square icon with an abstract geometric house mark.</desc>
+  <rect width="512" height="512" fill="#F8F5F0"/>
+  <g transform="translate(88 92)">
+    <path d="M80 246V124L168 52l88 72v122" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M52 126 168 32l116 94" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M168 246V148" fill="none" stroke="#E8621A" stroke-width="22" stroke-linecap="round"/>
+    <path d="M126 246H212" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round"/>
+    <path d="M150 148h36" fill="none" stroke="#E8621A" stroke-width="22" stroke-linecap="round"/>
+  </g>
+</svg>
