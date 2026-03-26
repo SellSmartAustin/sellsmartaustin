@@ -1,17 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="820" height="312" viewBox="0 0 820 312" role="img" aria-labelledby="title desc">
   <title id="title">Sell Smart Austin Facebook cover</title>
-  <desc id="desc">Clean dark navy cover with centered wordmark and subtle house mark.</desc>
+  <desc id="desc">Clean dark navy cover with centered wordmark and house icon.</desc>
   <rect width="820" height="312" fill="#1B2A4A"/>
-  <g opacity="0.12" transform="translate(650 54)">
-    <path d="M26 152V70l72-58 72 58v82" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M6 74 98 2l92 72" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M98 152V94" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-    <path d="M66 152h64" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  <g transform="translate(360 20) scale(0.8)">
+    <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 47 66 4l53 43" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M66 86V52" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M47 86H85" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M56 52h20" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
   </g>
-  <g opacity="0.10" transform="translate(86 58)">
-    <path d="M0 206c88-40 174-40 262 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-    <path d="M220 206c34-34 68-34 102 0" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-  </g>
-  <text x="410" y="134" text-anchor="middle" fill="#FFFFFF" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="3">SELL SMART AUSTIN</text>
-  <text x="410" y="183" text-anchor="middle" fill="#E8621A" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="1.2">Sell Smart. Close Fast.</text>
+  <text x="410" y="154" text-anchor="middle" fill="#FFFFFF" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="3">SELL SMART AUSTIN</text>
+  <text x="410" y="198" text-anchor="middle" fill="#E8621A" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="1.2">Sell Smart. Close Fast.</text>
 </svg>

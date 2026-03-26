@@ -6,8 +6,9 @@
     <g transform="translate(0 10)">
       <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#182744" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M13 47 66 4l53 43" fill="none" stroke="#182744" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M66 86V52" fill="none" stroke="#E8621A" stroke-width="10" stroke-linecap="round"/>
       <path d="M47 86H85" fill="none" stroke="#182744" stroke-width="8" stroke-linecap="round"/>
-      <rect x="54" y="56" width="24" height="30" rx="3" fill="#E8621A"/>
+      <path d="M56 52h20" fill="none" stroke="#E8621A" stroke-width="10" stroke-linecap="round"/>
     </g>
     <g transform="translate(170 18)">
       <text x="0" y="62" fill="#182744" font-family="Montserrat, Avenir Next, Avenir, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" letter-spacing="3">SELL SMART AUSTIN</text>

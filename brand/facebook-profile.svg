@@ -2,11 +2,11 @@
   <title id="title">Sell Smart Austin Facebook profile</title>
   <desc id="desc">Square profile icon with navy background and centered house mark.</desc>
   <rect width="400" height="400" fill="#1B2A4A"/>
-  <g transform="translate(54 54)">
-    <path d="M46 228V117l100-81 100 81v111" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M14 122 146 18l132 104" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M146 228V146" fill="none" stroke="#E8621A" stroke-width="20" stroke-linecap="round"/>
-    <path d="M103 228h86" fill="none" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round"/>
-    <path d="M129 146h34" fill="none" stroke="#E8621A" stroke-width="20" stroke-linecap="round"/>
+  <g transform="translate(94 128) scale(1.6)">
+    <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 47 66 4l53 43" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M66 86V52" fill="none" stroke="#E8621A" stroke-width="10" stroke-linecap="round"/>
+    <path d="M47 86H85" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <path d="M56 52h20" fill="none" stroke="#E8621A" stroke-width="10" stroke-linecap="round"/>
   </g>
 </svg>
