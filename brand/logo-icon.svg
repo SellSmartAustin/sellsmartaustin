@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">Sell Smart Austin icon</title>
-  <desc id="desc">Square icon with an abstract geometric house mark.</desc>
+  <desc id="desc">Square icon with an abstract geometric house mark centered on a cream background.</desc>
   <rect width="512" height="512" fill="#F8F5F0"/>
-  <g transform="translate(88 92)">
-    <path d="M80 246V124L168 52l88 72v122" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M52 126 168 32l116 94" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M168 246V148" fill="none" stroke="#E8621A" stroke-width="22" stroke-linecap="round"/>
-    <path d="M126 246H212" fill="none" stroke="#1B2A4A" stroke-width="22" stroke-linecap="round"/>
-    <path d="M150 148h36" fill="none" stroke="#E8621A" stroke-width="22" stroke-linecap="round"/>
+  <g transform="matrix(3.38 0 0 3.38 33.1 104.3)">
+    <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#1B2A4A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M13 47 66 4l53 43" fill="none" stroke="#1B2A4A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M47 86H85" fill="none" stroke="#1B2A4A" stroke-width="8" stroke-linecap="round"/>
+    <rect x="59" y="56.5" width="14" height="26" rx="2" fill="#E8621A"/>
+    <circle cx="71" cy="69.5" r="1.8" fill="#1B2A4A"/>
   </g>
 </svg>
