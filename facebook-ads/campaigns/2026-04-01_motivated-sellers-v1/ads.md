@@ -8,6 +8,9 @@
 ## AD 1 — Landlord Burnout ⭐ LAUNCH THIS FIRST
 *Most underserved angle in Austin right now per social research*
 
+**Video Script:**
+"Hey Austin landlords — tired of chasing rent while taxes keep climbing? I want to buy your house. AS-IS, cash, close whenever you want. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
+
 **Headline:**
 Austin Landlords: Tired of Chasing Rent While Taxes Keep Climbing?
 
@@ -33,6 +36,9 @@ You get a fair cash offer, a clean exit, and your time back.
 ## AD 2 — Home Sitting Too Long
 *Target: frustrated sellers who've tried the traditional route*
 
+**Video Script:**
+"If your Austin home has been sitting on the market with no results — there's another way. I buy homes directly. No listings, no open houses, no deals falling through. Just a fair cash offer and a close that actually happens. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
+
 **Headline:**
 Your Austin Home Has Been on the Market Too Long. There's Another Way.
 
@@ -55,6 +61,9 @@ If you're frustrated with the process, we get it. And we can help.
 
 ## AD 3 — Behind on Mortgage / Financial Pressure
 *Highest urgency angle — layer in after Ad 1 has data*
+
+**Video Script:**
+"If you're behind on mortgage payments or just can't afford to keep the house anymore — you have options. I buy Austin homes as-is, for cash. No repairs, no fees, no judgment. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
 
 **Headline:**
 Can't Cover the Mortgage Anymore? You Have Options.
