@@ -1,5 +1,9 @@
 # Campaign Notes — Motivated Sellers V1
 
+**Last Updated:** 2026-05-06
+**Status:** ✅ Ready to Launch — A2P approved 2026-04-24, phone live, Resimpli active.
+**Canonical launch state:** see `Master Doc/Master Doc.md` (Section 9: What Still Needs to Be Done).
+
 ## Setup
 - **Special Ad Category:** Housing
 - **Objective:** Leads
@@ -8,16 +12,22 @@
 - **Targeting:** Broad (Housing category limits targeting — let algorithm self-select)
 - **Pixel:** 5191741884383418
 - **Landing page:** sellsmartaustin.com
+- **Phone:** (737) 355-8100 (Resimpli)
 - **Launch ad:** Ad 1 (Landlord Burnout)
 
-## Launch Checklist
-- [ ] REI BB intro call complete (Thu 4/2 @ 11:30am CT)
-- [ ] Austin phone number activated (737-339-4248 via ProfitDial)
-- [ ] Phone number updated on sellsmartaustin.com
-- [ ] Ad 1 created in Ads Manager (paused)
-- [ ] Special Ad Category: Housing selected
-- [ ] Meta Pixel confirmed active
-- [ ] Campaign set live
+## Launch Checklist (campaign-side — see Master Doc for full pre-launch list)
+- [x] Phone number live: (737) 355-8100 (Resimpli)
+- [x] Phone number on sellsmartaustin.com
+- [x] A2P 10DLC approved (2026-04-24)
+- [x] Meta Pixel installed on landing page (5191741884383418)
+- [ ] Confirm Meta Pixel firing in Events Manager (test event)
+- [ ] FB Lead Ads → Resimpli wired (Zapier or direct REST)
+- [ ] Site forms → Resimpli wired (separate integration)
+- [ ] Drip sequences built in Resimpli
+- [ ] AI call answering script customized in Resimpli
+- [ ] Landing page video filmed + uploaded
+- [ ] Ad 1 built in Ads Manager (Special Ad Category: Housing) — paused
+- [ ] Campaign set live at $25/day
 
 ## Research Basis
 *From social/Reddit research (r/Austin, r/realestate) — March 31, 2026*
