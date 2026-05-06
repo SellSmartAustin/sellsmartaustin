@@ -9,7 +9,7 @@
 *Most underserved angle in Austin right now per social research*
 
 **Video Script:**
-"Hey Austin landlords — tired of chasing rent while taxes keep climbing? I want to buy your house. AS-IS, cash, close whenever you want. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
+"Hey Austin landlords — tired of chasing rent while taxes keep climbing? I want to buy your house. AS-IS, cash, close whenever you want. I'm James, licensed Texas agent at MODUS Real Estate — I make it simple, so you can sell smart."
 
 **Headline:**
 Austin Landlords: Tired of Chasing Rent While Taxes Keep Climbing?
@@ -31,13 +31,15 @@ You get a fair cash offer, a clean exit, and your time back.
 
 **CTA Button:** Get My Cash Offer
 
+*James Konvalinka, Licensed TX Sales Agent (#831102) · Sponsored by MODUS Real Estate (#9013412) · Equal Housing Opportunity*
+
 ---
 
 ## AD 2 — Home Sitting Too Long
 *Target: frustrated sellers who've tried the traditional route*
 
 **Video Script:**
-"If your Austin home has been sitting on the market with no results — there's another way. I buy homes directly. No listings, no open houses, no deals falling through. Just a fair cash offer and a close that actually happens. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
+"If your Austin home has been sitting on the market with no results — there's another way. I buy homes directly. No listings, no open houses, no deals falling through. Just a fair cash offer and a close that actually happens. I'm James, licensed Texas agent at MODUS Real Estate — I make it simple, so you can sell smart."
 
 **Headline:**
 Your Austin Home Has Been on the Market Too Long. There's Another Way.
@@ -57,13 +59,15 @@ If you're frustrated with the process, we get it. And we can help.
 
 **CTA Button:** Skip the Wait — Get an Offer
 
+*James Konvalinka, Licensed TX Sales Agent (#831102) · Sponsored by MODUS Real Estate (#9013412) · Equal Housing Opportunity*
+
 ---
 
 ## AD 3 — Behind on Mortgage / Financial Pressure
 *Highest urgency angle — layer in after Ad 1 has data*
 
 **Video Script:**
-"If you're behind on mortgage payments or just can't afford to keep the house anymore — you have options. I buy Austin homes as-is, for cash. No repairs, no fees, no judgment. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
+"If you're behind on mortgage payments or just can't afford to keep the house anymore — you have options. I buy Austin homes as-is, for cash. No repairs, no fees, no judgment. I'm James, licensed Texas agent at MODUS Real Estate — I make it simple, so you can sell smart."
 
 **Headline:**
 Can't Cover the Mortgage Anymore? You Have Options.
@@ -84,3 +88,14 @@ We'll give you a straight answer and a fair offer — fast.
 👉 Reach out today. No pressure, no obligation.
 
 **CTA Button:** Get My Free Offer
+
+*James Konvalinka, Licensed TX Sales Agent (#831102) · Sponsored by MODUS Real Estate (#9013412) · Equal Housing Opportunity*
+
+---
+
+## TREC Compliance Notes (Apply to All Ads)
+
+- The "Licensed Texas agent at MODUS Real Estate" line in each video script satisfies TREC Rule 535.155 broker-disclosure when spoken on camera.
+- For the static/visual end-card or lower-third in each video, include: "James Konvalinka · Licensed TX Sales Agent #831102 · Sponsored by MODUS Real Estate #9013412 · Equal Housing Opportunity" — small but readable.
+- The compliance line under each ad body copy is what posts as the ad's primary text disclosure.
+- Equal Housing Opportunity logo on the end card is recommended (HUD compliance signal, also reduces FB Special Ad Category friction).

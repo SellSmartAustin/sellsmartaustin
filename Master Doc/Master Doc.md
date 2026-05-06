@@ -1,7 +1,7 @@
 # Sell Smart Austin — Master Documentation
 ## Single Source of Truth
-**Last updated:** April 9, 2026
-**Status:** Pre-launch — LLC live + EIN in hand, Resimpli live, A2P submitted, FB ads blocked on A2P approval (1-3 weeks)
+**Last updated:** May 4, 2026
+**Status:** Ready to Launch — A2P ✅ | Ads built ✅ | Resimpli live ✅ | Reactivating May 2026
 
 ---
 
@@ -15,9 +15,12 @@
 6. Content Strategy
 7. CRM & Automation — Resimpli
 8. What Has Been Built
-9. What Still Needs to Be Built
+9. What Still Needs to Be Done
 10. Key Decisions Log
-11. File Inventory
+11. 90-Day Launch Plan (Updated)
+12. Revenue Model & Projections
+13. Risks & Mitigations
+14. File Inventory
 
 ---
 
@@ -30,7 +33,7 @@ Sell Smart Austin is James Konvalinka's seller lead generation and acquisition p
 Every lead that comes in gets evaluated for one of three buckets:
 
 1. **Flip** — James buys, renovates, sells
-2. **Wholesale** — James assigns the contract for a fee
+2. **Wholesale Referral** — James refers to a trusted wholesaler for a referral fee
 3. **List it** — If the numbers don't work for a buy, James lists it as an agent and earns commission
 
 No lead is wasted. Broad targeting is intentional — it catches all three deal types.
@@ -71,9 +74,10 @@ Licensed TX agent under MODUS Real Estate. All outreach signed: **"James K | MOD
 | FB Profile Pic | `/brand/FB Profile Pic.png` |
 | FB Cover | `/brand/FB Cover.png` |
 | Myth Buster Graphic | `/brand/SSA - Myth Buster Graphic.svg` |
-| Landing Page | `/brand/SSA-Landing-Page.html` |
 | Facebook Cover (SVG) | `/brand/facebook-cover.svg` |
 | FB Post Template | `/brand/SellSmartAustin_FB_Post_1080x1350.png` |
+
+*Live landing page lives at `/index.html` (root). The previous `/brand/SSA-Landing-Page.html` was a stale duplicate carrying the pre-A2P consent block and was removed 2026-05-06.*
 
 ---
 
@@ -85,13 +89,12 @@ Licensed TX agent under MODUS Real Estate. All outreach signed: **"James K | MOD
 **Document #:** 1573678620002
 **Session:** 040226BI2347
 **Registered Agent:** James Konvalinka, 1301 Parker Lane Unit 339, Austin TX
+**EIN:** 42-1788107 ✅ (received April 8, 2026)
+**Bank:** Mercury ✅ (opened April 13, 2026)
+**RE License:** TX license under MODUS Real Estate
 
-### Completed
-- ✅ TX SOS approved
-- ✅ EIN: **42-1788107** (received April 8, 2026)
-
-### Pending Steps
-1. Open Mercury business bank account (EIN in hand — ready to go)
+### ⚠️ Flip Entity Warning
+SSA LLC should **NOT** hold flip properties — liability exposure. Need a separate acquisition LLC or TX Series LLC before the first Austin flip goes under contract. James has NOT yet consulted a TX RE attorney. **Flag before any flip goes under contract.**
 
 ---
 
@@ -99,29 +102,35 @@ Licensed TX agent under MODUS Real Estate. All outreach signed: **"James K | MOD
 
 | Tool | Purpose | Cost | Status |
 |---|---|---|---|
-| Resimpli | CRM, automation, AI call answering, skip tracing, phone | $149/mo | ✅ Set up — onboarding call Tue Apr 7 @ 1pm |
+| Resimpli | CRM, automation, AI call answering, skip tracing, phone | $149/mo | ✅ Live |
 | sellsmartaustin.com | Domain | Namecheap | ✅ Active |
 | Google Workspace | Email (james@sellsmartaustin.com) | ~$6/mo | ✅ Active |
 | PropStream | Deal sourcing + skip tracing | — | ✅ Active |
-| Meta Ads Manager | Facebook lead ads | Ad spend only | 🟡 Ready — blocked on phone number |
-| REI BlackBook | Former CRM | $197/mo | ✅ Cancelled April 9, 2026 |
-| Namecheap | Domain registration | — | ✅ Active — also cancel offerreadyleads.com |
+| Meta Ads Manager | Facebook lead ads | Ad spend only ($25/day) | ✅ Ready to launch |
+| Mercury | Business banking | Free | ✅ Live — opened April 13, 2026 |
 
 **Meta Pixel ID:** 5191741884383418
 
+### Google Drive
+- **Drive:** SSA - Mav Shared Drive | ID: `0ANMbACLUQ0JIUk9PVA` | Account: james@sellsmartaustin.com
+- **Root folder:** Sell Smart Austin | `1sulhYQveDWvvjrp27wca1jtxvO1jGlBm`
+- **Folders:** Sales | Contracts & Templates | Marketing | Finance | Clients | Onboarding | Internal | Business & Legal
+- Full folder IDs → `memory/tech-and-ids.md`
+
 ### Phone Number
 
-**(737) 355-8100** ✅ — new Resimpli number, iMessage via Linq
+**(737) 355-8100** ✅ — Resimpli number, iMessage via Linq
+- A2P 10DLC: ✅ **APPROVED** April 24, 2026 — SMS drip now fully unlocked
 - (737) 209-5277 is **DEAD** — was a GHL/ProfitDial number, lost when GHL was cancelled
-- This number is live on all website pages and landing page
 
 ### Cancelled / Retired Tools
 
 - GHL (GoHighLevel) — cancelled
+- REI BlackBook — cancelled April 9, 2026
 - Twilio — cancelled
 - OpenPhone — cancelled
 - Notion CRM — cancelled
-- Offer Ready Leads (domain, brand) — retired, domain cancelled
+- Offer Ready Leads (brand) — retired, domain cancelled
 
 ---
 
@@ -137,34 +146,45 @@ Licensed TX agent under MODUS Real Estate. All outreach signed: **"James K | MOD
 
 ### Campaign: Motivated Sellers V1
 
-**Status:** 🟡 Ready to Launch — blocked on A2P 10DLC approval (submitted Apr 8, 1-3 weeks)
+**Status:** ✅ Ready to Launch — A2P approved, ads built, ready to flip on
 
 **Location:** `/facebook-ads/campaigns/2026-04-01_motivated-sellers-v1/`
 
 | Ad | Angle | Launch Order | Status |
 |---|---|---|---|
-| Ad 1 — Landlord Burnout | Tired of tenants + rising taxes | **First** | Ready |
-| Ad 2 — Home Sitting Too Long | Frustrated lister | Second | Ready |
-| Ad 3 — Behind on Mortgage | Financial pressure / urgency | Third | Ready |
+| Ad 1 — Landlord Burnout | Tired of tenants + rising taxes | **First** | ✅ Ready |
+| Ad 2 — Home Sitting Too Long | Frustrated lister | Second | ✅ Ready |
+| Ad 3 — Behind on Mortgage | Financial pressure / urgency | Third | ✅ Ready |
 
 **Ad 1 Video Script:**
 > "Hey Austin landlords — tired of chasing rent while taxes keep climbing? I want to buy your house. AS-IS, cash, close whenever you want. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
 
-**Key Setup Checklist:**
-- [x] New phone number purchased in Resimpli — (737) 355-8100, iMessage via Linq ✅
-- [x] Landing page phone number updated to (737) 355-8100 ✅
+**Key Launch Checklist:**
+- [x] Phone number live — (737) 355-8100 ✅
+- [x] A2P 10DLC approved ✅ (April 24, 2026)
+- [x] iMessage via Linq ✅
+- [x] Landing page phone number updated ✅
 - [ ] Meta Pixel confirmed active on landing page
+- [ ] FB Lead Ads → Resimpli integration live (Zapier)
 - [ ] Ad 1 built in Ads Manager with Special Ad Category: Housing
+- [ ] Drip sequences loaded in Resimpli
+- [ ] Landing page video filmed + uploaded
 - [ ] Campaign set live at $25/day
 
 ---
 
 ## 6. Content Strategy
 
+### Videos
+
+James has filmed content for SSA. Landing page video script (v2) is finalized:
+- James films in tan/cream polo, podcast studio setting
+- Full script in #ad-scripts Discord channel
+
 ### FB Content Calendar
 
-- **First post:** April 8, 2026 @ 12pm (locked)
-- Cadence: TBD post-launch
+- Original first post: April 8, 2026 @ 12pm (plan — execution TBD on reactivation)
+- Cadence: Resume on reactivation
 
 ### Content Angles (from research)
 
@@ -176,10 +196,6 @@ Key hooks that work:
 - Process transparency (what we found behind the walls)
 - Local identity (Austin investors, this one's for you)
 - Honest about the messy middle — not just the pretty after
-
-**Landing Page Video Script (v2)** — finalized ✅
-- James films in tan/cream polo, podcast studio setting
-- In #ad-scripts Discord channel
 
 ### Brand Voice
 
@@ -198,48 +214,26 @@ Key hooks that work:
 
 ### Resimpli Setup Status
 
-- ✅ Account created
-- ✅ API key saved
-- ✅ Phone number live: (737) 355-8100
-- ✅ A2P 10DLC submitted — April 8, 2026 ~3:17pm CDT (1-3 week approval window)
-- ✅ Opt-in forms updated for A2P compliance (April 9, 2026) — 2 optional SMS checkboxes (transactional + marketing) per TCR requirements
-- 🟡 Drip sequences not yet loaded (built, ready — waiting on A2P approval)
-- 🟡 FB Lead Ads integration not yet connected
-- 🟡 Phone number port ((737) 209-5277) — start at next onboarding touchpoint
+| Item | Status |
+|---|---|
+| Account created | ✅ |
+| API key saved | ✅ |
+| Phone number live: (737) 355-8100 | ✅ |
+| A2P 10DLC | ✅ APPROVED April 24, 2026 |
+| iMessage via Linq | ✅ |
+| Resimpli API Key | `ab714258b938da2e53b705792837a451` |
+| Drip sequences | ⏳ Not yet built |
+| FB Lead Ads → Resimpli (Zapier) | ⏳ Not yet connected |
+| AI call answering script | ⏳ Not yet customized |
 
 ### Lead Routing Plan
 
-**Option A (Plan A):** Zapier bridge — FB Lead Ad → Zapier → Resimpli
-**Option B:** Direct REST API — depends on Resimpli API capabilities (confirm on onboarding call)
+**Plan A:** Zapier bridge — FB Lead Ad → Zapier → Resimpli
+**Plan B:** Direct REST API — Resimpli REST API (check availability end of May 2026)
 
-### Key Questions for Resimpli Onboarding Call (Tue Apr 7 @ 1pm)
+### Speed-to-Lead Target
 
-**AI Voice Answering:**
-- What does the AI say when it picks up? Can I customize the script?
-- Does it qualify leads live or just capture name/number?
-- Does it pull the lead into Resimpli automatically after the call?
-- Can it trigger a drip sequence immediately after call ends?
-- What happens if it can't handle the conversation — live transfer to me?
-- Recording + transcript of every AI call?
-- Available 24/7?
-
-**Phone / Number Porting:**
-- Can I port (737) 209-5277? How long?
-- Will AI answer on that number once ported?
-
-**API / Integrations:**
-- Direct REST API for lead creation and triggering campaigns?
-- Native Zapier integration — what triggers/actions?
-- FB Lead Ads — native or Zapier only?
-
-**SMS / A2P:**
-- Do they handle 10DLC registration or do I submit it myself?
-- Can drip sequences mix SMS + email + ringless voicemail?
-- Pre-built sequences or build from scratch?
-
-**General:**
-- What does full onboarding look like / timeline?
-- What do most people get wrong in the first 30 days?
+< 5 minutes from lead submission to first contact attempt. Auto SMS fires on A2P approval — now unlocked.
 
 ---
 
@@ -254,32 +248,33 @@ Key hooks that work:
 | FB ad copy — 3 ads | ✅ Complete | `/facebook-ads/campaigns/2026-04-01_motivated-sellers-v1/` |
 | Landing page video script v2 | ✅ Finalized | In #ad-scripts Discord |
 | Flip reveal captions | ✅ Written | `/FLIP_CAPTIONS.md` |
-| FB content calendar | ✅ Locked | First post Apr 8 @ 12pm |
-| Sell Smart Austin LLC | ✅ Filed | Pending TX SOS approval |
-| Resimpli account | ✅ Set up | Drip sequences not built |
+| Sell Smart Austin LLC | ✅ Filed + approved | Doc #1573678620002 |
+| EIN | ✅ Received | 42-1788107 |
+| Mercury bank account | ✅ Live | Opened April 13, 2026 |
+| Resimpli account | ✅ Live | API key saved |
+| Phone number (737) 355-8100 | ✅ Live | iMessage via Linq |
+| A2P 10DLC registration | ✅ APPROVED | April 24, 2026 |
 | Meta Pixel | ✅ Active | ID: 5191741884383418 |
-| (737) 209-5277 phone number | ✅ Acquired | Needs porting to Resimpli |
+| SSA Business Plan | ✅ Written | `memory/ssa-business-plan.md` |
+| Videos filmed | ✅ James has content | Landing page video + ad content ready |
 
 ---
 
-## 9. What Still Needs to Be Built
+## 9. What Still Needs to Be Done
 
-| Item | Priority | Dependency |
-|---|---|---|
-| ~~Purchase new number in Resimpli~~ | ✅ Done | (737) 355-8100 — iMessage via Linq |
-| ~~Cancel REI BlackBook~~ | ✅ Done | Cancelled April 9, 2026 |
-| Connect FB Lead Ads → Resimpli (Zapier or API) | 🔴 High | Resimpli onboarding |
-| Build drip sequences in Resimpli | 🔴 High | None (James to load after Mav drafts) |
-| Launch Ad 1 in FB Ads Manager at $25/day | 🔴 High | Phone number live |
-| TX SOS approval → EIN | 🔴 High | Out of James's hands — just waiting |
-| ~~Submit A2P 10DLC~~ | ✅ Done | Submitted April 8, 2026 — awaiting approval (1-3 weeks) |
-| ~~Update opt-in forms for A2P compliance~~ | ✅ Done | Split into transactional + marketing checkboxes (both optional) April 9, 2026 |
-| Mercury business bank account | 🔴 High | EIN in hand ✅ — ready to open now |
-| Film landing page video (tan/cream polo, podcast studio) | 🟡 Medium | None |
-| Upload landlord burnout video to Resimpli landing page | 🟡 Medium | Video filmed |
-| Cancel offerreadyleads.com in Namecheap | 🟡 Medium | Stop auto-renew |
-| Build Ad 2 + Ad 3 in Ads Manager (paused) | 🟢 Low | After Ad 1 exits learning phase |
-| Direct mail campaign | 🟢 Low | Phase 2 |
+| Item | Priority | Dependency | Notes |
+|---|---|---|---|
+| Film landing page video | 🔴 High | None | Script done — tan/cream polo, podcast studio |
+| Upload landing page video to site | 🔴 High | Video filmed | Blocks conversion rate |
+| Connect FB Lead Ads → Resimpli (Zapier) | 🔴 High | None | Plan A — Zapier bridge |
+| Build drip sequences in Resimpli | 🔴 High | None | SMS + email + ringless VM |
+| Customize AI call answering script | 🔴 High | None | First impression for inbound leads |
+| Launch Ad 1 in Ads Manager at $25/day | 🔴 High | Resimpli connected | Special Ad Category: Housing |
+| Confirm Meta Pixel active on landing page | 🟡 Medium | None | Required for retargeting |
+| Cancel offerreadyleads.com auto-renew | 🟡 Medium | None | Namecheap — stop the bleed |
+| Build Ad 2 + Ad 3 in Ads Manager (paused) | 🟢 Low | After Ad 1 exits learning phase | 50+ conversions first |
+| Direct mail campaign | 🟢 Low | Phase 2 | PropStream list pull |
+| Consult TX RE attorney re: flip entity | ⚠️ Before first flip | N/A | SSA LLC should NOT hold flip properties |
 
 ---
 
@@ -287,29 +282,106 @@ Key hooks that work:
 
 | Decision | What Was Decided | Why |
 |---|---|---|
-| Business model | Flip / Wholesale / List it — no lead wasted | Broad targeting catches all seller motivations; listing fallback = commission regardless |
+| Business model | Flip / Wholesale Referral / List it — no lead wasted | Broad targeting catches all seller motivations; listing fallback = commission regardless |
 | Lead gen | FB ads (inbound) + direct mail, NO cold SMS | Legal risk on cold SMS; inbound quality is higher |
-| CRM | Resimpli (switched from REI BlackBook) | AI call answering, skip tracing built-in, speed-to-lead — objectively better for a solo operator |
-| Phone strategy | Single number (737) 209-5277 ported into Resimpli | Preserve number, route AI voice answering through it |
+| CRM | Resimpli (switched from REI BlackBook April 2026) | AI call answering, skip tracing built-in, speed-to-lead — objectively better for solo operator |
+| Phone strategy | (737) 355-8100 in Resimpli | Preserve number, route AI voice answering through it |
 | Ad launch order | Ad 1 (Landlord Burnout) first | Landlord burnout is underserved and high intent in Austin right now |
-| A2P approach | Submit 10DLC after EIN, no cold SMS | Compliance first — SMS drip for inbound leads only |
+| A2P approach | Submit 10DLC, no cold SMS | Compliance first — SMS drip for inbound leads only |
 | Entity | Sell Smart Austin LLC (TX) | Separation of personal liability, professional presence |
-| Banking | Mercury or Relay (to be decided post-EIN) | Fintech business banking, no fees |
+| Banking | Mercury | Fintech business banking, no fees |
+| Focus priority | SSA paused April 2026, reactivating May 2026 | FCS was primary — now reactivating SSA for cash flow |
+| Ad budget | $25/day ($750/mo) to start | Conservative while FCS also in startup; scale after CPL confirmed |
 
 ---
 
-## 11. File Inventory
+## 11. 90-Day Launch Plan (Reactivation — May 2026)
+
+### Immediate (This Week)
+- [ ] Film landing page video (tan/cream polo, podcast studio)
+- [ ] Connect FB Lead Ads → Resimpli via Zapier
+- [ ] Build drip sequences in Resimpli (SMS + email + ringless VM)
+- [ ] Customize AI call answering script in Resimpli
+- [ ] Confirm Meta Pixel firing on landing page
+- [ ] Launch Ad 1 at $25/day
+
+### Month 1 (May → June 2026)
+- [ ] Analyze CPL and contact rate weekly
+- [ ] Adjust ad creative if CPL > $75
+- [ ] First qualified lead conversations
+- [ ] First deal in pipeline (referral or listing first — fastest cash)
+- **Goal:** First leads in system, first contact attempts, first qualified conversation
+
+### Month 2 (June → July 2026)
+- [ ] Test 2nd ad angle once Ad 1 exits learning phase
+- [ ] First closed deal — target wholesale referral or listing
+- [ ] Review funnel metrics and adjust
+- **Goal:** First revenue closed
+
+### Month 3 (July → Aug 2026)
+- [ ] Add direct mail layer if ads are working
+- [ ] Target 2-3 deals in pipeline simultaneously
+- [ ] Decide: increase ad budget or optimize first?
+- **Goal:** Consistent deal flow, revenue predictable
+
+### Revenue Priority Order (Fastest Cash First)
+1. **Wholesale referral fee** — days to close once deal found
+2. **Listing commission** — weeks to close
+3. **Flip** — months, but highest upside
+
+---
+
+## 12. Revenue Model & Projections
+
+### Deal Economics (conservative)
+
+| Deal Type | Avg. Revenue | Frequency | Monthly Revenue |
+|---|---|---|---|
+| Flip | $25,000–50,000 profit | 0.25/month (3/year) | ~$9,375 avg |
+| Wholesale Referral | $2,000–5,000 fee | 1–2/month | ~$4,500 avg |
+| Listing | $5,000–8,000 commission | 0.5–1/month | ~$3,250 avg |
+| **Total** | | | **~$17,000/month** |
+
+*Month-to-month will be lumpy — referrals + listings are the consistent cash flow base.*
+
+### Break-Even
+- Marketing: ~$750/month (ads at $25/day)
+- Resimpli: $149/month
+- Tools: ~$50/month
+- **Total overhead: ~$950/month**
+- One wholesale referral fee covers 2-5 months of overhead. Very lean by design.
+
+### Year 1 Target
+- Revenue: $150,000–200,000
+- Net after costs: ~$120,000–160,000
+
+---
+
+## 13. Risks & Mitigations
+
+| Risk | Mitigation |
+|---|---|
+| Ad CPL too high | Test new creative angles; add direct mail as parallel channel |
+| Cash flow crunch | SSA overhead is only ~$950/month — one referral fee covers it. Keep budget lean. |
+| Flip market softens | Referral + listing buckets still work regardless of flip viability |
+| James too busy with FCS | SSA designed to be low-touch — Resimpli handles follow-up, GC handles rehab |
+| First flip in wrong entity | ⚠️ Consult TX attorney before any flip goes under contract |
+
+---
+
+## 14. File Inventory
 
 | File | Contents | Location |
 |---|---|---|
 | Master Doc.md | This document — single source of truth | `/Master Doc/Master Doc.md` |
+| ssa-business-plan.md | Full business plan (written April 2026) | `~/.openclaw/workspace/memory/ssa-business-plan.md` |
 | ads.md | All 3 FB ad scripts | `/facebook-ads/campaigns/2026-04-01_motivated-sellers-v1/ads.md` |
 | notes.md | Campaign setup, targeting, performance log | `/facebook-ads/campaigns/2026-04-01_motivated-sellers-v1/notes.md` |
 | FLIP_CAPTIONS.md | Before/during/after flip reveal captions | `/FLIP_CAPTIONS.md` |
-| index.html | Main website | `/index.html` |
-| SSA-Landing-Page.html | Lead capture landing page | `/brand/SSA-Landing-Page.html` |
+| index.html | Main website + lead capture (canonical) | `/index.html` |
 | logo-v3.svg | Primary logo | `/brand/logo-v3.svg` |
 | logo-icon.svg | Icon-only logo | `/brand/logo-icon.svg` |
+| sell-smart-austin.md | Memory/context file | `~/.openclaw/workspace/memory/sell-smart-austin.md` |
 
 ---
 
@@ -317,5 +389,6 @@ Key hooks that work:
 
 | Date | Changes |
 |---|---|
-| April 7, 2026 | Initial document created. Captures full business context: model, brand, LLC status, tech stack (Resimpli switch), FB ad campaign, content strategy, build status, and key decisions. |
-| April 9, 2026 | EIN received (42-1788107). REI BlackBook cancelled. A2P 10DLC submitted. Opt-in forms updated for TCR compliance — split into transactional + marketing checkboxes (both optional). Status updated throughout. |
+| April 7, 2026 | Initial document created |
+| April 9, 2026 | EIN received. REI BlackBook cancelled. A2P submitted. Opt-in forms updated for TCR compliance. |
+| May 4, 2026 | Major update: A2P approved (Apr 24), Mercury live (Apr 13), status updated throughout, 90-day plan rewritten for May 2026 reactivation, revenue priority order added (referral → listing → flip for fastest cash). |
