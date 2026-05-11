@@ -2046,43 +2046,113 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // Form submit — sends lead to Formspree
-  function submitForm(e) {
+  // Form submit — fires to Resimpli (primary CRM) and Formspree (backup + consent audit)
+  // in parallel. Success if either lands.
+  //
+  // Resimpli JWT below expires 2027-06-02. Rotate before then:
+  //   1. Open https://dashboard.resimpli.com/public/web-form?webFormLink=69d17a5a805243ab0b88aa91
+  //   2. DevTools → Network → submit a test lead → right-click `createLead` → Copy as fetch
+  //   3. Replace RESIMPLI.authToken below with the new `authorization` value
+  const RESIMPLI = {
+    endpoint: 'https://live-api.resimpli.com/api/v4/webForm/createLead',
+    authToken: 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWQxNzVmOTU4ODIxYWZkYzY5ODhlZTIiLCJ0aW1lem9uZU9mZnNldCI6IkFtZXJpY2EvQ2hpY2FnbyIsInR5cGUiOiJ3ZWIiLCJsb2dpbkRhdGUiOjE3NzUzMzQ5MDU4NTksImlhdCI6MTc3NTMzNDkwNSwiZXhwIjoxODA2ODcwOTA1fQ.RTvD3rpKgF3wreSqtbmJ5PX1RIPOY_8DhoZHNcWP_UcORj53aOyW6zUovvgblbtJVSJ1goOWRKMhXhznyKuIBw',
+    webFormLink: '69d17a5a805243ab0b88aa91',
+    marketId: '69d175fc58821afdc6989328',
+    leadMainStatusId: '62d6b26a8865ded41d831ece',
+    crmQuestionId: '5a27d342c50f175ce762d358'
+  };
+
+  function formatPhoneE164(raw) {
+    const digits = (raw || '').replace(/\D/g, '');
+    if (digits.length === 10) return '+1' + digits;
+    if (digits.length === 11 && digits[0] === '1') return '+' + digits;
+    return raw;
+  }
+
+  function buildResimpliPayload(formData) {
+    const get = (k) => (formData.get(k) || '').toString().trim();
+
+    // Resimpli has no dedicated fields for condition/timeline, so we stuff them
+    // into the contact title for at-a-glance visibility in the CRM.
+    const titleParts = [get('name')];
+    if (get('property_condition')) titleParts.push(get('property_condition'));
+    if (get('timeline')) titleParts.push(get('timeline'));
+
+    return {
+      isMarkasHotLead: false,
+      title: titleParts.join(' · '),
+      phoneNumber: formatPhoneE164(get('phone')),
+      email: get('email'),
+      address: get('property_address'),
+      crmQuestionId: RESIMPLI.crmQuestionId,
+      leadCreated: Date.now(),
+      marketId: RESIMPLI.marketId,
+      leadMainStatusId: RESIMPLI.leadMainStatusId,
+      defaultNumber: true,
+      duplicateLead: true,
+      // Empty placeholders that mirror Resimpli's hosted-form payload shape.
+      secondaryContact: [], buyerIds: [], dispoPreference: [], preference: [],
+      garage: {}, leadInfo: {
+        propertyInfo: {}, valuation: {}, agentInfo: {},
+        taxInfo: {}, lastSaleInfo: {}, mls: {}, mortgageInfo: {}
+      },
+      ownerName1: '', ownerMailingAddress: '',
+      bathCount: '', bedroomsCount: '', area: '', lotSizeSqft: '',
+      yearBuilt: '', useCode: '', taxAssessedYear: '', taxBilledAmount: '',
+      estimateLow: 0, estimateHigh: 0
+    };
+  }
+
+  async function submitForm(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
+    const formData = new FormData(form);
 
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    // Fire Facebook Lead conversion event
-    if (typeof fbq !== 'undefined') {
-      fbq('track', 'Lead');
-    }
+    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
 
-    const data = new FormData(form);
-
-    fetch('https://formspree.io/f/xnjozqzg', {
+    // credentials must be 'omit' — Resimpli responds with Access-Control-Allow-Origin: *
+    // which the CORS spec forbids combining with credentials:include.
+    const resimpliRequest = fetch(RESIMPLI.endpoint, {
       method: 'POST',
-      body: data,
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': RESIMPLI.authToken,
+        'Webformlink': RESIMPLI.webFormLink
+      },
+      body: JSON.stringify(buildResimpliPayload(formData))
+    }).then(async (r) => {
+      if (!r.ok) throw new Error('Resimpli ' + r.status + ': ' + await r.text());
+      return r.json();
+    });
+
+    // Formspree carries the full FormData incl. consent checkboxes — our audit trail.
+    const formspreeRequest = fetch('https://formspree.io/f/xnjozqzg', {
+      method: 'POST',
+      body: formData,
       headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-      if (response.ok) {
-        btn.textContent = '✓ Request Sent! We\'ll Call You Shortly.';
-        btn.style.background = '#16a34a';
-        form.reset();
-      } else {
-        btn.textContent = 'Something went wrong — please try again.';
-        btn.style.background = '#dc2626';
-        btn.disabled = false;
-      }
-    })
-    .catch(() => {
+    });
+
+    const [resimpli, formspree] = await Promise.allSettled([resimpliRequest, formspreeRequest]);
+
+    if (resimpli.status === 'rejected') console.error('Resimpli:', resimpli.reason);
+    if (formspree.status === 'rejected') console.error('Formspree:', formspree.reason);
+
+    if (resimpli.status === 'fulfilled' || formspree.status === 'fulfilled') {
+      btn.textContent = '✓ Request Sent! We\'ll Call You Shortly.';
+      btn.style.background = '#16a34a';
+      form.reset();
+    } else {
       btn.textContent = 'Something went wrong — please try again.';
       btn.style.background = '#dc2626';
       btn.disabled = false;
-    });
+    }
   }
 
   // Scroll fade-in
