@@ -224,12 +224,46 @@ Key hooks that work:
 | Resimpli API Key | `ab714258b938da2e53b705792837a451` |
 | Drip sequences | ⏳ Not yet built |
 | FB Lead Ads → Resimpli (Zapier) | ⏳ Not yet connected |
+| Website form → Resimpli | ✅ Wired 2026-05-11 — direct browser fetch (see Section 7a). Final test pending 2026-05-13. |
 | AI call answering script | ⏳ Not yet customized |
 
 ### Lead Routing Plan
 
-**Plan A:** Zapier bridge — FB Lead Ad → Zapier → Resimpli
-**Plan B:** Direct REST API — Resimpli REST API (check availability end of May 2026)
+- **Website form → Resimpli (direct browser fetch)** — ✅ Implemented 2026-05-11. `sellsmartaustin.com` form POSTs to `live-api.resimpli.com/api/v4/webForm/createLead` directly from the browser using a hardcoded webform JWT. No proxy, no Zapier, $0/mo. Resimpli's API responds with `Access-Control-Allow-Origin: *` so cross-origin POST works natively.
+- **FB Lead Ads → Resimpli (Zapier)** — ⏳ Still required. FB Lead Ads can't fire arbitrary browser JS, so Zapier remains the only practical bridge for that channel.
+
+### 7a. Website Form → Resimpli Integration (technical reference)
+
+**Status:** Wired and deployed in commit `ba95830` (2026-05-11). Final live test pending — first attempt 2026-05-11 hit a 400 "Address already associated with other property" because the test reused a real Resimpli address. Re-test with a unique address required to declare done.
+
+**Where the code lives:** `index.html` script block — `RESIMPLI` config object + `submitForm()` function.
+
+**Architecture:** `index.html` form → `fetch()` to Resimpli with JWT auth → success surfaces to user. Formspree retained as parallel backup destination (captures full FormData incl. SMS-consent checkboxes, which Resimpli has no clean field for).
+
+**Resimpli account constants (hardcoded in `index.html`):**
+
+| Field | Value | Purpose |
+|---|---|---|
+| `webFormLink` | `69d17a5a805243ab0b88aa91` | Identifies James's form in Resimpli |
+| `marketId` | `69d175fc58821afdc6989328` | "Primary Market" |
+| `leadMainStatusId` | `62d6b26a8865ded41d831ece` | "New Leads" default status |
+| `crmQuestionId` | `5a27d342c50f175ce762d358` | Form's question template |
+
+**JWT auth (expires 2027-06-02):** ~13-month lifetime makes hardcoding viable. Stored in `RESIMPLI.authToken` inside `index.html`.
+
+**JWT rotation procedure (do before 2027-06-02):**
+1. Open `https://dashboard.resimpli.com/public/web-form?webFormLink=69d17a5a805243ab0b88aa91`
+2. DevTools → Network → Fetch/XHR → clear log
+3. Submit a junk-data lead
+4. Right-click `createLead` → Copy → Copy as fetch
+5. Paste the `authorization` header value as `RESIMPLI.authToken` in `index.html`
+6. Decode the JWT payload at jwt.io → confirm new `exp` claim → update the comment in the code with the new expiry date
+7. Push, hard-refresh sellsmartaustin.com, submit a real test, confirm in Resimpli
+
+**Known limitations:**
+- `property_condition` and `timeline` from the SSA form are stuffed into Resimpli's contact `title` field separated by ` · ` (e.g. *"Jane Smith · Needs major repairs · Within 30 days"*) — Resimpli has no clean fields for these, so this is the temporary at-a-glance solution. Iteration 2 may map them via Resimpli's "preference" question system.
+- SMS-consent checkbox state (`sms_consent_transactional`, `sms_consent_marketing`) is NOT sent to Resimpli — no field exists. It's captured in the Formspree backup email for audit trail. TCPA / A2P compliance still requires a record per lead, so Formspree must stay running as the audit-trail source until we build proper consent storage.
+- Resimpli's API rejects duplicate property addresses with HTTP 400 even when `duplicateLead: true` is set. Cosmetically rare in practice (would require two distinct sellers at the same address), but worth noting.
 
 ### Speed-to-Lead Target
 
@@ -243,7 +277,8 @@ Key hooks that work:
 |---|---|---|
 | Brand identity (logo, colors, assets) | ✅ Complete | In `/brand/` |
 | sellsmartaustin.com domain | ✅ Active | Namecheap |
-| Landing page (HTML) | ✅ Built | `/brand/SSA-Landing-Page.html` |
+| Landing page (HTML) | ✅ Built | `/index.html` is canonical (old `/brand/SSA-Landing-Page.html` removed 2026-05-06 in P0 audit — was a stale pre-A2P duplicate) |
+| Website form → Resimpli wiring | ✅ Wired | Direct browser fetch, JWT-auth, exp 2027-06-02 — see Section 7a |
 | Google Workspace email | ✅ Active | james@sellsmartaustin.com |
 | FB ad copy — 3 ads | ✅ Complete | `/facebook-ads/campaigns/2026-04-01_motivated-sellers-v1/` |
 | Landing page video script v2 | ✅ Finalized | In #ad-scripts Discord |
@@ -266,8 +301,10 @@ Key hooks that work:
 |---|---|---|---|
 | Film landing page video | 🔴 High | None | Script done — tan/cream polo, podcast studio |
 | Upload landing page video to site | 🔴 High | Video filmed | Blocks conversion rate |
-| Connect FB Lead Ads → Resimpli (Zapier) | 🔴 High | None | Plan A — Zapier bridge |
+| Re-test website form → Resimpli with unique address | 🔴 High | None | First test 2026-05-11 hit "address already associated" 400 because test address was reused. Submit again with a fresh address to confirm clean handoff. |
+| Connect FB Lead Ads → Resimpli (Zapier) | 🔴 High | None | Plan A — Zapier bridge. Separate from website form (FB Lead Ads can't fire arbitrary browser JS). |
 | Build drip sequences in Resimpli | 🔴 High | None | SMS + email + ringless VM |
+| Rotate Resimpli JWT before 2027-06-02 | 🟢 Maintenance | None | Hardcoded in `index.html`. Procedure documented in Section 7a. |
 | Customize AI call answering script | 🔴 High | None | First impression for inbound leads |
 | Launch Ad 1 in Ads Manager at $25/day | 🔴 High | Resimpli connected | Special Ad Category: Housing |
 | Confirm Meta Pixel active on landing page | 🟡 Medium | None | Required for retargeting |
@@ -292,6 +329,7 @@ Key hooks that work:
 | Banking | Mercury | Fintech business banking, no fees |
 | Focus priority | SSA paused April 2026, reactivating May 2026 | FCS was primary — now reactivating SSA for cash flow |
 | Ad budget | $25/day ($750/mo) to start | Conservative while FCS also in startup; scale after CPL confirmed |
+| Website form → Resimpli architecture (2026-05-11) | Direct browser fetch over Zapier or Cloudflare Worker proxy | Resimpli's API has open CORS (`Access-Control-Allow-Origin: *`) and the webform JWT has a 13-month lifetime, so no proxy or middleware is needed. Saves $20-30/mo Zapier subscription. Tradeoff: JWT must be rotated before 2027-06-02 (procedure in Section 7a). |
 
 ---
 
