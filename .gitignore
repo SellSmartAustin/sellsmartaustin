@@ -1,0 +1,7 @@
+# OS junk
+.DS_Store
+
+# Internal / sensitive — NEVER publish to the live site
+/Sell Smart Austin - Registration Docs/
+/seller-outreach/
+CLAUDE.md

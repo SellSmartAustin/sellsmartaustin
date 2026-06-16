@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sell Smart Austin — We buy houses in Austin, TX for cash. No repairs, no commissions, close in 7 days. Get your free cash offer today.">
-<title>Sell Smart Austin | Cash Home Buyers in Austin, TX</title>
+<meta name="description" content="Sell your Austin home your way. I'm James — a licensed Texas real estate agent. Get all 3 options: a fair cash offer, list for top dollar, or a smart middle path. You decide. No pressure, no fees to find out.">
+<title>Sell Smart Austin | Licensed Agent — Cash, List, or a Smart Middle Path</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <!-- Meta Pixel Code -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','5191741884383418');fbq('track','PageView');</script>
@@ -127,7 +127,7 @@
   /* ── HERO ── */
   #home {
     min-height: 100vh;
-    background: var(--navy);
+    background: linear-gradient(100deg, rgba(19,32,56,0.95) 0%, rgba(19,32,56,0.88) 45%, rgba(27,42,74,0.70) 100%), url('assets/hero-austin-street.png') center/cover no-repeat;
     display: flex;
     align-items: center;
     padding: 120px 5% 80px;
@@ -419,14 +419,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 26px;
     flex-wrap: wrap;
   }
 
   .trust-item {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     font-size: 13px;
     font-weight: 700;
     color: var(--navy);
@@ -434,16 +434,15 @@
   }
 
   .trust-icon {
-    width: 36px; height: 36px;
-    background: var(--navy);
-    border-radius: 50%;
+    width: 24px; height: 24px;
+    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
 
-  .trust-icon svg { color: var(--orange); }
+  .trust-icon svg { color: var(--orange); width: 22px; height: 22px; }
 
   .trust-divider {
     width: 1px; height: 32px;
@@ -693,8 +692,8 @@
     justify-content: flex-start;
   }
 
-  .check { color: #4ADE80; font-size: 18px; }
-  .cross { color: rgba(255,255,255,0.3); font-size: 18px; }
+  .check { color: #4ADE80; font-size: 17px; margin-right: 9px; }
+  .cross { color: #F0564A; font-size: 16px; margin-right: 9px; }
   .col-us-val {
     background: rgba(232,98,26,0.08);
     border-left: 1px solid rgba(232,98,26,0.2);
@@ -801,25 +800,29 @@
   }
 
   .about-credentials {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 28px;
+    border-top: 1.5px solid var(--cream-dark);
   }
 
   .credential-badge {
-    background: var(--cream);
-    border: 1px solid var(--cream-dark);
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 12px;
+    background: none;
+    border-bottom: 1.5px solid var(--cream-dark);
+    padding: 16px 6px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--navy);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 12px;
   }
-  .credential-badge span { color: var(--orange); font-size: 14px; }
+  .credential-badge:nth-child(odd) {
+    border-right: 1.5px solid var(--cream-dark);
+    padding-left: 2px;
+  }
+  .credential-badge:nth-child(even) { padding-left: 22px; }
+  .credential-badge svg { color: var(--orange); width: 22px; height: 22px; flex-shrink: 0; }
 
   .about-text .section-label { margin-bottom: 8px; }
 
@@ -1051,7 +1054,7 @@
 
   /* ── GET OFFER / CONTACT ── */
   #get-offer {
-    background: var(--navy);
+    background: linear-gradient(rgba(19,32,56,0.93) 0%, rgba(19,32,56,0.86) 55%, rgba(19,32,56,0.96) 100%), url('assets/austin-skyline.png') center bottom/cover no-repeat;
     position: relative;
     overflow: hidden;
   }
@@ -1333,6 +1336,18 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .loc-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 9px 18px;
+    border-radius: 100px;
+    backdrop-filter: blur(2px);
+  }
 </style>
 </head>
 <body>
@@ -1356,12 +1371,13 @@
     </div>
   </a>
   <ul class="nav-links">
+    <li><a href="#options">Your 3 Options</a></li>
     <li><a href="#how-it-works">How It Works</a></li>
     <li><a href="#why-us">Why Us</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="tel:7373558100" class="nav-phone">📞 (737) 355-8100</a></li>
-    <li><a href="#get-offer" class="nav-cta">Get My Cash Offer</a></li>
+    <li><a href="#get-offer" class="nav-cta">See My Options</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1371,12 +1387,13 @@
 <!-- Mobile menu -->
 <div id="mobile-menu" style="display:none; position:fixed; top:72px; left:0; right:0; background:var(--navy); z-index:999; padding:24px 5%; border-bottom:2px solid var(--orange);">
   <ul style="list-style:none; display:flex; flex-direction:column; gap:20px;">
+    <li><a href="#options" onclick="toggleMenu()" style="color:rgba(255,255,255,0.85); text-decoration:none; font-size:16px; font-weight:600;">Your 3 Options</a></li>
     <li><a href="#how-it-works" onclick="toggleMenu()" style="color:rgba(255,255,255,0.85); text-decoration:none; font-size:16px; font-weight:600;">How It Works</a></li>
     <li><a href="#why-us" onclick="toggleMenu()" style="color:rgba(255,255,255,0.85); text-decoration:none; font-size:16px; font-weight:600;">Why Us</a></li>
     <li><a href="#about" onclick="toggleMenu()" style="color:rgba(255,255,255,0.85); text-decoration:none; font-size:16px; font-weight:600;">About</a></li>
     <li><a href="#faq" onclick="toggleMenu()" style="color:rgba(255,255,255,0.85); text-decoration:none; font-size:16px; font-weight:600;">FAQ</a></li>
     <li><a href="tel:7373558100" style="color:var(--orange); text-decoration:none; font-size:18px; font-weight:800;">(737) 355-8100</a></li>
-    <li><a href="#get-offer" onclick="toggleMenu()" style="background:var(--orange); color:var(--white); padding:14px 20px; border-radius:8px; text-decoration:none; font-size:15px; font-weight:800; text-align:center; display:block;">Get My Free Cash Offer →</a></li>
+    <li><a href="#get-offer" onclick="toggleMenu()" style="background:var(--orange); color:var(--white); padding:14px 20px; border-radius:8px; text-decoration:none; font-size:15px; font-weight:800; text-align:center; display:block;">See My 3 Options →</a></li>
   </ul>
 </div>
 
@@ -1384,31 +1401,31 @@
 <section id="home">
   <div class="hero-grid">
     <div class="hero-content">
-      <div class="hero-badge">Austin's Local Cash Home Buyers</div>
+      <div class="hero-badge">Licensed Austin Agent · 3 Ways to Sell</div>
       <h1 class="hero-headline">
-        Sell Your Austin Home<br>
-        <span class="accent">Fast, Fair & Hassle-Free</span>
+        Your Home. Your Choice.<br>
+        <span class="accent">Sell It Your Way.</span>
       </h1>
       <p class="hero-sub">
-        No repairs. No agent commissions. No waiting. We buy houses directly from Austin homeowners — and we can close in as little as <strong>7 days</strong> on your timeline.
+        Most "we buy houses" companies only make one move — a lowball cash offer. I'm James, a <strong>licensed Texas agent</strong>. I'll lay out all three of your options — cash as-is, a smart middle path, or list for top dollar — and <strong>you</strong> decide. No pressure, no fees to find out.
       </p>
       <div class="hero-proof">
         <div class="proof-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Close in 7 Days
+          Licensed TX Agent
         </div>
         <div class="proof-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          Zero Commissions
+          All 3 Options, No Pressure
         </div>
         <div class="proof-item">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-          No Repairs Needed
+          Cash Close in 7 Days
         </div>
       </div>
       <div class="hero-actions">
         <a href="#get-offer" class="btn-primary">
-          Get My Free Cash Offer
+          See My 3 Options
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
         <a href="tel:7373558100" class="btn-secondary">
@@ -1420,7 +1437,7 @@
 
     <!-- Hero Form -->
     <div class="hero-form-card">
-      <h2 class="form-title">Get Your Free Cash Offer</h2>
+      <h2 class="form-title">See Your 3 Options — Free</h2>
       <p class="form-subtitle">No obligation · Takes less than 60 seconds</p>
       <form onsubmit="submitForm(event)" id="hero-form">
         <div class="form-group">
@@ -1467,7 +1484,7 @@
           <input type="checkbox" id="hero-sms-marketing" name="sms_consent_marketing">
           <label for="hero-sms-marketing">I agree to receive marketing communications from Sell Smart Austin via text messages, phone calls, and emails, including property offers, promotions, and other real estate-related marketing. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg &amp; data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for marketing purposes.</label>
         </div>
-        <button type="submit" class="form-submit">Get My Free Cash Offer →</button>
+        <button type="submit" class="form-submit">Show Me My Options →</button>
       </form>
       <p class="form-disclaimer">🔒 Your information is 100% private. We never share your details.</p>
     </div>
@@ -1488,21 +1505,21 @@
       <div class="trust-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8621A" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       </div>
-      Licensed Real Estate Agent
+      Licensed TX Agent
     </div>
     <div class="trust-divider"></div>
     <div class="trust-item">
       <div class="trust-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8621A" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
-      Close in as Few as 7 Days
+      Close in 7 Days
     </div>
     <div class="trust-divider"></div>
     <div class="trust-item">
       <div class="trust-icon">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8621A" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
       </div>
-      Zero Fees or Commissions
+      Zero Commissions
     </div>
     <div class="trust-divider"></div>
     <div class="trust-item">
@@ -1514,31 +1531,65 @@
   </div>
 </div>
 
+<!-- ── YOUR 3 OPTIONS ── -->
+<section id="options" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="hiw-header fade-in">
+      <div class="section-label">The Sell Smart Advantage</div>
+      <h2 class="section-title">You Have Three Options — Not Just One</h2>
+      <p class="section-sub" style="margin:0 auto;">Most "we buy houses" companies can only make a lowball cash offer. As a licensed Texas agent, I lay out all three paths with the real Austin numbers behind each — then <strong>you</strong> choose what's best for your situation.</p>
+    </div>
+    <div class="situations-grid" style="margin-top:8px;">
+      <div class="situation-card fade-in" style="text-align:center;">
+        <span class="situation-emoji">💵</span>
+        <h4>1. Cash, As-Is</h4>
+        <p>A fair cash offer and a close in as little as 7 days. No repairs, no cleaning, no fees, no showings. Best when speed and certainty matter most.</p>
+      </div>
+      <div class="situation-card fade-in" style="text-align:center; border-color:var(--orange); box-shadow:var(--shadow); position:relative;">
+        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--orange); color:#fff; font-size:10px; font-weight:800; letter-spacing:1px; text-transform:uppercase; padding:4px 12px; border-radius:100px; white-space:nowrap;">Most Sellers Pick This</div>
+        <span class="situation-emoji">⚖️</span>
+        <h4>2. A Smart Middle Path</h4>
+        <p>Light prep, a quick refresh, or a creative structure that nets you more than a straight cash sale — without the full cost and wait of a traditional listing.</p>
+      </div>
+      <div class="situation-card fade-in" style="text-align:center;">
+        <span class="situation-emoji">📈</span>
+        <h4>3. List for Top Dollar</h4>
+        <p>If the numbers say listing nets you more, I'll tell you straight — and as your licensed agent, I'll list it and get you maximum market value.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:44px;">
+      <a href="#get-offer" class="btn-primary" style="display:inline-flex;">See Which Option Fits You — Free
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ── HOW IT WORKS ── -->
 <section id="how-it-works">
   <div class="section-inner">
     <div class="hiw-header fade-in">
       <div class="section-label">Simple Process</div>
-      <h2 class="section-title">Selling Your Home Has Never Been Easier</h2>
-      <p class="section-sub">Three simple steps and you're done. No showings, no open houses, no stress.</p>
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-sub">Three simple steps and you're in control the whole way. No showings, no pressure, no obligation.</p>
     </div>
     <div class="steps-grid">
       <div class="step-card fade-in">
         <div class="step-number">1</div>
-        <h3>Tell Us About Your Home</h3>
-        <p>Fill out our quick form or give us a call. We'll ask a few basic questions about your property — no appraisal, no inspection required at this stage.</p>
+        <h3>Tell Me About Your Home</h3>
+        <p>Fill out the quick form or call me directly. I'll ask a few basic questions about your property — no appraisal or inspection needed at this stage.</p>
         <span class="step-time">⚡ Takes 60 Seconds</span>
       </div>
       <div class="step-card fade-in" style="transition-delay:0.1s">
         <div class="step-number">2</div>
-        <h3>Receive Your Fair Cash Offer</h3>
-        <p>We'll walk through your property and present you a no-obligation cash offer within 24 hours. No lowballs, no games — just a straightforward number you can count on.</p>
+        <h3>Get All 3 Options</h3>
+        <p>I'll show you a fair cash number, what it could list for, and a smart middle path — with the real Austin comps behind each, so you see the full picture.</p>
         <span class="step-time">📋 Within 24 Hours</span>
       </div>
       <div class="step-card fade-in" style="transition-delay:0.2s">
         <div class="step-number">3</div>
-        <h3>Close on Your Timeline</h3>
-        <p>If you accept, you pick the closing date. We can close in as little as 7 days, or give you more time if you need it. You get cash — we handle everything else.</p>
+        <h3>You Choose — I Handle It</h3>
+        <p>Pick the option that fits your life. Whatever you choose, I manage the details, the paperwork, and the timeline. You can close in as little as 7 days.</p>
         <span class="step-time">🏠 As Fast as 7 Days</span>
       </div>
     </div>
@@ -1698,10 +1749,10 @@
           </div>
         </div>
         <div class="about-credentials">
-          <div class="credential-badge"><span>🏡</span> Licensed TX Agent</div>
-          <div class="credential-badge"><span>📍</span> Austin Based</div>
-          <div class="credential-badge"><span>🔨</span> Active Investor</div>
-          <div class="credential-badge"><span>⚡</span> Fast Closings</div>
+          <div class="credential-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Licensed TX Agent</div>
+          <div class="credential-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Austin Based</div>
+          <div class="credential-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.1 2.1-2.4-2.4 2.1-2.1z"/></svg> Active Investor</div>
+          <div class="credential-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg> Fast Closings</div>
         </div>
       </div>
       <div class="about-text fade-in">
@@ -1725,6 +1776,28 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCAL AUSTIN ── -->
+<section id="local" style="background:linear-gradient(rgba(19,32,56,0.72) 0%, rgba(19,32,56,0.88) 100%), url('assets/austin-aerial.png') center/cover no-repeat;">
+  <div class="section-inner" style="text-align:center;">
+    <div class="section-label" style="color:var(--orange);">Proudly Local</div>
+    <h2 class="section-title" style="color:#fff;">Serving Austin &amp; the Whole I-35 Corridor</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.84); margin:0 auto;">From Travis to Williamson, Hays, Comal, Bastrop, Caldwell, and Guadalupe — I'm a licensed Austin agent who actually knows these neighborhoods. Not a faceless national company a thousand miles away.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:32px auto 0; max-width:780px;">
+      <span class="loc-pill">Austin</span>
+      <span class="loc-pill">Round Rock</span>
+      <span class="loc-pill">Cedar Park</span>
+      <span class="loc-pill">Georgetown</span>
+      <span class="loc-pill">Pflugerville</span>
+      <span class="loc-pill">Kyle</span>
+      <span class="loc-pill">Buda</span>
+      <span class="loc-pill">Leander</span>
+      <span class="loc-pill">Manor</span>
+      <span class="loc-pill">San Marcos</span>
+      <span class="loc-pill">New Braunfels</span>
     </div>
   </div>
 </section>
@@ -1810,9 +1883,9 @@
   <div class="section-inner">
     <div class="offer-grid">
       <div class="offer-left fade-in">
-        <div class="section-label" style="color:var(--orange)">Ready to Sell?</div>
-        <h2 class="section-title">Get Your Free Cash Offer Today</h2>
-        <p class="section-sub">Fill out the form or call us directly. Either way, you'll have a cash offer in your hands within 24 hours — no pressure, no obligation.</p>
+        <div class="section-label" style="color:var(--orange)">Ready When You Are</div>
+        <h2 class="section-title">See Your 3 Options — Free</h2>
+        <p class="section-sub">Fill out the form or call me directly. Within 24 hours I'll walk you through all three options for your home — cash, a middle path, or list — with no pressure and no obligation.</p>
         <div class="offer-promises">
           <div class="promise-item">
             <div class="promise-check">✓</div>
@@ -1936,7 +2009,7 @@
           <span class="tagline">Sell Smart. Close Fast.</span>
         </div>
       </a>
-      <p>We're local Austin real estate investors who buy houses directly from homeowners — fast, fair, and hassle-free. Licensed Texas real estate agent.</p>
+      <p>I'm James — a licensed Texas real estate agent helping Austin homeowners sell on their terms. Get all three options: cash as-is, a smart middle path, or list for top dollar. You decide.</p>
       <a href="tel:7373558100" class="footer-phone">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         (737) 355-8100
