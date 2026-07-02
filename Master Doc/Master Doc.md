@@ -61,7 +61,7 @@ Licensed TX agent under MODUS Real Estate. All outreach signed: **"James K | MOD
 **Tagline:** "Sell Smart. Close Fast."
 **Domain:** sellsmartaustin.com (Namecheap)
 **Email:** james@sellsmartaustin.com (Google Workspace)
-**Phone:** (737) 355-8100 — Resimpli, iMessage via Linq ✅
+**Phone:** (512) 368-1487 — SendBlue SSA Main (iMessage/SMS), calls forward to GHL. Old (737) 355-8100 Resimpli line retired 2026-07. ✅
 
 **Video Ad Tagline:** "I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
 
@@ -119,7 +119,7 @@ SSA LLC should **NOT** hold flip properties — liability exposure. Need a separ
 
 ### Phone Number
 
-**(737) 355-8100** ✅ — Resimpli number, iMessage via Linq
+**(512) 368-1487** ✅ — SendBlue SSA Main (iMessage/SMS), calls forward to GHL. Old (737) 355-8100 retired 2026-07.
 - A2P 10DLC: ✅ **APPROVED** April 24, 2026 — SMS drip now fully unlocked
 - (737) 209-5277 is **DEAD** — was a GHL/ProfitDial number, lost when GHL was cancelled
 
@@ -160,7 +160,7 @@ SSA LLC should **NOT** hold flip properties — liability exposure. Need a separ
 > "Hey Austin landlords — tired of chasing rent while taxes keep climbing? I want to buy your house. AS-IS, cash, close whenever you want. I'm James, licensed agent in Austin — I make it simple, so you can sell smart."
 
 **Key Launch Checklist:**
-- [x] Phone number live — (737) 355-8100 ✅
+- [x] Phone number live — (512) 368-1487 (was 737-355-8100) ✅
 - [x] A2P 10DLC approved ✅ (April 24, 2026)
 - [x] iMessage via Linq ✅
 - [x] Landing page phone number updated ✅
@@ -218,7 +218,7 @@ Key hooks that work:
 |---|---|
 | Account created | ✅ |
 | API key saved | ✅ |
-| Phone number live: (737) 355-8100 | ✅ |
+| Phone number live: (512) 368-1487 | ✅ |
 | A2P 10DLC | ✅ APPROVED April 24, 2026 |
 | iMessage via Linq | ✅ |
 | Resimpli API Key | `ab714258b938da2e53b705792837a451` |
@@ -287,7 +287,7 @@ Key hooks that work:
 | EIN | ✅ Received | 42-1788107 |
 | Mercury bank account | ✅ Live | Opened April 13, 2026 |
 | Resimpli account | ✅ Live | API key saved |
-| Phone number (737) 355-8100 | ✅ Live | iMessage via Linq |
+| Phone number (512) 368-1487 | ✅ Live | SendBlue SSA Main, iMessage/SMS |
 | A2P 10DLC registration | ✅ APPROVED | April 24, 2026 |
 | Meta Pixel | ✅ Active | ID: 5191741884383418 |
 | SSA Business Plan | ✅ Written | `memory/ssa-business-plan.md` |
@@ -322,7 +322,7 @@ Key hooks that work:
 | Business model | Flip / Wholesale Referral / List it — no lead wasted | Broad targeting catches all seller motivations; listing fallback = commission regardless |
 | Lead gen | FB ads (inbound) + direct mail, NO cold SMS | Legal risk on cold SMS; inbound quality is higher |
 | CRM | Resimpli (switched from REI BlackBook April 2026) | AI call answering, skip tracing built-in, speed-to-lead — objectively better for solo operator |
-| Phone strategy | (737) 355-8100 in Resimpli | Preserve number, route AI voice answering through it |
+| Phone strategy | (512) 368-1487 SendBlue SSA Main | Public text/callback line; inbound calls forward to GHL |
 | Ad launch order | Ad 1 (Landlord Burnout) first | Landlord burnout is underserved and high intent in Austin right now |
 | A2P approach | Submit 10DLC, no cold SMS | Compliance first — SMS drip for inbound leads only |
 | Entity | Sell Smart Austin LLC (TX) | Separation of personal liability, professional presence |
