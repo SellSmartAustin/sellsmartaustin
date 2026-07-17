@@ -241,6 +241,7 @@
   .intake-pitch .callbox { margin-top:30px; padding-top:26px; border-top:1px solid var(--line-navy); }
   .intake-pitch .callbox a { color:#fff; font-family:'Newsreader',serif; font-size:26px; font-weight:600; text-decoration:none; }
   .intake-pitch .callbox span { display:block; color:rgba(255,255,255,0.6); font-size:14px; margin-top:4px; }
+  .intake-pitch .callbox span a { font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; color:var(--orange); text-decoration:none; white-space:nowrap; }
 
   .form-card { background:var(--cream); color:var(--ink); border-radius:var(--radius); padding:34px 32px; }
   .form-head { margin-bottom:22px; }
@@ -403,6 +404,7 @@
     <a href="#faq">FAQ</a>
     <a href="#intake" class="btn btn-primary mm-cta">See My Cash Option</a>
     <a href="tel:5123681487" class="mm-call">Call (512) 368-1487</a>
+    <a href="sms:5123681487" class="mm-call">Text (512) 368-1487</a>
   </div>
 </header>
 
@@ -418,7 +420,7 @@
         <a href="#intake" class="btn btn-primary">See My Cash Option
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <span class="hero-callnote">or call <a href="tel:5123681487">(512) 368-1487</a></span>
+        <span class="hero-callnote">or <a href="tel:5123681487">call</a> or <a href="sms:5123681487">text</a> (512) 368-1487</span>
       </div>
     </div>
     <div class="hero-media" aria-label="Recent Sell Smart Austin projects">
@@ -631,7 +633,7 @@
       <p>Tell us about the property and how to reach you. We'll review it and get back to you with the cash number and any alternative that fits better. No pressure and no obligation.</p>
       <div class="callbox">
         <a href="tel:5123681487">(512) 368-1487</a>
-        <span>Prefer to talk now? Call or text us directly.</span>
+        <span>Call or text us directly. A text reaches a real person, not a bot &mdash; <a href="sms:5123681487">send a text&nbsp;&rarr;</a></span>
       </div>
     </div>
 
@@ -759,10 +761,15 @@
       <div class="form-state ok" id="state-ok" role="status" aria-live="polite">
         <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div>
         <h3>Thanks — I received your request.</h3>
-        <p>We'll review the property information and reach out using your preferred contact method. If you need us sooner, call (512) 368-1487.</p>
-        <a href="tel:5123681487" class="btn btn-primary">Call (512) 368-1487
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 01-.1.2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
-        </a>
+        <p>We'll review the property information and reach out using your preferred contact method. If you need us sooner, call or text (512) 368-1487.</p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <a href="tel:5123681487" class="btn btn-primary">Call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 01-.1.2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
+          </a>
+          <a href="sms:5123681487" class="btn btn-ghost">Text Us
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </a>
+        </div>
         <div><button type="button" class="form-restart" id="restart-ok">Submit another property</button></div>
       </div>
 
@@ -770,9 +777,10 @@
       <div class="form-state fail" id="state-fail" role="alert">
         <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
         <h3>Your request didn't go through.</h3>
-        <p>Please try again or call (512) 368-1487.</p>
+        <p>Please try again, or call or text (512) 368-1487.</p>
         <button type="button" class="btn btn-primary" id="retry-btn">Try again</button>
-        <a href="tel:5123681487" class="btn btn-ghost" style="margin-left:10px;">Call instead</a>
+        <a href="tel:5123681487" class="btn btn-ghost" style="margin-left:10px;">Call</a>
+        <a href="sms:5123681487" class="btn btn-ghost" style="margin-left:8px;">Text</a>
       </div>
 
       <p class="mock-note" id="mock-note"></p>
@@ -801,6 +809,10 @@
         <a href="tel:5123681487" class="foot-phone">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 010 .2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
           (512) 368-1487
+        </a>
+        <a href="sms:5123681487" class="foot-phone" style="margin-top:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Text us &mdash; we reply from a real number
         </a>
       </div>
       <div class="foot-col">
@@ -1238,6 +1250,10 @@
   <a href="tel:5123681487" class="sticky-call" aria-label="Call Sell Smart Austin">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 010 .2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
     Call
+  </a>
+  <a href="sms:5123681487" class="sticky-call" aria-label="Text Sell Smart Austin">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    Text
   </a>
   <a href="#intake" class="sticky-offer btn btn-primary">Get My Cash Offer</a>
 </div>
