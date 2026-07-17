@@ -107,7 +107,19 @@
   .nav-cta { display:flex; align-items:center; gap:18px; }
   .nav-cta .btn { white-space:nowrap; }
   .nav-phone { font-weight:700; color:var(--navy); text-decoration:none; white-space:nowrap; }
-  .nav-toggle { display:none; background:none; border:0; cursor:pointer; }
+  .nav-toggle { display:none; background:none; border:0; cursor:pointer; color:var(--navy); padding:4px; align-items:center; }
+
+  /* Mobile dropdown menu */
+  .mobile-menu { display:none; flex-direction:column; background:var(--cream); border-bottom:1px solid var(--line); padding:6px 20px 16px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu > a { padding:13px 2px; font-size:16px; font-weight:600; color:var(--navy); text-decoration:none; border-bottom:1px solid var(--line); }
+  .mobile-menu .mm-cta { margin-top:12px; justify-content:center; border-bottom:0; min-height:48px; }
+  .mobile-menu .mm-call { border-bottom:0; text-align:center; color:var(--orange-ink); font-weight:700; }
+
+  /* Mobile sticky bottom CTA bar */
+  .sticky-cta { display:none; }
+  .sticky-call { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--navy); text-decoration:none; font-weight:700; font-size:12px; letter-spacing:0.02em; padding:0 16px; border:1.5px solid var(--navy); border-radius:var(--radius); }
+  .sticky-offer { flex:1; justify-content:center; min-height:50px; font-size:15px; }
 
   /* ── HERO ── */
   .hero { background:var(--cream); border-bottom:1px solid var(--line); padding:0; }
@@ -306,6 +318,7 @@
   /* ── RESPONSIVE ── */
   @media (max-width:960px) {
     .nav-links { display:none; }
+    .nav-toggle { display:inline-flex; }
     .hero-grid { grid-template-columns:1fr; }
     .hero-copy { padding:56px 0 40px; }
     .hero-media { min-height:420px; order:-1; }
@@ -335,6 +348,15 @@
     .foot-main { grid-template-columns:1fr; gap:28px; }
     .proof-inner { flex-direction:column; gap:8px; }
     .proof-dot { display:none; }
+    /* Sticky bottom CTA bar on phones */
+    body { padding-bottom:76px; }
+    .sticky-cta {
+      display:flex; gap:10px; align-items:stretch;
+      position:fixed; left:0; right:0; bottom:0; z-index:200;
+      background:rgba(246,241,231,0.97); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+      border-top:1px solid var(--line);
+      padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    }
   }
   @media (prefers-reduced-motion:reduce) {
     html { scroll-behavior:auto; }
@@ -369,7 +391,18 @@
     <div class="nav-cta">
       <a href="tel:5123681487" class="nav-phone">(512) 368-1487</a>
       <a href="#intake" class="btn btn-primary" style="padding:11px 20px; min-height:44px;">See My Cash Option</a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#options">The Options</a>
+    <a href="#projects">Real Projects</a>
+    <a href="#how">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#intake" class="btn btn-primary mm-cta">See My Cash Option</a>
+    <a href="tel:5123681487" class="mm-call">Call (512) 368-1487</a>
   </div>
 </header>
 
@@ -1184,7 +1217,29 @@
     }
     if (!reduce) { setInterval(function () { show(idx + 1); }, 4500); }
   })();
+
+  // ---- Mobile hamburger menu ----------------------------------------------
+  (function () {
+    var toggle = document.getElementById("nav-toggle");
+    var menu = document.getElementById("mobile-menu");
+    if (!toggle || !menu) return;
+    function close() { menu.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
+    toggle.addEventListener("click", function () {
+      var open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
+  })();
 })();
 </script>
+
+<!-- ══════════ MOBILE STICKY CTA BAR ══════════ -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="tel:5123681487" class="sticky-call" aria-label="Call Sell Smart Austin">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 010 .2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
+    Call
+  </a>
+  <a href="#intake" class="sticky-offer btn btn-primary">Get My Cash Offer</a>
+</div>
 </body>
 </html>
