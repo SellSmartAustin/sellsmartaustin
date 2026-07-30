@@ -23,11 +23,9 @@
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','5191741884383418');</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=5191741884383418&ev=PageView&noscript=1"/></noscript>
 
-<!-- Google Ads base tag — uncomment and replace AW-XXXXXXXXX after creating
-     the conversion actions (Gate 2). Also set CONFIG.tracking.googleSendTo below.
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-XXXXXXXXX');</script>
--->
+<!-- Google tag (gtag.js) — Google Ads conversion tracking, account AW-18359778796 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18359778796"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18359778796');</script>
 
 <style>
   :root {
@@ -756,9 +754,9 @@
   var CONFIG = {
     ghlWebhookUrl: "https://services.leadconnectorhq.com/hooks/WjdfN8VsDVZQWNlVWn9E/webhook-trigger/b5399575-8760-4a9e-b421-67233c38e497",
     prototypeMockSuccess: false,
-    // googleSendTo: set to "AW-XXXXXXXXX/LABEL" after Gate 2 (conversion action
-    // created + base tag uncommented in <head>). Fires ONLY on webhook success.
-    tracking: { enabled: true, metaPixelId: "5191741884383418", googleSendTo: null },
+    // "Submit lead form" conversion. Fires ONLY on confirmed GHL webhook success.
+    tracking: { enabled: true, metaPixelId: "5191741884383418",
+                googleSendTo: "AW-18359778796/twwnCK71_tgcEOz7z7JE" },
     disclosureVersion: "2026-07-16",
     leadSource: "google-ads-cash-lp",
     submittedKey: "ssa_submitted_cash"
