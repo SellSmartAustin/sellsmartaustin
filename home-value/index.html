@@ -572,9 +572,8 @@
           <div class="field" data-required>
             <label for="f-contact-pref">Preferred contact method <span class="req">*</span></label>
             <select id="f-contact-pref" name="contact_preference">
-              <option value="" selected disabled>Select one…</option>
               <option>Call</option>
-              <option>Text</option>
+              <option selected>Text</option>
               <option>Email</option>
             </select>
             <div class="err" role="alert">Please choose how you'd like James to reach you.</div>
@@ -807,12 +806,18 @@
   function validEmailValue(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function contactPref() { return (prefSelect.value || ""); }
   function emailRequired() { return contactPref() === "Email"; }
-  function transactionalRequired() { return contactPref() === "Text"; }
+  // 2026-07-31 (James, option 1): transactional consent is ALWAYS required.
+  // Sarah answers every inbound lead by text within minutes, so a lead without
+  // text consent cannot be served and would sit silent (Echo fails closed and
+  // suppresses the SMS). The box is deliberately NOT pre-checked - TCPA express
+  // written consent must be an affirmative act, and a pre-ticked box would
+  // invalidate the very consent record we rely on.
+  function transactionalRequired() { return true; }
   function syncPrefRules() {
     emailReqMark.style.display = emailRequired() ? "inline" : "none";
     var msgs = [];
     if (emailRequired()) msgs.push("Email is required so James can reach you that way.");
-    if (transactionalRequired()) msgs.push("To be contacted by text, please check the transactional consent box below.");
+    msgs.push("Please check the transactional consent box below so James can reply to you.");
     prefHint.textContent = msgs.join(" ");
   }
   prefSelect.addEventListener("change", syncPrefRules);
