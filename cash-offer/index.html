@@ -318,6 +318,26 @@
   .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity:1; transform:none; }
 
+  /* Real Projects carousel: swipe on mobile, arrows on desktop */
+  .pcar-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:34px; }
+  .pcar-head .projects-head { margin-bottom:0; }
+  .pcar-btns { display:flex; gap:10px; flex-shrink:0; padding-bottom:4px; }
+  .pcar-btn { width:46px; height:46px; border-radius:50%; border:1.5px solid var(--navy); background:transparent; color:var(--navy); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .18s, color .18s, opacity .18s; }
+  .pcar-btn:hover:not(:disabled) { background:var(--navy); color:#fff; }
+  .pcar-btn:disabled { opacity:.3; cursor:default; }
+  .pcar { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px; }
+  .pcar::-webkit-scrollbar { display:none; }
+  .pcar-card { flex:0 0 calc((100% - 36px) / 3); scroll-snap-align:start; background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .pcar-card img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .pcar-card .pc-body { padding:16px 18px 18px; }
+  .pcar-card h4 { font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:18px; color:var(--navy); line-height:1.25; margin-bottom:6px; }
+  .pcar-card p { font-size:14.5px; color:var(--muted); line-height:1.5; }
+  @media (max-width:960px) {
+    .pcar-card { flex-basis:78%; }
+    .pcar-btns { display:none; }
+    .pcar-head { display:block; }
+  }
+  @media (prefers-reduced-motion:reduce) { .pcar { scroll-behavior:auto; } }
   /* ── RESPONSIVE ── */
   @media (max-width:960px) {
     .nav-links { display:none; }
@@ -372,17 +392,9 @@
   .nav-links, .nav-toggle, .mobile-menu { display:none !important; }
   .hero-media { min-height:440px; }
   .lp-two-num { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
-  .lp-more { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:64px; }
-  .lp-more .card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
-  .lp-more .card img { width:100%; height:auto; display:block; aspect-ratio:3/2; object-fit:cover; }
-  .lp-more .body { padding:20px 22px 22px; }
-  .lp-more h4 { font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:21px; color:var(--navy); margin-bottom:5px; }
-  .lp-more .place { font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
-  .lp-more p { font-size:15px; color:var(--muted); }
   @media (max-width:960px) {
     .lp-two-num { grid-template-columns:1fr; }
-    .lp-more { grid-template-columns:1fr; margin-top:44px; }
-    /* Paid traffic: the ad-matching headline must be the first thing seen.
+      /* Paid traffic: the ad-matching headline must be the first thing seen.
        Homepage puts the photo first on mobile; the LP flips that. */
     .hero-media { order:2; min-height:300px; }
     .hero-copy { padding:44px 0 36px; }
@@ -461,45 +473,81 @@
 
 <section id="projects" style="background:var(--cream-2);">
   <div class="wrap">
-    <div class="projects-head reveal">
-      <p class="eyebrow">Real Projects</p>
-      <h2 class="h2">Real homes. Real work. No stock photos.</h2>
-      <p class="lead" style="margin-top:16px;">These are homes our team has actually bought, renovated, and sold across the Austin area. When we make you an offer, it's priced by people who know what the work really costs.</p>
+    <div class="pcar-head reveal">
+      <div class="projects-head">
+        <p class="eyebrow">Real Projects</p>
+        <h2 class="h2">Real homes. Real work. No stock photos.</h2>
+        <p class="lead" style="margin-top:16px;">These are homes our team has actually bought, renovated, and sold across the Austin area. When we make you an offer, it's priced by people who know what the work really costs.</p>
+      </div>
+      <div class="pcar-btns">
+        <button class="pcar-btn" id="pcar-prev" type="button" aria-label="Previous projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+        <button class="pcar-btn" id="pcar-next" type="button" aria-label="Next projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
     </div>
-    <article class="project reveal">
-      <div class="p-media">
-        <img class="project-establish" src="/assets/projects/mcgregor-exterior.webp" width="1024" height="683"
-             alt="Completed exterior of the McGregor renovation in South Austin" loading="lazy">
-        <div class="p-thumbs three">
-          <img src="/assets/projects/mcgregor-kitchen.webp" width="1024" height="1536" alt="Finished kitchen with gray cabinetry and stone counters" loading="lazy">
-          <img src="/assets/projects/mcgregor-living.webp" width="1024" height="683" alt="Finished open living room at the McGregor project" loading="lazy">
-          <img src="/assets/projects/mcgregor-bath.webp" width="1024" height="683" alt="Finished primary bathroom with walk-in shower" loading="lazy">
-        </div>
-      </div>
-      <div class="p-copy">
-        <h3>A full renovation — not a cosmetic cleanup.</h3>
-        <div class="p-place">2609 McGregor · South Austin</div>
-        <p class="p-body">Structural leveling, roofing, windows, plumbing, electrical, kitchen, bathrooms. We bought it as-is and did the work ourselves. That's exactly the condition you can sell to us in — we've seen worse, honestly.</p>
-        <p class="p-status">Closed in July 2026.</p>
-      </div>
-    </article>
-    <div class="lp-more">
-      <div class="card reveal">
-        <img src="/assets/projects/westbury-exterior.webp" width="1024" height="683" alt="Completed exterior and backyard of the Westbury project in Georgetown" loading="lazy">
-        <div class="body">
-          <h4>Focused improvements, not overbuilding.</h4>
-          <div class="place">515 Westbury · Georgetown</div>
-          <p>Paint, flooring, lighting, fixtures. We fixed what mattered and left what didn't. Closed March 2026.</p>
-        </div>
-      </div>
-      <div class="card reveal">
-        <img src="/assets/projects/croftwood-living.webp" width="1024" height="1536" alt="Staged Croftwood living room with modern finishes" loading="lazy">
-        <div class="body">
-          <h4>Targeted updates, finished feel.</h4>
-          <div class="place">7729 Croftwood · South Austin</div>
-          <p>Flooring, cabinetry, tile, doors, tankless water heater. Move-in ready and sold. Closed 2026.</p>
-        </div>
-      </div>
+    <div class="pcar reveal" id="pcar" tabindex="0" role="group" aria-label="Projects Sell Smart Austin has bought, renovated and sold. Scroll horizontally to see more.">
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-exterior.webp" alt="Completed exterior of the McGregor renovation in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>2609 McGregor · South Austin</h4>
+          <p>Leveled, re-roofed, rewired, replumbed. Bought as-is, closed July 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-kitchen.webp" alt="Finished McGregor kitchen with gray cabinetry and stone counters" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Kitchen</h4>
+          <p>Taken back to the studs and rebuilt.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-living.webp" alt="Finished open living room at the McGregor project" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Living room</h4>
+          <p>Reworked layout, new flooring throughout.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-bath.webp" alt="Finished primary bathroom with walk-in shower and double vanity" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Primary bath</h4>
+          <p>Walk-in shower and a double vanity.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-exterior.webp" alt="Completed exterior and backyard of the Westbury project in Georgetown" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>515 Westbury · Georgetown</h4>
+          <p>Targeted fixes, not a teardown. Closed March 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-kitchen.webp" alt="Finished Westbury kitchen with large island and updated fixtures" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Kitchen</h4>
+          <p>New lighting, hardware and cabinet work.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-living.webp" alt="Staged Westbury living room with fireplace and open layout" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Living room</h4>
+          <p>Paint, flooring and staging.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-exterior.webp" alt="Completed exterior of the Croftwood project in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>7729 Croftwood · South Austin</h4>
+          <p>Flooring, cabinetry, tile, tankless heater. Closed 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-living.webp" alt="Staged Croftwood living room with modern finishes" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Croftwood · Living room</h4>
+          <p>Move-in ready at handover.</p>
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1020,5 +1068,35 @@
   <a href="sms:5123681487" class="sticky-call" aria-label="Text Sell Smart Austin">Text</a>
   <a href="#intake" class="sticky-offer btn btn-primary">Get My Cash Offer</a>
 </div>
+
+<script>
+/* Real Projects carousel: arrows step one card, disabled at the ends. */
+(function () {
+  "use strict";
+  var car = document.getElementById("pcar");
+  var prev = document.getElementById("pcar-prev");
+  var next = document.getElementById("pcar-next");
+  if (!car || !prev || !next) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function step() {
+    var card = car.querySelector(".pcar-card");
+    return card ? card.getBoundingClientRect().width + 18 : car.clientWidth;
+  }
+  function sync() {
+    var max = car.scrollWidth - car.clientWidth;
+    prev.disabled = car.scrollLeft <= 2;
+    next.disabled = car.scrollLeft >= max - 2;
+  }
+  function go(dir) {
+    car.scrollBy({ left: dir * step(), behavior: reduce ? "auto" : "smooth" });
+  }
+  prev.addEventListener("click", function () { go(-1); });
+  next.addEventListener("click", function () { go(1); });
+  car.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  sync();
+})();
+</script>
 </body>
 </html>
