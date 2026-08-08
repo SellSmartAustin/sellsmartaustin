@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Behind on Property Taxes? Sell Anyway | Sell Smart Austin</title>
+<meta name="description" content="Behind on property taxes in Texas? You can still sell your house, with back taxes paid at closing. A licensed Texas agent explains every option, no pressure.">
+<meta name="robots" content="noindex,follow">
+
+<!--
+  Landing page (behind-on-property-taxes): tax-delinquent lane,
+  which targets the entire US and filters geographically via keywords.
+  Derived from cash-offer/index.html: identical form wiring, conversion
+  tracking, consent gate and TREC footer. Built 2026-07-31.
+  Google tag: dormant until the AW- conversion ID exists
+  (see SellSmartAustin/import/PRELAUNCH-GATE-CHECKLIST.md, Gate 2).
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel (init only; PageView + Lead are fired from the app code — Lead only after a confirmed lead) -->
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','5191741884383418');</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=5191741884383418&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google tag (gtag.js) — Google Ads conversion tracking, account AW-18359778796 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18359778796"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','AW-18359778796');</script>
+
+<script>document.documentElement.className += " js";</script>
+
+<style>
+  :root {
+    --navy:      #1B2A4A;
+    --navy-deep: #132038;
+    --cream:     #F6F1E7;
+    --cream-2:   #EFE7D6;
+    --orange:    #E1591A;
+    --orange-ink:#c44e14;
+    --ink:       #23262d;
+    --muted:     #6b6357;
+    --line:      #ddd3c1;
+    --line-navy: rgba(255,255,255,0.14);
+    --white:     #ffffff;
+    --radius:    4px;
+    --maxw:      1160px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior:smooth; }
+
+  body {
+    font-family:'Manrope', system-ui, sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3 { font-family:'Newsreader', Georgia, serif; font-weight:500; line-height:1.12; letter-spacing:-0.01em; color:var(--navy); }
+
+  a { color:inherit; }
+
+  .wrap { max-width:var(--maxw); margin:0 auto; padding:0 28px; }
+
+  section { padding:92px 0; }
+
+  .eyebrow {
+    font-family:'Manrope', sans-serif;
+    font-size:12.5px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--orange-ink); margin-bottom:18px;
+  }
+
+  .h2 { font-size:clamp(30px, 4vw, 46px); }
+  .lead { font-size:19px; color:var(--muted); max-width:60ch; }
+
+  /* Buttons */
+  .btn {
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Manrope',sans-serif; font-weight:700; font-size:16px;
+    padding:16px 26px; border-radius:var(--radius); border:2px solid transparent;
+    cursor:pointer; text-decoration:none; transition:background .18s, color .18s, border-color .18s;
+    min-height:52px;
+  }
+  .btn-primary { background:var(--orange); color:#fff; }
+  .btn-primary:hover { background:var(--orange-ink); }
+  .btn-ghost { background:transparent; color:var(--navy); border-color:var(--navy); }
+  .btn-ghost:hover { background:var(--navy); color:#fff; }
+  .btn-ghost-light { background:transparent; color:#fff; border-color:rgba(255,255,255,0.5); }
+  .btn-ghost-light:hover { background:#fff; color:var(--navy); border-color:#fff; }
+  .btn:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+    outline:3px solid var(--orange); outline-offset:2px;
+  }
+
+  /* ── NAV ── */
+  header.nav {
+    position:sticky; top:0; z-index:100;
+    background:rgba(246,241,231,0.92); backdrop-filter:saturate(180%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner { display:flex; align-items:center; justify-content:space-between; height:70px; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand .mark { width:38px; height:38px; border-radius:4px; display:block; }
+  .brand .name { font-family:'Manrope',sans-serif; font-weight:800; letter-spacing:0.03em; font-size:15px; color:var(--navy); line-height:1.05; }
+  .brand .name span { display:block; font-weight:600; font-size:11px; letter-spacing:0.14em; color:var(--muted); text-transform:uppercase; }
+  .nav-links { display:flex; align-items:center; gap:30px; }
+  .nav-links a { font-size:15px; font-weight:600; color:var(--navy); text-decoration:none; opacity:.82; }
+  .nav-links a:hover { opacity:1; color:var(--orange-ink); }
+  .nav-cta { display:flex; align-items:center; gap:18px; }
+  .nav-cta .btn { white-space:nowrap; }
+  .nav-phone { font-weight:700; color:var(--navy); text-decoration:none; white-space:nowrap; }
+  .nav-toggle { display:none; background:none; border:0; cursor:pointer; color:var(--navy); padding:4px; align-items:center; }
+
+  /* Mobile dropdown menu */
+  .mobile-menu { display:none; flex-direction:column; background:var(--cream); border-bottom:1px solid var(--line); padding:6px 20px 16px; }
+  .mobile-menu.open { display:flex; }
+  .mobile-menu > a { padding:13px 2px; font-size:16px; font-weight:600; color:var(--navy); text-decoration:none; border-bottom:1px solid var(--line); }
+  .mobile-menu .mm-cta { margin-top:12px; justify-content:center; border-bottom:0; min-height:48px; }
+  .mobile-menu .mm-call { border-bottom:0; text-align:center; color:var(--orange-ink); font-weight:700; }
+
+  /* Mobile sticky bottom CTA bar */
+  .sticky-cta { display:none; }
+  .sticky-call { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--navy); text-decoration:none; font-weight:700; font-size:12px; letter-spacing:0.02em; padding:0 16px; border:1.5px solid var(--navy); border-radius:var(--radius); }
+  .sticky-offer { flex:1; justify-content:center; min-height:50px; font-size:15px; }
+
+  /* ── HERO ── */
+  .hero { background:var(--cream); border-bottom:1px solid var(--line); padding:0; }
+  .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; align-items:stretch; gap:0; }
+  .hero-copy { padding:78px 56px 78px 0; align-self:center; }
+  .hero h1 { font-size:clamp(38px, 5.4vw, 64px); }
+  .hero h1 em { font-style:normal; color:var(--orange-ink); }
+  .hero-sub { font-size:19px; color:var(--muted); margin:26px 0 34px; max-width:46ch; }
+  .hero-actions { display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
+  .hero-callnote { font-size:15px; color:var(--muted); }
+  .hero-callnote a { color:var(--navy); font-weight:700; text-decoration:none; }
+  .hero-media { position:relative; min-height:520px; overflow:hidden; background:var(--navy); }
+  .hero-media .hc-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0; transition:opacity .9s ease; }
+  .hero-media .hc-slide.active { opacity:1; }
+  .hero-media::after { content:""; position:absolute; inset:0; box-shadow:inset 40px 0 60px -40px rgba(27,42,74,0.5); pointer-events:none; z-index:1; }
+  .hc-badge { position:absolute; top:16px; left:16px; z-index:2; background:rgba(19,32,56,0.82); color:#fff; font-size:12px; font-weight:700; letter-spacing:0.03em; padding:8px 13px; border-radius:4px; }
+  .hc-dots { position:absolute; bottom:16px; left:0; right:0; z-index:2; display:flex; gap:8px; justify-content:center; }
+  .hc-dot { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.5); border:0; padding:0; cursor:pointer; transition:background .2s; }
+  .hc-dot.active { background:var(--orange); }
+
+  /* ── PROOF LINE ── */
+  .proof { background:var(--navy); color:#fff; padding:0; }
+  .proof-inner { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:10px 26px; padding:20px 28px; text-align:center; }
+  .proof-item { font-size:14.5px; font-weight:600; color:rgba(255,255,255,0.9); letter-spacing:0.01em; }
+  .proof-dot { color:var(--orange); font-weight:800; }
+
+  /* ── OPTIONS (cash-first asymmetric) ── */
+  #options { background:var(--cream); }
+  .options-head { max-width:60ch; margin-bottom:44px; }
+  .options-grid { display:grid; grid-template-columns:1.7fr 1fr; gap:26px; align-items:stretch; }
+  .cash-panel {
+    background:var(--navy); color:#fff; border-radius:var(--radius);
+    padding:46px 44px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .cash-panel .tag { font-size:12.5px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--orange); margin-bottom:16px; }
+  .cash-panel h3 { color:#fff; font-size:40px; margin-bottom:8px; }
+  .cash-panel .desc-lead { font-size:16px; color:rgba(255,255,255,0.62); margin-bottom:26px; font-weight:600; }
+  .cash-panel p { color:rgba(255,255,255,0.86); font-size:16.5px; margin-bottom:26px; max-width:48ch; }
+  .cash-points { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:32px; }
+  .cash-points li { display:flex; gap:12px; align-items:flex-start; font-size:16px; color:rgba(255,255,255,0.92); }
+  .cash-points svg { flex-shrink:0; margin-top:3px; color:var(--orange); }
+  .cash-panel .btn { align-self:flex-start; margin-top:auto; }
+  .cash-fine { font-size:13px; color:rgba(255,255,255,0.5); margin-top:16px; max-width:46ch; }
+
+  .alt-col { display:flex; flex-direction:column; gap:22px; }
+  .alt {
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 26px; flex:1;
+  }
+  .alt h4 { font-family:'Newsreader',serif; font-weight:600; font-size:22px; color:var(--navy); margin-bottom:10px; }
+  .alt p { font-size:15px; color:var(--muted); }
+
+  /* ── PROJECTS ── */
+  #projects { background:var(--cream-2); }
+  .projects-head { max-width:62ch; margin-bottom:56px; }
+  .project { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; padding:0 0 76px; }
+  .project:last-of-type { padding-bottom:0; }
+  .project.flip .p-media { order:2; }
+  .project-establish { width:100%; height:auto; display:block; border-radius:var(--radius); border:1px solid var(--line); }
+  .p-thumbs { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px; }
+  .p-thumbs img { width:100%; height:100%; object-fit:cover; aspect-ratio:1/1; border-radius:var(--radius); border:1px solid var(--line); display:block; }
+  .p-thumbs.three { grid-template-columns:1fr 1fr 1fr; }
+  .p-num { font-family:'Newsreader',serif; font-size:15px; letter-spacing:0.14em; color:var(--orange-ink); font-weight:600; text-transform:uppercase; margin-bottom:14px; }
+  .project h3 { font-size:29px; margin-bottom:8px; }
+  .project .p-place { font-size:14px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); margin-bottom:18px; }
+  .project p.p-body { font-size:16.5px; color:var(--ink); margin-bottom:16px; }
+  .project .p-status { font-size:14.5px; color:var(--muted); border-left:3px solid var(--orange); padding-left:14px; }
+
+  /* ── HOW IT WORKS ── */
+  #how { background:var(--navy); color:#fff; }
+  #how h2 { color:#fff; }
+  .how-head { margin-bottom:44px; }
+  .how-head .lead { color:rgba(255,255,255,0.7); }
+  .steps { border-top:1px solid var(--line-navy); }
+  .step { display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:baseline; padding:30px 0; border-bottom:1px solid var(--line-navy); }
+  .step .n { font-family:'Newsreader',serif; font-size:44px; color:var(--orange); line-height:1; min-width:64px; }
+  .step h3 { color:#fff; font-size:24px; margin-bottom:6px; }
+  .step p { color:rgba(255,255,255,0.72); font-size:16px; max-width:60ch; }
+
+  /* ── TEAM ── */
+  #team { background:var(--cream); }
+  .team-head { max-width:60ch; margin-bottom:52px; }
+  .team-head .lead { margin-top:16px; }
+  .person { display:grid; grid-template-columns:0.82fr 1.18fr; gap:48px; align-items:center; padding-bottom:60px; }
+  .person:last-of-type { padding-bottom:0; }
+  .person.flip .person-photo-wrap { order:2; }
+  .person-photo { width:100%; height:auto; display:block; border-radius:var(--radius); border:1px solid var(--line); }
+  .person-photo-wrap { max-width:420px; }
+  .person-name { font-family:'Newsreader',serif; font-size:28px; font-weight:600; color:var(--navy); line-height:1.1; }
+  .person-role { display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--orange-ink); margin:10px 0 20px; }
+  .person p { font-size:16.5px; color:var(--ink); margin-bottom:16px; max-width:58ch; }
+  .person .lic-note { font-size:14px; color:var(--muted); margin-top:18px; }
+  .exp-line { font-size:15px; font-weight:700; color:var(--navy); letter-spacing:0.01em; margin-top:20px; }
+  .exp-line .sep { color:var(--orange); margin:0 10px; }
+
+  /* ── FAQ ── */
+  #faq { background:var(--cream-2); }
+  .faq-head { margin-bottom:40px; }
+  .faq-list { max-width:820px; border-top:1px solid var(--line); }
+  .faq-item { border-bottom:1px solid var(--line); }
+  .faq-q { width:100%; text-align:left; background:none; border:0; cursor:pointer;
+    display:flex; justify-content:space-between; align-items:center; gap:20px;
+    padding:24px 0; font-family:'Newsreader',serif; font-size:21px; font-weight:600; color:var(--navy); }
+  .faq-q .ic { flex-shrink:0; width:22px; height:22px; position:relative; transition:transform .2s; }
+  .faq-q .ic::before, .faq-q .ic::after { content:""; position:absolute; background:var(--orange); border-radius:2px; }
+  .faq-q .ic::before { top:10px; left:0; width:22px; height:2.5px; }
+  .faq-q .ic::after { top:0; left:10px; width:2.5px; height:22px; transition:opacity .2s; }
+  .faq-item[open] .faq-q .ic::after { opacity:0; }
+  .faq-a { padding:0 0 26px; font-size:16.5px; color:var(--muted); max-width:70ch; }
+  details > summary { list-style:none; }
+  details > summary::-webkit-details-marker { display:none; }
+
+  /* ── INTAKE ── */
+  #intake { background:var(--navy); color:#fff; }
+  .intake-grid { display:grid; grid-template-columns:1fr 1.05fr; gap:56px; align-items:start; }
+  .intake-pitch h2 { color:#fff; font-size:clamp(28px,3.6vw,42px); margin-bottom:20px; }
+  .intake-pitch p { color:rgba(255,255,255,0.76); font-size:17px; margin-bottom:20px; max-width:46ch; }
+  .intake-pitch .callbox { margin-top:30px; padding-top:26px; border-top:1px solid var(--line-navy); }
+  .intake-pitch .callbox a { color:#fff; font-family:'Newsreader',serif; font-size:26px; font-weight:600; text-decoration:none; }
+  .intake-pitch .callbox span { display:block; color:rgba(255,255,255,0.6); font-size:14px; margin-top:4px; }
+  .intake-pitch .callbox span a { font-family:'Manrope',sans-serif; font-size:14px; font-weight:700; color:var(--orange); text-decoration:none; white-space:nowrap; }
+
+  .form-card { background:var(--cream); color:var(--ink); border-radius:var(--radius); padding:34px 32px; }
+  .form-head { margin-bottom:22px; }
+  .form-head h3 { font-size:26px; margin-bottom:6px; }
+  .form-head p { font-size:15px; color:var(--muted); }
+  .progress { display:flex; align-items:center; gap:10px; margin:18px 0 24px; }
+  .progress .bar { height:4px; flex:1; background:var(--line); border-radius:3px; overflow:hidden; }
+  .progress .bar i { display:block; height:100%; width:50%; background:var(--orange); transition:width .3s; }
+  .progress .lbl { font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+
+  .field { margin-bottom:18px; }
+  .field label { display:block; font-size:14.5px; font-weight:700; color:var(--navy); margin-bottom:7px; }
+  .field .req { color:var(--orange-ink); }
+  .field input, .field select, .field textarea {
+    width:100%; font-family:'Manrope',sans-serif; font-size:16px; color:var(--ink);
+    padding:13px 14px; border:1.5px solid var(--line); border-radius:var(--radius); background:#fff;
+  }
+  .field textarea { resize:vertical; min-height:84px; }
+  .field .hint { font-size:12.5px; color:var(--muted); margin-top:5px; }
+  .field .err { display:none; font-size:13px; color:#c0341d; font-weight:600; margin-top:6px; }
+  .field.invalid input, .field.invalid select, .field.invalid textarea { border-color:#c0341d; }
+  .field.invalid .err { display:block; }
+
+  .consent { display:flex; gap:11px; align-items:flex-start; margin-bottom:14px; }
+  .consent input { width:19px; height:19px; margin-top:3px; flex-shrink:0; accent-color:var(--orange); }
+  .consent label { font-size:12.5px; color:var(--muted); line-height:1.5; }
+  .consent label a { color:var(--orange-ink); font-weight:600; }
+  .consent.invalid label { color:#c0341d; }
+
+  .step-pane { display:none; }
+  .step-pane.active { display:block; }
+  .form-nav { display:flex; align-items:center; gap:14px; margin-top:8px; }
+  .form-nav .btn { flex:1; justify-content:center; }
+  .btn-back { background:none; border:0; color:var(--navy); font-weight:700; cursor:pointer; font-family:'Manrope',sans-serif; font-size:15px; padding:12px; }
+
+  .form-state { display:none; text-align:center; padding:20px 6px; }
+  .form-state.show { display:block; }
+  .form-state .ic { width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 18px; }
+  .form-state.ok .ic { background:rgba(22,120,60,0.12); color:#16783c; }
+  .form-state.fail .ic { background:rgba(192,52,29,0.12); color:#c0341d; }
+  .form-state h3 { margin-bottom:12px; }
+  .form-state p { font-size:15.5px; color:var(--muted); margin-bottom:20px; max-width:40ch; margin-left:auto; margin-right:auto; }
+  .form-state .btn { justify-content:center; }
+  .form-restart { background:none; border:0; color:var(--muted); text-decoration:underline; cursor:pointer; font-size:14px; margin-top:14px; font-family:'Manrope',sans-serif; }
+  .mock-note { font-size:11.5px; color:var(--muted); text-align:center; margin-top:16px; opacity:.8; }
+
+  /* ── FOOTER ── */
+  footer { background:var(--navy-deep); color:rgba(255,255,255,0.7); padding:0; }
+  .foot-main { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding:60px 0 40px; }
+  .foot-brand p { font-size:15px; color:rgba(255,255,255,0.6); margin:16px 0; max-width:42ch; }
+  .foot-brand .foot-phone { color:#fff; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+  .foot-col h4 { color:#fff; font-family:'Manrope',sans-serif; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; }
+  .foot-col ul { list-style:none; }
+  .foot-col li { margin-bottom:10px; }
+  .foot-col a { color:rgba(255,255,255,0.65); text-decoration:none; font-size:15px; }
+  .foot-col a:hover { color:#fff; }
+  .trec-bar { border-top:1px solid rgba(255,255,255,0.1); padding:20px 0; }
+  .trec-bar .row { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .trec-links { display:flex; gap:22px; flex-wrap:wrap; align-items:center; }
+  .trec-links a { font-size:12px; color:rgba(255,255,255,0.7); text-decoration:underline; font-weight:600; }
+  .trec-links a.plain { text-decoration:none; color:rgba(255,255,255,0.5); font-weight:500; }
+  .eho { display:flex; align-items:center; gap:8px; }
+  .eho span { font-size:11px; color:rgba(255,255,255,0.5); line-height:1.3; }
+  .lic-block { background:rgba(0,0,0,0.22); padding:16px 0; }
+  .lic-block p { font-size:11px; color:rgba(255,255,255,0.45); line-height:1.8; }
+  .lic-block strong { color:rgba(255,255,255,0.65); font-weight:700; }
+  .lic-block a { color:rgba(255,255,255,0.45); text-decoration:none; }
+  .foot-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding:22px 0; font-size:13px; color:rgba(255,255,255,0.5); }
+  .foot-bottom a { color:rgba(255,255,255,0.6); text-decoration:none; margin-left:20px; }
+
+  /* Reveal animation */
+  /* Hidden only once JS is confirmed alive (see the .js script in <head>).
+     Without JS nothing is ever hidden, so the page can never render blank. */
+  .js .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* Real Projects carousel: swipe on mobile, arrows on desktop */
+  .pcar-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:34px; }
+  .pcar-head .projects-head { margin-bottom:0; }
+  .pcar-btns { display:flex; gap:10px; flex-shrink:0; padding-bottom:4px; }
+  .pcar-btn { width:46px; height:46px; border-radius:50%; border:1.5px solid var(--navy); background:transparent; color:var(--navy); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .18s, color .18s, opacity .18s; }
+  .pcar-btn:hover:not(:disabled) { background:var(--navy); color:#fff; }
+  .pcar-btn:disabled { opacity:.3; cursor:default; }
+  .pcar { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px; }
+  .pcar::-webkit-scrollbar { display:none; }
+  .pcar-card { flex:0 0 calc((100% - 36px) / 3); scroll-snap-align:start; background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .pcar-card img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .pcar-card .pc-body { padding:16px 18px 18px; }
+  .pcar-card h4 { font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:18px; color:var(--navy); line-height:1.25; margin-bottom:6px; }
+  .pcar-card p { font-size:14.5px; color:var(--muted); line-height:1.5; }
+  @media (max-width:960px) {
+    .pcar-card { flex-basis:78%; }
+    .pcar-btns { display:none; }
+    .pcar-head { display:block; }
+  }
+  @media (prefers-reduced-motion:reduce) { .pcar { scroll-behavior:auto; } }
+  /* ── RESPONSIVE ── */
+  @media (max-width:960px) {
+    .nav-links { display:none; }
+    .nav-toggle { display:inline-flex; }
+    .hero-grid { grid-template-columns:1fr; }
+    .hero-copy { padding:56px 0 40px; }
+    .hero-media { min-height:420px; order:-1; }
+    .options-grid { grid-template-columns:1fr; }
+    .project, .project.flip { grid-template-columns:1fr; gap:22px; }
+    .project.flip .p-media { order:0; }
+    .person, .person.flip { grid-template-columns:1fr; gap:26px; }
+    .person.flip .person-photo-wrap { order:0; }
+    .person-photo-wrap { max-width:340px; }
+    .intake-grid { grid-template-columns:1fr; gap:34px; }
+  }
+  @media (max-width:560px) {
+    section { padding:64px 0; }
+    .wrap { padding:0 20px; }
+    /* Mobile nav: drop the redundant CTA button (hero has it) so the header
+       fits — keep the tap-to-call phone, which is the higher-intent action. */
+    .nav-inner { height:62px; }
+    .nav-cta .btn { display:none; }
+    .brand .name { font-size:13.5px; }
+    .brand .name span { font-size:9px; }
+    .brand .mark { width:34px; height:34px; }
+    .nav-phone { font-size:15px; }
+    .cash-panel { padding:34px 26px; }
+    .cash-panel h3 { font-size:32px; }
+    .form-card { padding:26px 20px; }
+    .step .n { font-size:34px; min-width:48px; }
+    .foot-main { grid-template-columns:1fr; gap:28px; }
+    .proof-inner { flex-direction:column; gap:8px; }
+    .proof-dot { display:none; }
+    /* Sticky bottom CTA bar on phones */
+    body { padding-bottom:76px; }
+    .sticky-cta {
+      display:flex; gap:10px; align-items:stretch;
+      position:fixed; left:0; right:0; bottom:0; z-index:200;
+      background:rgba(246,241,231,0.97); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+      border-top:1px solid var(--line);
+      padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+    }
+  }
+  @media (prefers-reduced-motion:reduce) {
+    html { scroll-behavior:auto; }
+    .js .reveal { transition:none; opacity:1; transform:none; }
+    * { transition:none !important; }
+  }
+</style>
+<style>
+  /* LP-only overrides: no nav links off the page; paid click stays here. */
+  .nav-links, .nav-toggle, .mobile-menu { display:none !important; }
+  .hero-media { min-height:440px; }
+  .lp-two-num { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:960px) {
+    .lp-two-num { grid-template-columns:1fr; }
+      /* Paid traffic: the ad-matching headline must be the first thing seen.
+       Homepage puts the photo first on mobile; the LP flips that. */
+    .hero-media { order:2; min-height:300px; }
+    .hero-copy { padding:44px 0 36px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "url": "https://sellsmartaustin.com/behind-on-property-taxes/",
+      "name": "Behind on Property Taxes? Sell Anyway | Sell Smart Austin",
+      "description": "Behind on property taxes in Texas? You can still sell your house, with back taxes paid at closing. A licensed Texas agent explains every option, no pressure.",
+      "isPartOf": {
+        "@id": "https://sellsmartaustin.com/#website"
+      },
+      "about": {
+        "@id": "https://sellsmartaustin.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Selling a house with delinquent property taxes",
+      "description": "Help for Central Texas homeowners behind on property taxes: back taxes paid from sale proceeds at closing, side by side nets for cash as-is and listed sales, and honest guidance on payment plans and deferrals, from a licensed Texas real estate agent.",
+      "url": "https://sellsmartaustin.com/behind-on-property-taxes/",
+      "serviceType": "Selling a house with delinquent property taxes",
+      "provider": {
+        "@id": "https://sellsmartaustin.com/#business"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Texas"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I sell my house if I owe back taxes in Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The back taxes, penalties, and interest are paid out of your sale proceeds at closing, and the title company sends that money straight to the taxing units. As long as the house is worth more than what's owed against it, the debt gets cleared and you keep what's left after your mortgage and closing costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need cash to pay off the taxes before I can sell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and this is the part most homeowners don't know. You pay nothing up front. The tax bill is settled at closing from the proceeds of the sale, the same way a mortgage payoff works."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "I'm over 65 and behind on my property taxes. What are my options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Texas Tax Code 33.06 lets homeowners who are 65 or older, disabled, or a qualifying disabled veteran defer property tax collection on their homestead. Collection is postponed while the deferral is active, though interest keeps accruing. You get it by filing a deferral affidavit with your county appraisal district (the tax office can point you there). Look into that before you talk to anyone about selling, including me."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast do penalties grow on delinquent property taxes in Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fast. Taxes become delinquent February 1, penalties climb to a 12% cap by July, and interest keeps adding 1% every month with no cap. When collection attorneys take over, typically around July 1, an additional penalty of up to 20% can be tacked on. That's why deciding something, even a simple payment plan, beats deciding nothing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does it cost to sell a house with back taxes in Texas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Talking to me costs nothing and comes with no obligation. If you take a cash as-is offer there are no commissions, and I'll show you every closing cost on paper before you sign anything. If you list with me, the commission comes out of proceeds at closing like any normal sale. And if your best move is a payment plan with the tax office, I'll tell you that for free too."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <span class="brand" aria-label="Sell Smart Austin">
+      <svg class="mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="400" height="400" rx="16" fill="#1B2A4A"/>
+        <g transform="translate(94 128) scale(1.6)">
+          <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 47 66 4l53 43" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M47 86H85" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+          <rect x="59" y="56.5" width="14" height="29.5" rx="2" fill="#E1591A"/>
+        </g>
+      </svg>
+      <span class="name">SELL SMART AUSTIN<span>Sell Smart. Close Fast.</span></span>
+    </span>
+    <div class="nav-cta">
+      <a href="tel:5123681487" class="nav-phone">(512) 368-1487</a>
+      <a href="#intake" class="btn btn-primary" style="padding:11px 20px; min-height:44px;">Get My Written Offer</a>
+    </div>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 id="hero-h">Behind On Property Taxes? <em>You Have More Options Than You Think.</em></h1>
+      <p class="hero-sub">Texas tax penalties climb to a 12% cap by July, interest keeps adding 1% every month with no cap, and attorney collection can add up to 20% on top. Eventually the taxing units can sue and force a sale. But you still have real choices. You can set up a payment plan or a senior or disabled deferral, or you can sell with the back taxes paid out of your proceeds at closing. I'm James Konvalinka, a licensed Texas real estate agent, and I'll walk you through each one with real numbers.</p>
+      <div class="hero-actions">
+        <a href="#intake" class="btn btn-primary">Get My Written Offer
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="hero-callnote">or <a href="tel:5123681487">call</a> or <a href="sms:5123681487">text</a> (512) 368-1487</span>
+      </div>
+    </div>
+    <div class="hero-media" aria-label="A real Sell Smart Austin project">
+      <span class="hc-badge">Real homes we've renovated &amp; sold</span>
+      <img class="hc-slide active" src="/assets/projects/mcgregor-exterior.webp" width="1024" height="683" alt="Completed exterior of the McGregor renovation in South Austin" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<div class="proof">
+  <div class="wrap proof-inner">
+    <span class="proof-item">90+ real-estate transactions</span>
+    <span class="proof-dot" aria-hidden="true">·</span>
+    <span class="proof-item">Active Austin investors</span>
+    <span class="proof-dot" aria-hidden="true">·</span>
+    <span class="proof-item">Licensed Texas agent #831102</span>
+    <span class="proof-dot" aria-hidden="true">·</span>
+    <span class="proof-item">MODUS Real Estate</span>
+  </div>
+</div>
+
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="how-head reveal">
+      <p class="eyebrow" style="color:var(--orange);">Your Real Options</p>
+      <h2 id="how-h" class="h2">Three Ways This Goes. Doing Nothing Is One of Them.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n">1</div><div><h3>Work With the Tax Office</h3><p>County tax offices offer installment payment plans. For your homestead, Texas law generally requires them to offer one if you ask, though eligibility rules apply. For example, you usually can't get a new plan within 24 months of a prior one. And if you're 65 or older, disabled, or a qualifying disabled veteran, Texas law lets you defer collection on your homestead while you live there. You get the deferral by filing an affidavit with your county appraisal district, and the tax office can point you there. Interest still accrues on a deferral, but the pressure stops. For plenty of homeowners this is the right answer, and it starts with one phone call to the tax office, not to me.</p></div></div>
+      <div class="step reveal"><div class="n">2</div><div><h3>Sell and Clear the Taxes at Closing</h3><p>You don't need cash to pay the taxes first. The back taxes, penalties, and interest come out of your sale proceeds at closing, and you keep what's left after your mortgage and closing costs. I'll show you two real numbers side by side: what you'd net from a cash as-is sale, and what you'd net listing it on the open market. You pick. If a lawsuit has been filed or a sale date is already scheduled, timing is tight. Talk to a Texas attorney immediately.</p></div></div>
+      <div class="step reveal"><div class="n">3</div><div><h3>Do Nothing</h3><p>This is also a choice, and it's the expensive one. Penalties climb to a 12% cap, interest keeps adding 1% every month with no cap, collection attorneys can add up to 20% on top, and the taxing units can sue and sell the house at a tax sale. Nobody wins that version except the people collecting the penalties.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream);">
+  <div class="wrap">
+    <div class="options-head reveal" style="max-width:60ch; margin-bottom:44px;">
+      <p class="eyebrow">The Clock</p>
+      <h2 class="h2">The Clock Is Real. So Is Your Equity.</h2>
+      <p style="margin-top:12px;">Here's how tax delinquency actually unfolds in Texas, and the facts that still give you leverage. This is general information, not legal or tax advice. For the exact figures on your account, call your county tax office, and talk to a Texas attorney before making legal decisions.</p>
+    </div>
+    <div class="lp-two-num" style="margin-bottom:22px;">
+      <div class="alt reveal">
+        <h4>February 1: Officially Delinquent</h4>
+        <p>Texas property taxes are due January 31. On February 1 the unpaid balance becomes delinquent, and penalties and interest start immediately.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Every Month It Gets Worse</h4>
+        <p>Penalties climb to a 12% cap by July, interest keeps adding 1% every month with no cap, and attorney collection can add up to 20% on top. The balance only moves in one direction, which is why waiting is the one strategy that never works.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Around July 1: Attorneys Take Over</h4>
+        <p>Most taxing units hand delinquent accounts to collection attorneys, typically July 1, and an additional penalty of up to 20% can be added on top. A lawsuit can technically come any time after delinquency, and once collection attorneys are involved it becomes far more likely.</p>
+      </div>
+    </div>
+    <div class="lp-two-num">
+      <div class="alt reveal">
+        <h4>Your Equity Usually Dwarfs the Debt</h4>
+        <p>In Travis and Williamson counties, back-tax bills are often a few thousand dollars against a house worth hundreds of thousands. A tax problem is almost never a whole-house problem.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Taxes Are Paid at Closing, Not From Your Pocket</h4>
+        <p>In a typical sale with equity, the title company pays the taxing units directly out of your proceeds at closing. You don't come up with the cash up front.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Verify Me Before You Trust Me</h4>
+        <p>Look up James Konvalinka on the TREC license lookup, license #831102, sponsored by MODUS Real Estate. If someone offering to help won't show you a license, that tells you something.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--cream-2);">
+  <div class="wrap">
+    <div class="pcar-head reveal">
+      <div class="projects-head">
+        <p class="eyebrow">Real Projects</p>
+        <h2 class="h2">Real homes. Real work. No stock photos.</h2>
+        <p class="lead" style="margin-top:16px;">These are houses this team actually bought, renovated, and sold in Austin. It matters here for one reason: when someone tells you a house needs $60,000 of work, you want that coming from people who have paid that bill themselves.</p>
+      </div>
+      <div class="pcar-btns">
+        <button class="pcar-btn" id="pcar-prev" type="button" aria-label="Previous projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+        <button class="pcar-btn" id="pcar-next" type="button" aria-label="Next projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="pcar reveal" id="pcar" tabindex="0" role="group" aria-label="Projects Sell Smart Austin has bought, renovated and sold. Scroll horizontally to see more.">
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-exterior.webp" alt="Completed exterior of the McGregor renovation in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>2609 McGregor · South Austin</h4>
+          <p>Leveled, re-roofed, rewired, replumbed. Bought as-is, closed July 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-kitchen.webp" alt="Finished McGregor kitchen with gray cabinetry and stone counters" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Kitchen</h4>
+          <p>Taken back to the studs and rebuilt.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-living.webp" alt="Finished open living room at the McGregor project" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Living room</h4>
+          <p>Reworked layout, new flooring throughout.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-bath.webp" alt="Finished primary bathroom with walk-in shower and double vanity" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Primary bath</h4>
+          <p>Walk-in shower and a double vanity.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-exterior.webp" alt="Completed exterior and backyard of the Westbury project in Georgetown" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>515 Westbury · Georgetown</h4>
+          <p>Targeted fixes, not a teardown. Closed March 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-kitchen.webp" alt="Finished Westbury kitchen with large island and updated fixtures" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Kitchen</h4>
+          <p>New lighting, hardware and cabinet work.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-living.webp" alt="Staged Westbury living room with fireplace and open layout" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Living room</h4>
+          <p>Paint, flooring and staging.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-exterior.webp" alt="Completed exterior of the Croftwood project in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>7729 Croftwood · South Austin</h4>
+          <p>Flooring, cabinetry, tile, tankless heater. Closed 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-living.webp" alt="Staged Croftwood living room with modern finishes" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Croftwood · Living room</h4>
+          <p>Move-in ready at handover.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="team" aria-labelledby="team-h" style="background:var(--cream);">
+  <div class="wrap">
+    <div class="person reveal">
+      <div class="person-photo-wrap">
+        <img class="person-photo" src="/assets/team/james-editorial-4x5.webp" width="800" height="1000"
+             alt="James Konvalinka of Sell Smart Austin at a home entrance" loading="lazy">
+      </div>
+      <div>
+        <div class="person-name">James Konvalinka</div>
+        <span class="person-role">Founder · Realtor&reg; · Active Investor</span>
+        <p>I'm James Konvalinka, a licensed real estate agent in Texas and Wisconsin and an active Austin investor. Before you take my word for anything, verify me on TREC, license #831102, sponsored by MODUS Real Estate. When we talk, I'll show you what your house is worth as-is and what it could bring listed, with the math on paper. And if your best move is a payment plan with the tax office instead of selling, I'll tell you that.</p>
+        <p class="exp-line">90+ Transactions <span class="sep">·</span> 15+ Home Renovations</p>
+        <p class="lic-note">James Konvalinka, Licensed Texas Sales Agent #831102, sponsored by MODUS Real Estate. Every conversation comes with full disclosure and no obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="faq-head reveal">
+      <p class="eyebrow">Before You Reach Out</p>
+      <h2 id="faq-h" class="h2">Straight answers to the usual questions.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary class="faq-q">Can I sell my house if I owe back taxes in Texas?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Yes. The back taxes, penalties, and interest are paid out of your sale proceeds at closing, and the title company sends that money straight to the taxing units. As long as the house is worth more than what's owed against it, the debt gets cleared and you keep what's left after your mortgage and closing costs.</div></details>
+      <details class="faq-item"><summary class="faq-q">Do I need cash to pay off the taxes before I can sell?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">No, and this is the part most homeowners don't know. You pay nothing up front. The tax bill is settled at closing from the proceeds of the sale, the same way a mortgage payoff works.</div></details>
+      <details class="faq-item"><summary class="faq-q">I'm over 65 and behind on my property taxes. What are my options?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Texas Tax Code 33.06 lets homeowners who are 65 or older, disabled, or a qualifying disabled veteran defer property tax collection on their homestead. Collection is postponed while the deferral is active, though interest keeps accruing. You get it by filing a deferral affidavit with your county appraisal district (the tax office can point you there). Look into that before you talk to anyone about selling, including me.</div></details>
+      <details class="faq-item"><summary class="faq-q">How fast do penalties grow on delinquent property taxes in Texas?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Fast. Taxes become delinquent February 1, penalties climb to a 12% cap by July, and interest keeps adding 1% every month with no cap. When collection attorneys take over, typically around July 1, an additional penalty of up to 20% can be tacked on. That's why deciding something, even a simple payment plan, beats deciding nothing.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does it cost to sell a house with back taxes in Texas?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Talking to me costs nothing and comes with no obligation. If you take a cash as-is offer there are no commissions, and I'll show you every closing cost on paper before you sign anything. If you list with me, the commission comes out of proceeds at closing like any normal sale. And if your best move is a payment plan with the tax office, I'll tell you that for free too.</div></details>
+    </div>
+  </div>
+</section>
+
+<section id="intake" aria-labelledby="intake-h">
+  <div class="wrap intake-grid">
+    <div class="intake-pitch reveal">
+      <p class="eyebrow" style="color:var(--orange);">Start Here</p>
+      <h2 id="intake-h">One address. We take it from there.</h2>
+      <p>Tell us where the property is and how to reach you. You don't need photos, a repair list, or your tax statements to start. James will go look at it and come back with a written number within 24 hours. No pressure and no obligation.</p>
+      <div class="callbox">
+        <a href="tel:5123681487">(512) 368-1487</a>
+        <span>Call or text us directly. Prefer texting? <a href="sms:5123681487">Send a text&nbsp;&rarr;</a></span>
+      </div>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="ssa-intake" novalidate>
+        <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+          <label>Leave this field empty<input type="text" id="hp-field" name="company_website" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-head">
+          <h3>Get Your Written Offer</h3>
+          <p>Start with the address. That's all we need for step one.</p>
+        </div>
+        <div class="progress">
+          <span class="lbl" id="step-lbl">Step 1 of 2</span>
+          <span class="bar"><i id="progress-bar"></i></span>
+        </div>
+
+        <div class="step-pane active" id="pane-1" role="group" aria-label="Step 1: The property">
+          <div class="field" data-required>
+            <label for="f-address">Property address <span class="req">*</span></label>
+            <input type="text" id="f-address" name="property_address" placeholder="123 Main St, City, TX" autocomplete="street-address">
+            <div class="err" role="alert">Please enter the property address.</div>
+          </div>
+          <div class="form-nav">
+            <button type="button" class="btn btn-primary" id="to-step-2">Continue
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="step-pane" id="pane-2" role="group" aria-label="Step 2: How should we reach you">
+          <div class="field" data-required>
+            <label for="f-name">First and last name <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" placeholder="First & Last Name" autocomplete="name">
+            <div class="err" role="alert">Please enter your first and last name.</div>
+          </div>
+          <div class="field" data-required data-phone>
+            <label for="f-phone">Best phone number <span class="req">*</span></label>
+            <input type="tel" id="f-phone" name="phone" placeholder="(512) 555-0100" autocomplete="tel">
+            <div class="err" role="alert">Please enter a valid phone number.</div>
+          </div>
+          <div class="field" id="field-email">
+            <label for="f-email">Email address <span id="email-req" class="req" style="display:none;">*</span></label>
+            <input type="email" id="f-email" name="email" placeholder="you@email.com" autocomplete="email">
+            <div class="err" role="alert">Please enter a valid email address.</div>
+          </div>
+          <div class="field" data-required>
+            <label for="f-contact-pref">Preferred contact method <span class="req">*</span></label>
+            <select id="f-contact-pref" name="contact_preference">
+              <option>Call</option>
+              <option selected>Text</option>
+              <option>Email</option>
+            </select>
+            <div class="err" role="alert">Please choose how you'd like James to reach you.</div>
+            <div class="hint" id="pref-hint"></div>
+          </div>
+
+          <div class="consent" data-required id="consent-terms-wrap">
+            <input type="checkbox" id="c-terms" name="consent_terms">
+            <label for="c-terms">I agree to the <a href="/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>. <span class="req">*</span></label>
+          </div>
+          <div class="consent" id="consent-trans-wrap">
+            <input type="checkbox" id="c-trans" name="consent_transactional">
+            <label for="c-trans">I agree to receive transactional or conversational communications from Sell Smart Austin LLC via text messages, phone calls, and emails related to my real estate inquiry, such as property details, responses, and appointment confirmations. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg &amp; data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for promotional purposes.</label>
+          </div>
+          <div class="consent" id="consent-mktg-wrap">
+            <input type="checkbox" id="c-mktg" name="consent_marketing">
+            <label for="c-mktg">I agree to receive marketing communications from Sell Smart Austin LLC via text messages, phone calls, and emails, including property offers, promotions, and other real estate-related marketing. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg &amp; data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for marketing purposes.</label>
+          </div>
+
+          <div class="form-nav">
+            <button type="button" class="btn-back" id="to-step-1">← Back</button>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Get My Written Offer
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div class="form-state ok" id="state-ok" role="status" aria-live="polite">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h3>Thanks. I'm on it.</h3>
+        <p>Your address is in. I'll go look at the property and get you a written offer within 24 hours, usually sooner. Need me before that? Call or text (512) 368-1487.</p>
+        <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+          <a href="tel:5123681487" class="btn btn-primary">Call</a>
+          <a href="sms:5123681487" class="btn btn-ghost">Text Us</a>
+        </div>
+        <div><button type="button" class="form-restart" id="restart-ok">Submit another property</button></div>
+      </div>
+
+      <div class="form-state fail" id="state-fail" role="alert">
+        <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+        <h3>Your request didn't go through.</h3>
+        <p>Please try again, or call or text (512) 368-1487.</p>
+        <button type="button" class="btn btn-primary" id="retry-btn">Try again</button>
+        <a href="tel:5123681487" class="btn btn-ghost" style="margin-left:10px;">Call</a>
+        <a href="sms:5123681487" class="btn btn-ghost" style="margin-left:8px;">Text</a>
+      </div>
+      <p class="mock-note" id="mock-note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a href="/" class="brand" aria-label="Sell Smart Austin home">
+          <svg class="mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="400" height="400" rx="16" fill="#1B2A4A"/>
+            <g transform="translate(94 128) scale(1.6)">
+              <path d="M26 86V42L66 10l40 32v44" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M13 47 66 4l53 43" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M47 86H85" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+              <rect x="59" y="56.5" width="14" height="29.5" rx="2" fill="#E1591A"/>
+            </g>
+          </svg>
+          <span class="name" style="color:#fff;">SELL SMART AUSTIN<span style="color:rgba(255,255,255,0.55);">Sell Smart. Close Fast.</span></span>
+        </a>
+        <p>We're an Austin investment team, led by licensed Texas Realtor&reg; James Konvalinka, helping homeowners sell on their terms. Cash as-is, a structured middle path, or an open-market listing. You decide.</p>
+        <a href="tel:5123681487" class="foot-phone">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 010 .2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
+          (512) 368-1487
+        </a>
+        <a href="sms:5123681487" class="foot-phone" style="margin-top:8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Text us anytime
+        </a>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/#options">The Options</a></li>
+          <li><a href="/#projects">Real Projects</a></li>
+          <li><a href="/#how">How It Works</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="#intake">See My Options</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>We Serve</h4>
+        <ul>
+          <li><a href="#intake">Austin &amp; Travis County</a></li>
+          <li><a href="#intake">Round Rock &amp; Georgetown</a></li>
+          <li><a href="#intake">Cedar Park &amp; Leander</a></li>
+          <li><a href="#intake">Pflugerville &amp; Hutto</a></li>
+          <li><a href="#intake">Kyle, Buda &amp; San Marcos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TREC Compliance Bar (disclosures preserved from live site) -->
+  <div class="trec-bar">
+    <div class="wrap row">
+      <div class="trec-links">
+        <a href="https://sellsmartaustin.com/iabs.pdf" target="_blank" rel="noopener">Texas Real Estate Commission Information About Brokerage Services</a>
+        <a href="https://www.trec.texas.gov/forms/consumer-protection-notice" target="_blank" rel="noopener">TREC Consumer Protection Notice</a>
+        <a class="plain" href="https://www.trec.texas.gov" target="_blank" rel="noopener">www.trec.texas.gov</a>
+      </div>
+      <div class="eho">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Equal Housing Opportunity">
+          <rect width="100" height="100" rx="4" fill="rgba(255,255,255,0.1)"/>
+          <polygon points="50,10 90,45 80,45 80,90 60,90 60,65 40,65 40,90 20,90 20,45 10,45" fill="white"/>
+          <rect x="35" y="52" width="30" height="4" fill="#1B2A4A"/>
+          <rect x="35" y="60" width="30" height="4" fill="#1B2A4A"/>
+        </svg>
+        <span>Equal Housing<br>Opportunity</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- License Info Block (preserved exactly) -->
+  <div class="lic-block">
+    <div class="wrap">
+      <p>
+        <strong>License Information &mdash; Texas:</strong>
+        James Konvalinka, Sales Agent, License #831102 &nbsp;|&nbsp;
+        Sponsored by: MODUS Real Estate, License #9013412 &nbsp;|&nbsp;
+        Designated Broker: Lawrence Pritchett, License #659100 &nbsp;|&nbsp;
+        2400 Webberville Rd #C100, Austin, TX 78702 &nbsp;|&nbsp;
+        (512) 920-5653 &nbsp;|&nbsp;
+        <a href="mailto:atxleadership@modusrealestate.com">atxleadership@modusrealestate.com</a>
+        <br><br>
+        <strong>License Information &mdash; Wisconsin:</strong>
+        James Konvalinka, Real Estate License #92936-94 &nbsp;|&nbsp;
+        Venture Real Estate Group
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap foot-bottom">
+    <p>© 2026 Sell Smart Austin. All rights reserved. James Konvalinka is a licensed Texas Real Estate Sales Agent sponsored by MODUS Real Estate.</p>
+    <div>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var CONFIG = {
+    ghlWebhookUrl: "https://services.leadconnectorhq.com/hooks/WjdfN8VsDVZQWNlVWn9E/webhook-trigger/b5399575-8760-4a9e-b421-67233c38e497",
+    prototypeMockSuccess: false,
+    // "Submit lead form" conversion. Fires ONLY on confirmed GHL webhook success.
+    tracking: { enabled: true, metaPixelId: "5191741884383418",
+                googleSendTo: "AW-18359778796/twwnCK71_tgcEOz7z7JE" },
+    disclosureVersion: "2026-07-16",
+    // NOTE: Sarah/Echo must add a lane for this value. Until then it falls back
+    // to the generic website-inbound copy (lead is still contacted).
+    leadSource: "taxes-lp",
+    submittedKey: "ssa_submitted_taxes"
+  };
+
+  var ATTR_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
+  function captureAttribution() {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var store = JSON.parse(sessionStorage.getItem("ssa_attr") || "{}");
+      if (!store.landing_url) {
+        store.landing_url = window.location.href;
+        store.first_seen = new Date().toISOString();
+      }
+      ATTR_KEYS.forEach(function (k) {
+        var v = params.get(k);
+        if (v && !store[k]) store[k] = v;
+      });
+      sessionStorage.setItem("ssa_attr", JSON.stringify(store));
+      return store;
+    } catch (e) { return { landing_url: window.location.href }; }
+  }
+  var attribution = captureAttribution();
+
+  function trackPageView() {
+    if (!CONFIG.tracking.enabled) return;
+    if (window.fbq) window.fbq("track", "PageView");
+  }
+  function trackLead() {
+    if (!CONFIG.tracking.enabled) return;
+    if (window.fbq) window.fbq("track", "Lead");
+    if (window.gtag && CONFIG.tracking.googleSendTo) window.gtag("event", "conversion", { send_to: CONFIG.tracking.googleSendTo });
+  }
+  trackPageView();
+
+  var form = document.getElementById("ssa-intake");
+  var pane1 = document.getElementById("pane-1");
+  var pane2 = document.getElementById("pane-2");
+  var stepLbl = document.getElementById("step-lbl");
+  var progressBar = document.getElementById("progress-bar");
+  var toStep2 = document.getElementById("to-step-2");
+  var toStep1 = document.getElementById("to-step-1");
+  var submitBtn = document.getElementById("submit-btn");
+  var stateOk = document.getElementById("state-ok");
+  var stateFail = document.getElementById("state-fail");
+  var retryBtn = document.getElementById("retry-btn");
+  var restartOk = document.getElementById("restart-ok");
+  var prefSelect = document.getElementById("f-contact-pref");
+  var prefHint = document.getElementById("pref-hint");
+  var emailField = document.getElementById("field-email");
+  var emailReqMark = document.getElementById("email-req");
+  var emailInput = document.getElementById("f-email");
+  var phoneInput = document.getElementById("f-phone");
+  var consentTermsWrap = document.getElementById("consent-terms-wrap");
+  var consentTransWrap = document.getElementById("consent-trans-wrap");
+  var submitting = false;
+
+  function normalizePhone(raw) {
+    var d = (raw || "").replace(/\D/g, "");
+    if (d.length === 10) return "+1" + d;
+    if (d.length === 11 && d[0] === "1") return "+" + d;
+    return null;
+  }
+  function fieldEl(input) { return input.closest(".field") || input.closest(".consent"); }
+  function setInvalid(input, bad) {
+    var f = fieldEl(input); if (!f) return;
+    f.classList.toggle("invalid", bad);
+  }
+  function validText(input) { var ok = input.value.trim().length > 0; setInvalid(input, !ok); return ok; }
+  function validEmailValue(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+  function contactPref() { return (prefSelect.value || ""); }
+  function emailRequired() { return contactPref() === "Email"; }
+  // 2026-07-31 (James, option 1): transactional consent is ALWAYS required.
+  // Sarah answers every inbound lead by text within minutes, so a lead without
+  // text consent cannot be served and would sit silent (Echo fails closed and
+  // suppresses the SMS). The box is deliberately NOT pre-checked - TCPA express
+  // written consent must be an affirmative act, and a pre-ticked box would
+  // invalidate the very consent record we rely on.
+  function transactionalRequired() { return true; }
+  function syncPrefRules() {
+    emailReqMark.style.display = emailRequired() ? "inline" : "none";
+    var msgs = [];
+    if (emailRequired()) msgs.push("Email is required so James can reach you that way.");
+    msgs.push("Please check the transactional consent box below so James can reply to you.");
+    prefHint.textContent = msgs.join(" ");
+  }
+  prefSelect.addEventListener("change", syncPrefRules);
+
+  function validateStep1() {
+    var ok = true;
+    pane1.querySelectorAll("[data-required]").forEach(function (f) {
+      var input = f.querySelector("input,select,textarea");
+      var good = input.value.trim().length > 0;
+      f.classList.toggle("invalid", !good);
+      if (!good && ok) input.focus();
+      ok = ok && good;
+    });
+    return ok;
+  }
+  function goStep(n) {
+    var toTwo = n === 2;
+    pane1.classList.toggle("active", !toTwo);
+    pane2.classList.toggle("active", toTwo);
+    stepLbl.textContent = "Step " + n + " of 2";
+    progressBar.style.width = toTwo ? "100%" : "50%";
+    document.getElementById("intake").scrollIntoView({ block: "start" });
+  }
+  toStep2.addEventListener("click", function () { if (validateStep1()) goStep(2); });
+  toStep1.addEventListener("click", function () { goStep(1); });
+
+  function validateStep2() {
+    var ok = true;
+    if (!validText(document.getElementById("f-name"))) ok = false;
+    var phoneOk = normalizePhone(phoneInput.value) !== null;
+    setInvalid(phoneInput, !phoneOk); if (!phoneOk) ok = false;
+    var emailVal = emailInput.value.trim();
+    var emailOk = true;
+    if (emailRequired()) emailOk = validEmailValue(emailVal);
+    else if (emailVal.length > 0) emailOk = validEmailValue(emailVal);
+    emailField.classList.toggle("invalid", !emailOk); if (!emailOk) ok = false;
+    if (!prefSelect.value) { setInvalid(prefSelect, true); ok = false; } else setInvalid(prefSelect, false);
+    var terms = document.getElementById("c-terms");
+    consentTermsWrap.classList.toggle("invalid", !terms.checked); if (!terms.checked) ok = false;
+    var trans = document.getElementById("c-trans");
+    if (transactionalRequired()) {
+      consentTransWrap.classList.toggle("invalid", !trans.checked);
+      if (!trans.checked) ok = false;
+    } else {
+      consentTransWrap.classList.remove("invalid");
+    }
+    return ok;
+  }
+
+  function splitName(full) {
+    var parts = (full || "").trim().split(/\s+/);
+    if (parts.length === 1) return { first: parts[0], last: "" };
+    return { first: parts[0], last: parts.slice(1).join(" ") };
+  }
+  function parseAddress(addr) {
+    var out = { city: "", state: "", zip: "" };
+    var segs = (addr || "").split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+    var tail = segs.length ? segs[segs.length - 1] : "";
+    var m = tail.match(/\b([A-Za-z]{2})\b\s*(\d{5})?/);
+    if (m) { out.state = m[1].toUpperCase(); if (m[2]) out.zip = m[2]; }
+    else { var z = tail.match(/\b(\d{5})\b/); if (z) out.zip = z[1]; }
+    if (segs.length >= 3) out.city = segs[segs.length - 2];
+    else if (segs.length === 2 && !/\d{5}/.test(segs[1]) && !/^[A-Za-z]{2}\b/.test(segs[1])) out.city = segs[1];
+    return out;
+  }
+
+  // Same payload keys as the homepage form so the GHL inbound-webhook workflow
+  // maps 1:1. Fields not asked on this LP are sent empty; Sarah qualifies them
+  // by text. Routing tag stays "website-inbound" so the existing workflow and
+  // Sarah pickup are unchanged; attribution lives in ssa_lead_source + UTMs.
+  function buildPayload() {
+    var now = new Date().toISOString();
+    var nm = splitName(document.getElementById("f-name").value);
+    var addr = document.getElementById("f-address").value.trim();
+    var loc = parseAddress(addr);
+    var a = attribution || {};
+    return {
+      firstName: nm.first,
+      lastName: nm.last,
+      phone: normalizePhone(phoneInput.value),
+      email: emailInput.value.trim() || "",
+      ssa_property_address: addr,
+      ssa_property_city: loc.city,
+      ssa_property_state: loc.state,
+      ssa_property_zip: loc.zip,
+      ssa_seller_relationship: "",
+      ssa_condition_seller_reported: "",
+      ssa_selling_timeline: "",
+      ssa_contact_preference: prefSelect.value,
+      ssa_optional_seller_context: "",
+      ssa_lead_source: CONFIG.leadSource,
+      ssa_context_provenance: "seller-reported",
+      consent_terms: !!document.getElementById("c-terms").checked,
+      consent_terms_at: document.getElementById("c-terms").checked ? now : "",
+      consent_transactional: !!document.getElementById("c-trans").checked,
+      consent_transactional_at: document.getElementById("c-trans").checked ? now : "",
+      consent_marketing: !!document.getElementById("c-mktg").checked,
+      consent_marketing_at: document.getElementById("c-mktg").checked ? now : "",
+      consent_disclosure_version: CONFIG.disclosureVersion,
+      consent_page_url: window.location.href,
+      utm_source: a.utm_source || "", utm_medium: a.utm_medium || "",
+      utm_campaign: a.utm_campaign || "", utm_content: a.utm_content || "",
+      utm_term: a.utm_term || "", gclid: a.gclid || "", fbclid: a.fbclid || "",
+      landing_url: a.landing_url || "", submitted_at: now,
+      tag: "website-inbound"
+    };
+  }
+
+  function sendToDestination(payload) {
+    if (CONFIG.ghlWebhookUrl) {
+      return fetch(CONFIG.ghlWebhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(function (r) {
+        if (!r.ok) throw new Error("GHL webhook " + r.status);
+        return true;
+      });
+    }
+    return Promise.reject(new Error("No GHL webhook configured"));
+  }
+
+  function showState(which) {
+    form.style.display = which ? "none" : "block";
+    stateOk.classList.toggle("show", which === "ok");
+    stateFail.classList.toggle("show", which === "fail");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (submitting) return;
+    var hp = document.getElementById("hp-field");
+    if (hp && hp.value) { showState("ok"); return; }
+    if (!validateStep2()) return;
+    submitting = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending…";
+    var payload = buildPayload();
+    sendToDestination(payload).then(function () {
+      trackLead();
+      try { sessionStorage.setItem(CONFIG.submittedKey, "1"); } catch (e2) {}
+      showState("ok");
+    }).catch(function (err) {
+      console.error("[SSA] submission failed:", err && err.message);
+      showState("fail");
+    }).then(function () {
+      submitting = false;
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Get My Written Offer <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    });
+  });
+
+  retryBtn.addEventListener("click", function () { showState(null); goStep(2); });
+  restartOk.addEventListener("click", function () {
+    try { sessionStorage.removeItem(CONFIG.submittedKey); } catch (e) {}
+    form.reset(); syncPrefRules(); showState(null); goStep(1);
+  });
+  try {
+    if (sessionStorage.getItem(CONFIG.submittedKey) === "1") showState("ok");
+  } catch (e) {}
+
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  } else if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+  }
+})();
+</script>
+
+<div class="sticky-cta" id="sticky-cta">
+  <a href="tel:5123681487" class="sticky-call" aria-label="Call Sell Smart Austin">Call</a>
+  <a href="sms:5123681487" class="sticky-call" aria-label="Text Sell Smart Austin">Text</a>
+  <a href="#intake" class="sticky-offer btn btn-primary">Get My Written Offer</a>
+</div>
+
+<script>
+/* Real Projects carousel: arrows step one card, disabled at the ends. */
+(function () {
+  "use strict";
+  var car = document.getElementById("pcar");
+  var prev = document.getElementById("pcar-prev");
+  var next = document.getElementById("pcar-next");
+  if (!car || !prev || !next) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function step() {
+    var card = car.querySelector(".pcar-card");
+    return card ? card.getBoundingClientRect().width + 18 : car.clientWidth;
+  }
+  function sync() {
+    var max = car.scrollWidth - car.clientWidth;
+    prev.disabled = car.scrollLeft <= 2;
+    next.disabled = car.scrollLeft >= max - 2;
+  }
+  function go(dir) {
+    car.scrollBy({ left: dir * step(), behavior: reduce ? "auto" : "smooth" });
+  }
+  prev.addEventListener("click", function () { go(-1); });
+  next.addEventListener("click", function () { go(1); });
+  car.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  sync();
+})();
+</script>
+
+<script>
+/* Reveal safety net. Independent of the main script on purpose: if that script
+   throws before its IntersectionObserver is wired up, this still runs and the
+   page cannot be left permanently blank. No-op when the observer worked. */
+setTimeout(function () {
+  var els = document.querySelectorAll(".reveal:not(.in)");
+  for (var i = 0; i < els.length; i++) { els[i].classList.add("in"); }
+}, 1500);
+</script>
+</body>
+</html>
