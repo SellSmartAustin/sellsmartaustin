@@ -3,19 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sell Smart Austin | Sell As-Is for Cash — or See Every Option First</title>
-<meta name="msvalidate.01" content="1D9ABFC3D60A9D4CC6BD3D06D5374253" />
-<meta name="description" content="Sell your Austin house as-is for cash, or see every option first. We're active real estate investors backed by a licensed Texas Realtor&reg;. Real projects, honest numbers, no pressure.">
+<title>Sell a Vacant House in Austin | Sell Smart Austin</title>
+<meta name="description" content="A vacant house in Austin bills you every month. Three honest options from a licensed Texas Realtor: sell as-is with no cleanout, list it, or keep it.">
 
 <!--
-  ============================================================================
-  SSA WEBSITE REDESIGN — LOCAL PROTOTYPE  (redesign.html)
-  Built 2026-07-16 per CLAUDE-SSA-WEBSITE-REDESIGN-START-BRIEF-2026-07-16.md
-  STATUS: local prototype only. NOT committed / pushed / deployed / submitted.
-  - No ReSimpli. No Formspree. No exposed CRM token.
-  - Analytics + form destination are FAIL-CLOSED behind config; disabled in prototype.
-  - Existing index.html (with prior team draft) is untouched and preserved.
-  ============================================================================
+  Landing page (sell-vacant-house) situation lane,
+  which targets the entire US and filters geographically via keywords.
+  Derived from cash-offer/index.html: identical form wiring, conversion
+  tracking, consent gate and TREC footer. Built 2026-07-31.
+  Google tag: dormant until the AW- conversion ID exists
+  (see SellSmartAustin/import/PRELAUNCH-GATE-CHECKLIST.md, Gate 2).
 -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -297,7 +294,7 @@
 
   /* ── FOOTER ── */
   footer { background:var(--navy-deep); color:rgba(255,255,255,0.7); padding:0; }
-  .foot-main { display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:36px; padding:60px 0 40px; }
+  .foot-main { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding:60px 0 40px; }
   .foot-brand p { font-size:15px; color:rgba(255,255,255,0.6); margin:16px 0; max-width:42ch; }
   .foot-brand .foot-phone { color:#fff; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
   .foot-col h4 { color:#fff; font-family:'Manrope',sans-serif; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; }
@@ -325,6 +322,26 @@
   .js .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
   .reveal.in { opacity:1; transform:none; }
 
+  /* Real Projects carousel: swipe on mobile, arrows on desktop */
+  .pcar-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:34px; }
+  .pcar-head .projects-head { margin-bottom:0; }
+  .pcar-btns { display:flex; gap:10px; flex-shrink:0; padding-bottom:4px; }
+  .pcar-btn { width:46px; height:46px; border-radius:50%; border:1.5px solid var(--navy); background:transparent; color:var(--navy); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .18s, color .18s, opacity .18s; }
+  .pcar-btn:hover:not(:disabled) { background:var(--navy); color:#fff; }
+  .pcar-btn:disabled { opacity:.3; cursor:default; }
+  .pcar { display:flex; gap:18px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; scrollbar-width:none; padding-bottom:4px; }
+  .pcar::-webkit-scrollbar { display:none; }
+  .pcar-card { flex:0 0 calc((100% - 36px) / 3); scroll-snap-align:start; background:#fff; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; }
+  .pcar-card img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .pcar-card .pc-body { padding:16px 18px 18px; }
+  .pcar-card h4 { font-family:'Newsreader',Georgia,serif; font-weight:600; font-size:18px; color:var(--navy); line-height:1.25; margin-bottom:6px; }
+  .pcar-card p { font-size:14.5px; color:var(--muted); line-height:1.5; }
+  @media (max-width:960px) {
+    .pcar-card { flex-basis:78%; }
+    .pcar-btns { display:none; }
+    .pcar-head { display:block; }
+  }
+  @media (prefers-reduced-motion:reduce) { .pcar { scroll-behavior:auto; } }
   /* ── RESPONSIVE ── */
   @media (max-width:960px) {
     .nav-links { display:none; }
@@ -374,178 +391,47 @@
     * { transition:none !important; }
   }
 </style>
+<style>
+  /* LP-only overrides: no nav links off the page; paid click stays here. */
+  .nav-links, .nav-toggle, .mobile-menu { display:none !important; }
+  .hero-media { min-height:440px; }
+  .lp-two-num { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:960px) {
+    .lp-two-num { grid-template-columns:1fr; }
+      /* Paid traffic: the ad-matching headline must be the first thing seen.
+       Homepage puts the photo first on mobile; the LP flips that. */
+    .hero-media { order:2; min-height:300px; }
+    .hero-copy { padding:44px 0 36px; }
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "RealEstateAgent",
-      "@id": "https://sellsmartaustin.com/#business",
-      "name": "Sell Smart Austin",
-      "legalName": "Sell Smart Austin LLC",
-      "url": "https://sellsmartaustin.com/",
-      "telephone": "+1-512-368-1487",
-      "image": "https://sellsmartaustin.com/assets/hero-austin-street.png",
-      "description": "Sell Smart Austin gives Central Texas homeowners three ways to sell a house: a cash offer as is, a full service MLS listing for top dollar, or a structured middle path. Founded and run by James Konvalinka, a licensed Texas real estate agent, so sellers see the real net number of every option before choosing.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Austin",
-        "addressRegion": "TX",
-        "addressCountry": "US"
+      "@type": "WebPage",
+      "url": "https://sellsmartaustin.com/sell-vacant-house/",
+      "name": "Sell a Vacant House in Austin | Sell Smart Austin",
+      "description": "A vacant house in Austin bills you every month. Three honest options from a licensed Texas Realtor: sell as-is with no cleanout, list it, or keep it.",
+      "isPartOf": {
+        "@id": "https://sellsmartaustin.com/#website"
       },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Austin, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Round Rock, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Georgetown, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Cedar Park, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Pflugerville, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Leander, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Hutto, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Buda, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Kyle, TX"
-        },
-        {
-          "@type": "City",
-          "name": "San Marcos, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Bastrop, TX"
-        },
-        {
-          "@type": "City",
-          "name": "New Braunfels, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Temple, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Killeen, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Belton, TX"
-        },
-        {
-          "@type": "City",
-          "name": "Waco, TX"
-        }
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "09:00",
-          "closes": "19:00"
-        }
-      ],
-      "founder": {
-        "@id": "https://sellsmartaustin.com/#james"
-      },
-      "employee": {
-        "@id": "https://sellsmartaustin.com/#james"
-      },
-      "sameAs": [
-        "https://www.instagram.com/sellsmartaustin"
-      ],
-      "knowsAbout": [
-        "cash offers for houses",
-        "selling a house as is",
-        "pre-foreclosure and foreclosure sale options",
-        "tax delinquent property sales",
-        "inherited property sales",
-        "probate property sales",
-        "houses needing major repairs",
-        "tired landlord and tenant occupied sales",
-        "vacant houses",
-        "divorce home sales",
-        "relocation and downsizing sales",
-        "home valuations",
-        "full service MLS listings",
-        "Austin Texas real estate"
-      ]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://sellsmartaustin.com/#james",
-      "name": "James Konvalinka",
-      "jobTitle": "Licensed Texas Real Estate Sales Agent",
-      "image": "https://sellsmartaustin.com/assets/team/james-portrait-2x3.webp",
-      "worksFor": {
-        "@type": "RealEstateAgent",
-        "name": "MODUS Real Estate",
-        "url": "https://modusrealestate.com"
-      },
-      "identifier": [
-        {
-          "@type": "PropertyValue",
-          "propertyID": "TREC License (TX)",
-          "value": "831102"
-        },
-        {
-          "@type": "PropertyValue",
-          "propertyID": "Sponsoring Broker TREC License",
-          "value": "9013412"
-        }
-      ],
-      "description": "James Konvalinka is an investor friendly real estate agent in Austin, TX, a licensed Texas Realtor with MODUS Real Estate, and an active investor who flips and holds property across Central Texas. Founder of Sell Smart Austin.",
-      "sameAs": [
-        "https://www.jameskonvalinka.realtor",
-        "https://modusrealestate.com/agents/James-Konvalinka/8828989",
-        "https://www.instagram.com/realestateinvestoratx"
-      ],
-      "knowsAbout": [
-        "investor friendly real estate",
-        "house flipping",
-        "rental property analysis",
-        "pre-foreclosure options",
-        "tax delinquent property",
-        "probate and inherited property sales",
-        "Austin Texas real estate market"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://sellsmartaustin.com/#website",
-      "url": "https://sellsmartaustin.com/",
-      "name": "Sell Smart Austin",
-      "publisher": {
+      "about": {
         "@id": "https://sellsmartaustin.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Selling a vacant house",
+      "description": "Help for owners of vacant Austin-area houses: as-is cash sales with no cleanout, listings when light make-ready pays, and honest carrying-cost math from a licensed Texas real estate agent.",
+      "url": "https://sellsmartaustin.com/sell-vacant-house/",
+      "serviceType": "Selling a vacant house",
+      "provider": {
+        "@id": "https://sellsmartaustin.com/#business"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "Texas"
       }
     },
     {
@@ -553,42 +439,42 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Do I need to repair or clean the property?",
+          "name": "Can I sell a vacant house in Austin without cleaning it out?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not for the cash, as-is path. You can sell the home in its current condition, with no repairs, cleaning, or staging. If you decide an open-market listing would net you more, some preparation usually helps, and we'll walk you through exactly what's worth doing and what isn't."
+            "text": "Yes. In an as-is cash sale you take the items you want and leave everything else, furniture included. We write it into the contract that anything you leave behind conveys to me at closing, so the cleanout becomes my job, not yours. If you choose to list instead, some clearing usually helps the sale, and we would decide together what is actually worth doing."
           }
         },
         {
           "@type": "Question",
-          "name": "How is the cash price determined?",
+          "name": "How much does a vacant house cost per month?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It's based on real Austin-area comparable sales, the home's condition, and the cost of the work it needs, not a random lowball figure. Because a licensed Texas Realtor® is on our team, we can also show you what the same home might sell for listed, so you can compare the two honestly."
+            "text": "Add your annual property tax divided by twelve, your insurance premium, base utilities, lawn service, and any HOA dues. For many Travis and Williamson County homes that lands in the hundreds of dollars every month before a single repair. Your exact number takes ten minutes to work out, and I will do it with you."
           }
         },
         {
           "@type": "Question",
-          "name": "What costs apply to each selling path?",
+          "name": "Should I renovate an empty house before selling it?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The cash, as-is route is designed to avoid repair costs, showings, and agent commissions on your side. A traditional listing involves preparation, showings, and commissions, but can produce a higher gross price. A structured middle path carries its own legal, tax, and timing considerations. We lay out the trade-offs so you can see the likely net of each."
+            "text": "Usually not fully. Big renovations on a vacant house often return less than they cost once you add the extra months of carrying costs. Light make-ready like paint, cleaning, and yard work sometimes pays for itself, and sometimes selling as-is nets nearly the same. I run both versions on paper so you can see which wins before you spend anything."
           }
         },
         {
           "@type": "Question",
-          "name": "How quickly could a cash transaction close?",
+          "name": "What happens if a house sits empty for a long time?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "A cash, as-is sale can move quickly and you choose the closing date, subject to title work and normal transaction requirements. We won't promise a specific number of days up front, because the honest answer depends on title and your situation."
+            "text": "The costs keep running and the risks build slowly. Many insurers limit coverage on vacant homes, so check your policy. Tall grass and broken windows draw city code enforcement letters, and unsecured houses attract vandalism and sometimes squatters. None of that means panic. It means either protect the house properly or decide to sell, instead of letting it drift."
           }
         },
         {
           "@type": "Question",
-          "name": "Is requesting options an obligation?",
+          "name": "How fast can I sell an empty house in Austin?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. Asking to see your options doesn't commit you to anything. If none of the three paths are right for you, that's a completely acceptable outcome. There's no cost and no pressure to move forward."
+            "text": "A cash sale is usually the fastest path because there are no showings, no lender, and no repair negotiations. We put your preferred closing date in the contract, and the title company closes once title is clear. A listing takes longer but often nets more. I will not quote you a closing date before the title work is done, and you should be skeptical of anyone who does."
           }
         }
       ]
@@ -599,10 +485,9 @@
 </head>
 <body>
 
-<!-- ══════════ NAV ══════════ -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand" aria-label="Sell Smart Austin home">
+    <span class="brand" aria-label="Sell Smart Austin">
       <svg class="mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect width="400" height="400" rx="16" fill="#1B2A4A"/>
         <g transform="translate(94 128) scale(1.6)">
@@ -613,60 +498,35 @@
         </g>
       </svg>
       <span class="name">SELL SMART AUSTIN<span>Sell Smart. Close Fast.</span></span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#options">The Options</a>
-      <a href="#projects">Real Projects</a>
-      <a href="#how">How It Works</a>
-      <a href="#faq">FAQ</a>
-    </nav>
+    </span>
     <div class="nav-cta">
       <a href="tel:5123681487" class="nav-phone">(512) 368-1487</a>
-      <a href="#intake" class="btn btn-primary" style="padding:11px 20px; min-height:44px;">See My Cash Option</a>
-      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+      <a href="#intake" class="btn btn-primary" style="padding:11px 20px; min-height:44px;">Get My Written Offer</a>
     </div>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#options">The Options</a>
-    <a href="#projects">Real Projects</a>
-    <a href="#how">How It Works</a>
-    <a href="#faq">FAQ</a>
-    <a href="#intake" class="btn btn-primary mm-cta">See My Cash Option</a>
-    <a href="tel:5123681487" class="mm-call">Call (512) 368-1487</a>
-    <a href="sms:5123681487" class="mm-call">Text (512) 368-1487</a>
   </div>
 </header>
 
 <span id="top"></span>
 
-<!-- ══════════ HERO ══════════ -->
 <section class="hero" aria-labelledby="hero-h">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1 id="hero-h">Sell Your House <em>As-Is.</em> Know Every Option Before You Decide.</h1>
-      <p class="hero-sub">We're active real estate investors backed by a licensed Texas Realtor&reg;. We'll lay out every option to sell your home, then hand you a real, no-BS cash offer.</p>
+      <h1 id="hero-h">The house is empty. <em>The bills are not.</em></h1>
+      <p class="hero-sub">Taxes, insurance, utilities, lawn service, maybe HOA dues. A vacant house charges you every month and gives nothing back. You do not have to clean it out to sell it, and you do not have to sell it at all. I will show you the real numbers for every path. I am James Konvalinka, a licensed Texas Realtor, and I put the math in writing.</p>
       <div class="hero-actions">
-        <a href="#intake" class="btn btn-primary">See My Cash Option
+        <a href="#intake" class="btn btn-primary">Get My Written Offer
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
         <span class="hero-callnote">or <a href="tel:5123681487">call</a> or <a href="sms:5123681487">text</a> (512) 368-1487</span>
       </div>
     </div>
-    <div class="hero-media" aria-label="Recent Sell Smart Austin projects">
+    <div class="hero-media" aria-label="A real Sell Smart Austin project">
       <span class="hc-badge">Real homes we've renovated &amp; sold</span>
-      <img class="hc-slide active" src="assets/projects/croftwood-exterior.webp" width="1400" height="933" alt="Completed Croftwood project exterior in South Austin" fetchpriority="high">
-      <img class="hc-slide" src="assets/projects/westbury-exterior.webp" width="1024" height="683" alt="Completed Westbury project exterior in Georgetown">
-      <img class="hc-slide" src="assets/projects/mcgregor-exterior.webp" width="1024" height="683" alt="Completed McGregor renovation exterior in South Austin">
-      <img class="hc-slide" src="assets/projects/westbury-kitchen.webp" width="1024" height="683" alt="Finished Westbury kitchen with large island">
-      <img class="hc-slide" src="assets/projects/mcgregor-living.webp" width="1024" height="683" alt="Finished McGregor living room">
-      <div class="hc-dots" aria-hidden="true"></div>
+      <img class="hc-slide active" src="/assets/projects/mcgregor-exterior.webp" width="1024" height="683" alt="Completed exterior of the McGregor renovation in South Austin" fetchpriority="high">
     </div>
   </div>
 </section>
 
-<!-- ══════════ PROOF LINE ══════════ -->
 <div class="proof">
   <div class="wrap proof-inner">
     <span class="proof-item">90+ real-estate transactions</span>
@@ -679,166 +539,157 @@
   </div>
 </div>
 
-<!-- ══════════ OPTIONS (cash-first) ══════════ -->
-<section id="options" aria-labelledby="opt-h">
-  <div class="wrap">
-    <div class="options-head reveal">
-      <p class="eyebrow">Three Honest Paths</p>
-      <h2 id="opt-h" class="h2">Start with the cash option. Keep the other two on the table.</h2>
-    </div>
-    <div class="options-grid">
-      <div class="cash-panel reveal">
-        <span class="tag">Cash, As-Is</span>
-        <h3>The straightforward option</h3>
-        <p class="desc-lead">Sell in the property's current condition — you pick the closing date that works.</p>
-        <p>Sell the home the way it stands today, without repairs, cleaning, or showings. Choose the closing date that works for you, subject to title and transaction requirements.</p>
-        <ul class="cash-points">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> No repairs or cleaning before you sell</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> No listing, staging, or showings</li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg> You choose the closing timeline</li>
-        </ul>
-        <a href="#intake" class="btn btn-primary">See My Cash Option
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <p class="cash-fine">The no-repair, no-showing, no-commission points above apply to the cash, as-is path. A traditional listing works differently — and if that nets you more, I'll tell you.</p>
-      </div>
-      <div class="alt-col">
-        <div class="alt reveal">
-          <h4>A structured middle path</h4>
-          <p>Structured terms may create a different balance of timing and total proceeds. They also involve delayed payments and added legal, tax, and default risk, so the details must be reviewed carefully.</p>
-        </div>
-        <div class="alt reveal">
-          <h4>List on the open market</h4>
-          <p>If listing is likely to produce the better net result, we'll show you the numbers and explain that route through our licensed agent at MODUS Real Estate.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ REAL PROJECTS ══════════ -->
-<section id="projects" aria-labelledby="proj-h">
-  <div class="wrap">
-    <div class="projects-head reveal">
-      <p class="eyebrow">Real Projects</p>
-      <h2 id="proj-h" class="h2">Real Homes. Real Work. No Stock Photos.</h2>
-      <p class="lead" style="margin-top:16px;">These are homes our team has actually bought, renovated, and sold. Every project needed a different plan, budget, and exit, the same practical experience we bring when reviewing your options.</p>
-    </div>
-
-    <!-- Project 1 — McGregor -->
-    <article class="project reveal">
-      <div class="p-media">
-        <img class="project-establish" src="assets/projects/mcgregor-exterior.webp" width="1024" height="683"
-             alt="Completed exterior of the McGregor renovation in South Austin" loading="lazy">
-        <div class="p-thumbs three">
-          <img src="assets/projects/mcgregor-kitchen.webp" width="1024" height="1536" alt="Finished kitchen with gray cabinetry, stone counters, and wood shelving" loading="lazy">
-          <img src="assets/projects/mcgregor-living.webp" width="1024" height="683" alt="Finished open living room at the McGregor project" loading="lazy">
-          <img src="assets/projects/mcgregor-bath.webp" width="1024" height="683" alt="Finished primary bathroom with walk-in shower and double vanity" loading="lazy">
-        </div>
-      </div>
-      <div class="p-copy">
-        <h3>A full renovation — not a cosmetic cleanup.</h3>
-        <div class="p-place">2609 McGregor · South Austin</div>
-        <p class="p-body">McGregor required structural leveling and a broad interior and exterior renovation. The plan included roofing, windows, plumbing, flooring, electrical work, a reworked kitchen, updated bathrooms, paint, and selective layout changes. The finished home is bright, functional, and market-ready — proof that we understand what repairs really cost and how to manage them.</p>
-        <p class="p-status">Closed in July 2026.</p>
-      </div>
-    </article>
-
-    <!-- Project 2 — Westbury (flipped) -->
-    <article class="project flip reveal">
-      <div class="p-media">
-        <img class="project-establish" src="assets/projects/westbury-exterior.webp" width="1024" height="683"
-             alt="Completed exterior and backyard of the Westbury project in Georgetown" loading="lazy">
-        <div class="p-thumbs">
-          <img src="assets/projects/westbury-kitchen.webp" width="1024" height="683" alt="Finished Westbury kitchen with large island and updated fixtures" loading="lazy">
-          <img src="assets/projects/westbury-living.webp" width="1024" height="683" alt="Staged Westbury living room with fireplace and open layout" loading="lazy">
-        </div>
-      </div>
-      <div class="p-copy">
-        <h3>Focused improvements instead of overbuilding.</h3>
-        <div class="p-place">515 Westbury · Georgetown</div>
-        <p class="p-body">Westbury did not need to be stripped down and rebuilt. We concentrated on the items that improved presentation and buyer confidence: interior paint, targeted flooring and carpet, updated lighting and hardware, cabinet touch-ups, bathroom fixtures, and exterior cleanup.</p>
-        <p class="p-status">Closed in March 2026.</p>
-      </div>
-    </article>
-
-    <!-- Project 3 — Croftwood -->
-    <article class="project reveal">
-      <div class="p-media">
-        <img class="project-establish" src="assets/projects/croftwood-exterior.webp" width="1400" height="933"
-             alt="Completed exterior of the Croftwood project in South Austin" loading="lazy">
-        <div class="p-thumbs">
-          <img src="assets/projects/croftwood-living.webp" width="1024" height="1536" alt="Staged Croftwood living room with modern finishes" loading="lazy">
-          <img src="assets/projects/croftwood-dining.webp" width="1024" height="1536" alt="Finished Croftwood dining area with modern lighting" loading="lazy">
-        </div>
-      </div>
-      <div class="p-copy">
-        <h3>Targeted updates that made the whole home feel finished.</h3>
-        <div class="p-place">7729 Croftwood · South Austin</div>
-        <p class="p-body">Croftwood received focused improvements that included flooring, cabinetry, tile, doors and baseboards, garage work, and a tankless water heater. The final staging and presentation brought the rooms together into a clean, warm, move-in-ready home.</p>
-        <p class="p-status">Closed in 2026.</p>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ══════════ HOW IT WORKS ══════════ -->
 <section id="how" aria-labelledby="how-h">
   <div class="wrap">
     <div class="how-head reveal">
-      <p class="eyebrow" style="color:var(--orange);">How It Works</p>
-      <h2 id="how-h" class="h2">Three steps. No pressure at any of them.</h2>
+      <p class="eyebrow" style="color:var(--orange);">Your Real Options</p>
+      <h2 id="how-h" class="h2">Three ways to handle an empty house</h2>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n">1</div><div><h3>Tell us about the property.</h3><p>Share the address, condition, and your timeline. That's enough to get started, with no long questionnaire and no repair estimates required from you.</p></div></div>
-      <div class="step reveal"><div class="n">2</div><div><h3>Review the cash route and any useful alternatives.</h3><p>We'll walk you through the cash, as-is number and, when it genuinely fits better, a structured or open-market option, with the real reasoning behind each.</p></div></div>
-      <div class="step reveal"><div class="n">3</div><div><h3>Choose the path and timing that fit.</h3><p>You decide which direction makes sense and when to close. If none of them are right for you, that's a fine answer too.</p></div></div>
+      <div class="step reveal"><div class="n">1</div><div><h3>Sell it as-is for cash</h3><p>I make a cash offer on the house exactly as it stands. No cleanout, no repairs, no staging. Take the photo albums and leave the furniture, and we write into the contract that anything you leave behind conveys to me at closing. You pick the target closing date, and we close as soon as the title company clears title. You see the full math behind my number before you sign anything. A cash price runs below list price, and I will show you that gap in writing instead of hiding it.</p></div></div>
+      <div class="step reveal"><div class="n">2</div><div><h3>List it for top dollar</h3><p>If the house shows decently, or the numbers say a light make-ready pays for itself, listing on the open market usually nets the most. I run both versions, sold as-is and sold after paint and cleanup, and show you which one actually puts more in your pocket after the work and the extra months of carrying costs.</p></div></div>
+      <div class="step reveal"><div class="n">3</div><div><h3>Keep it, but protect it</h3><p>Keeping the house can be the right call. If you go that route, do it deliberately: ask your insurer about a vacancy rider since many insurers limit coverage on vacant homes, set up yard service so tall grass never gives code enforcement a reason to send a letter, and have someone walk the house regularly. Then total the monthly cost so holding is a decision, not a drift.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ TEAM ══════════ -->
-<section id="team" aria-labelledby="team-h">
+<section style="background:var(--cream);">
   <div class="wrap">
-    <div class="team-head reveal">
-      <p class="eyebrow">Who You're Working With</p>
-      <h2 id="team-h" class="h2">The people behind Sell Smart Austin.</h2>
-      <p class="lead">You're working with two active real estate investors, one of them a licensed Texas Realtor&reg;. James handles seller conversations, offers, and options. Max brings two decades of investing experience to every deal we take on.</p>
+    <div class="options-head reveal" style="max-width:60ch; margin-bottom:44px;">
+      <p class="eyebrow">The Math</p>
+      <h2 class="h2">What an empty house costs, and how a sale actually works</h2>
+      <p style="margin-top:12px;">Most vacant houses I see are in Travis and Williamson County, and the pattern is the same everywhere: the house quietly costs money until someone decides. Here is the plain version of the costs and the process. This is general information, not legal advice. For title problems, inherited property questions, or anything involving a court, use a Texas real estate attorney.</p>
     </div>
+    <div class="lp-two-num" style="margin-bottom:22px;">
+      <div class="alt reveal">
+        <h4>The meter runs every month</h4>
+        <p>Property taxes, insurance, utilities, lawn care, and HOA dues do not care that nobody lives there. Write each one down, add them up, and you have your true monthly cost of waiting. Most owners have never seen that math on one page.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Check your insurance policy</h4>
+        <p>Many insurers limit coverage on homes that sit vacant, and some restrict coverage or decline to renew after a stretch of vacancy. Read your policy or call your agent, and ask about a vacant home policy or rider if you plan to hold. Do this whether you ever talk to me or not.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Cleanout is optional</h4>
+        <p>You can sell a vacant house with everything still in it. In a cash sale, take what matters to you and leave the rest, and we write into the contract that whatever stays conveys to me at closing, so the cleanout becomes my job. If you list instead, we decide together what is worth clearing and what is not.</p>
+      </div>
+    </div>
+    <div class="lp-two-num">
+      <div class="alt reveal">
+        <h4>Verify me on TREC first</h4>
+        <p>Look up license #831102 on the TREC website before you talk to anyone, including me. You will find James Konvalinka, sponsored by MODUS Real Estate. Run the same search on anyone who mails you a postcard and see how many come up.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Every option comes with a net sheet</h4>
+        <p>Cash, list, or hold, you get the same one-page math: what you walk away with, what it costs to get there, and what waiting costs per month. You compare the numbers and you pick. I do not talk anyone into a path.</p>
+      </div>
+      <div class="alt reveal">
+        <h4>Sometimes the answer is keep it</h4>
+        <p>If the numbers say holding the house serves you better, I will say so and help you set it up safely. I would rather lose a deal than earn the reputation of the people mailing you those yellow letters.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- James -->
+<section id="projects" style="background:var(--cream-2);">
+  <div class="wrap">
+    <div class="pcar-head reveal">
+      <div class="projects-head">
+        <p class="eyebrow">Real Projects</p>
+        <h2 class="h2">Real homes. Real work. No stock photos.</h2>
+        <p class="lead" style="margin-top:16px;">These are houses this team actually bought, renovated, and sold in Austin. It matters here for one reason: when someone tells you a house needs $60,000 of work, you want that coming from people who have paid that bill themselves.</p>
+      </div>
+      <div class="pcar-btns">
+        <button class="pcar-btn" id="pcar-prev" type="button" aria-label="Previous projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
+        <button class="pcar-btn" id="pcar-next" type="button" aria-label="Next projects"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="pcar reveal" id="pcar" tabindex="0" role="group" aria-label="Projects Sell Smart Austin has bought, renovated and sold. Scroll horizontally to see more.">
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-exterior.webp" alt="Completed exterior of the McGregor renovation in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>2609 McGregor · South Austin</h4>
+          <p>Leveled, re-roofed, rewired, replumbed. Bought as-is, closed July 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-kitchen.webp" alt="Finished McGregor kitchen with gray cabinetry and stone counters" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Kitchen</h4>
+          <p>Taken back to the studs and rebuilt.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-living.webp" alt="Finished open living room at the McGregor project" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Living room</h4>
+          <p>Reworked layout, new flooring throughout.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/mcgregor-bath.webp" alt="Finished primary bathroom with walk-in shower and double vanity" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>McGregor · Primary bath</h4>
+          <p>Walk-in shower and a double vanity.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-exterior.webp" alt="Completed exterior and backyard of the Westbury project in Georgetown" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>515 Westbury · Georgetown</h4>
+          <p>Targeted fixes, not a teardown. Closed March 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-kitchen.webp" alt="Finished Westbury kitchen with large island and updated fixtures" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Kitchen</h4>
+          <p>New lighting, hardware and cabinet work.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/westbury-living.webp" alt="Staged Westbury living room with fireplace and open layout" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Westbury · Living room</h4>
+          <p>Paint, flooring and staging.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-exterior.webp" alt="Completed exterior of the Croftwood project in South Austin" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>7729 Croftwood · South Austin</h4>
+          <p>Flooring, cabinetry, tile, tankless heater. Closed 2026.</p>
+        </figcaption>
+      </figure>
+      <figure class="pcar-card">
+        <img src="/assets/projects/croftwood-living.webp" alt="Staged Croftwood living room with modern finishes" loading="lazy" width="1024" height="768">
+        <figcaption class="pc-body">
+          <h4>Croftwood · Living room</h4>
+          <p>Move-in ready at handover.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="team" aria-labelledby="team-h" style="background:var(--cream);">
+  <div class="wrap">
     <div class="person reveal">
       <div class="person-photo-wrap">
-        <img class="person-photo" src="assets/team/james-editorial-4x5.webp" width="800" height="1000"
-             alt="James Konvalinka of Sell Smart Austin at a home entrance">
+        <img class="person-photo" src="/assets/team/james-editorial-4x5.webp" width="800" height="1000"
+             alt="James Konvalinka of Sell Smart Austin at a home entrance" loading="lazy">
       </div>
       <div>
         <div class="person-name">James Konvalinka</div>
         <span class="person-role">Founder · Realtor&reg; · Active Investor</span>
-        <p>I'm a licensed Realtor&reg; in Texas and Wisconsin. I've been buying, renovating, and selling investment properties across Austin and Milwaukee since 2021. I bring that same practical understanding to your options: what the work really costs, what a listing would actually net, and which path fits your situation.</p>
+        <p>Before you trust anything on this page, verify me. Search TREC for license #831102 and you will find me, James Konvalinka, sponsored by MODUS Real Estate. I am licensed in Texas and Wisconsin, and I invest in Austin myself, flipping some houses and keeping others, so I know what a vacant house costs because I have paid those bills. If your best move is to keep the house and protect it, that is exactly what I will tell you.</p>
         <p class="exp-line">90+ Transactions <span class="sep">·</span> 15+ Home Renovations</p>
         <p class="lic-note">James Konvalinka, Licensed Texas Sales Agent #831102, sponsored by MODUS Real Estate. Every conversation comes with full disclosure and no obligation.</p>
-      </div>
-    </div>
-
-    <!-- Max -->
-    <div class="person flip reveal">
-      <div class="person-photo-wrap">
-        <img class="person-photo" src="assets/team/max-kremer.webp" width="800" height="1244"
-             alt="Max Kremer, seasoned real estate investor at Sell Smart Austin">
-      </div>
-      <div>
-        <div class="person-name">Max Kremer</div>
-        <span class="person-role">Seasoned Real Estate Investor</span>
-        <p>With more than 20 years in marketing and advertising and eight years as a full-time real estate investor, I know how to spot opportunities other people overlook. I've renovated and sold more than 20 homes and owned and managed seven rentals across Connecticut, Florida, and Austin.</p>
-        <p>My experience goes beyond finding deals. I've personally analyzed, purchased, renovated, marketed, and sold investment properties, so I understand firsthand what actually creates a profitable return. Whether you're after your next renovation project or a long-term buy-and-hold, I can help you find opportunities that fit your goals. My mission is simple: connect investors with deals that make financial sense, and build lasting relationships on trust, experience, and results.</p>
-        <p class="exp-line">8 Years in Real Estate <span class="sep">·</span> 20+ Home Renovations</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════ FAQ ══════════ -->
 <section id="faq" aria-labelledby="faq-h">
   <div class="wrap">
     <div class="faq-head reveal">
@@ -846,22 +697,21 @@
       <h2 id="faq-h" class="h2">Straight answers to the usual questions.</h2>
     </div>
     <div class="faq-list reveal">
-      <details class="faq-item"><summary class="faq-q">Do I need to repair or clean the property?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Not for the cash, as-is path. You can sell the home in its current condition, with no repairs, cleaning, or staging. If you decide an open-market listing would net you more, some preparation usually helps, and we'll walk you through exactly what's worth doing and what isn't.</div></details>
-      <details class="faq-item"><summary class="faq-q">How is the cash price determined?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">It's based on real Austin-area comparable sales, the home's condition, and the cost of the work it needs, not a random lowball figure. Because a licensed Texas Realtor&reg; is on our team, we can also show you what the same home might sell for listed, so you can compare the two honestly.</div></details>
-      <details class="faq-item"><summary class="faq-q">What costs apply to each selling path?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">The cash, as-is route is designed to avoid repair costs, showings, and agent commissions on your side. A traditional listing involves preparation, showings, and commissions, but can produce a higher gross price. A structured middle path carries its own legal, tax, and timing considerations. We lay out the trade-offs so you can see the likely net of each.</div></details>
-      <details class="faq-item"><summary class="faq-q">How quickly could a cash transaction close?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">A cash, as-is sale can move quickly and you choose the closing date, subject to title work and normal transaction requirements. We won't promise a specific number of days up front, because the honest answer depends on title and your situation.</div></details>
-      <details class="faq-item"><summary class="faq-q">Is requesting options an obligation?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">No. Asking to see your options doesn't commit you to anything. If none of the three paths are right for you, that's a completely acceptable outcome. There's no cost and no pressure to move forward.</div></details>
+      <details class="faq-item"><summary class="faq-q">Can I sell a vacant house in Austin without cleaning it out?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Yes. In an as-is cash sale you take the items you want and leave everything else, furniture included. We write it into the contract that anything you leave behind conveys to me at closing, so the cleanout becomes my job, not yours. If you choose to list instead, some clearing usually helps the sale, and we would decide together what is actually worth doing.</div></details>
+      <details class="faq-item"><summary class="faq-q">How much does a vacant house cost per month?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Add your annual property tax divided by twelve, your insurance premium, base utilities, lawn service, and any HOA dues. For many Travis and Williamson County homes that lands in the hundreds of dollars every month before a single repair. Your exact number takes ten minutes to work out, and I will do it with you.</div></details>
+      <details class="faq-item"><summary class="faq-q">Should I renovate an empty house before selling it?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">Usually not fully. Big renovations on a vacant house often return less than they cost once you add the extra months of carrying costs. Light make-ready like paint, cleaning, and yard work sometimes pays for itself, and sometimes selling as-is nets nearly the same. I run both versions on paper so you can see which wins before you spend anything.</div></details>
+      <details class="faq-item"><summary class="faq-q">What happens if a house sits empty for a long time?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">The costs keep running and the risks build slowly. Many insurers limit coverage on vacant homes, so check your policy. Tall grass and broken windows draw city code enforcement letters, and unsecured houses attract vandalism and sometimes squatters. None of that means panic. It means either protect the house properly or decide to sell, instead of letting it drift.</div></details>
+      <details class="faq-item"><summary class="faq-q">How fast can I sell an empty house in Austin?<span class="ic" aria-hidden="true"></span></summary><div class="faq-a">A cash sale is usually the fastest path because there are no showings, no lender, and no repair negotiations. We put your preferred closing date in the contract, and the title company closes once title is clear. A listing takes longer but often nets more. I will not quote you a closing date before the title work is done, and you should be skeptical of anyone who does.</div></details>
     </div>
   </div>
 </section>
 
-<!-- ══════════ INTAKE (two-step, single shared component) ══════════ -->
 <section id="intake" aria-labelledby="intake-h">
   <div class="wrap intake-grid">
     <div class="intake-pitch reveal">
-      <p class="eyebrow" style="color:var(--orange);">See Your Options</p>
-      <h2 id="intake-h">See your 3 options — free.</h2>
-      <p>Tell us about the property and how to reach you. We'll review it and get back to you with the cash number and any alternative that fits better. No pressure and no obligation.</p>
+      <p class="eyebrow" style="color:var(--orange);">Start Here</p>
+      <h2 id="intake-h">One address. We take it from there.</h2>
+      <p>Tell us where the property is and how to reach you. You don't need photos, a repair list, or a cleanout to start. James will go look at it and come back with a written number within 24 hours. No pressure and no obligation.</p>
       <div class="callbox">
         <a href="tel:5123681487">(512) 368-1487</a>
         <span>Call or text us directly. Prefer texting? <a href="sms:5123681487">Send a text&nbsp;&rarr;</a></span>
@@ -874,56 +724,19 @@
           <label>Leave this field empty<input type="text" id="hp-field" name="company_website" tabindex="-1" autocomplete="off"></label>
         </div>
         <div class="form-head">
-          <h3>See Your 3 Options — Free</h3>
-          <p>Tell us about the property and how to reach you. No pressure and no obligation.</p>
+          <h3>Get Your Written Offer</h3>
+          <p>Start with the address. That's all we need for step one.</p>
         </div>
         <div class="progress">
           <span class="lbl" id="step-lbl">Step 1 of 2</span>
           <span class="bar"><i id="progress-bar"></i></span>
         </div>
 
-        <!-- STEP 1 -->
-        <div class="step-pane active" id="pane-1" role="group" aria-label="Step 1: About the property">
+        <div class="step-pane active" id="pane-1" role="group" aria-label="Step 1: The property">
           <div class="field" data-required>
             <label for="f-address">Property address <span class="req">*</span></label>
-            <input type="text" id="f-address" name="property_address" placeholder="123 Main St, Austin, TX" autocomplete="street-address">
+            <input type="text" id="f-address" name="property_address" placeholder="123 Main St, City, TX" autocomplete="street-address">
             <div class="err" role="alert">Please enter the property address.</div>
-          </div>
-          <div class="field" data-required>
-            <label for="f-relationship">Your connection to the property <span class="req">*</span></label>
-            <select id="f-relationship" name="seller_relationship">
-              <option value="" selected disabled>Select one…</option>
-              <option>Owner</option>
-              <option>Co-owner</option>
-              <option>Heir or estate representative</option>
-              <option>Family member or authorized representative</option>
-              <option>Other</option>
-            </select>
-            <div class="err" role="alert">Please select your connection to the property.</div>
-          </div>
-          <div class="field" data-required>
-            <label for="f-condition">Property condition <span class="req">*</span></label>
-            <select id="f-condition" name="condition_seller_reported">
-              <option value="" selected disabled>Select one…</option>
-              <option>Needs major repairs</option>
-              <option>Needs some repairs</option>
-              <option>Good condition</option>
-              <option>Move-in ready</option>
-              <option>Not sure</option>
-            </select>
-            <div class="err" role="alert">Please select the property condition.</div>
-          </div>
-          <div class="field" data-required>
-            <label for="f-timeline">Selling timeline <span class="req">*</span></label>
-            <select id="f-timeline" name="selling_timeline">
-              <option value="" selected disabled>Select one…</option>
-              <option>As soon as possible</option>
-              <option>Within 30 days</option>
-              <option>1–3 months</option>
-              <option>More than 3 months</option>
-              <option>Just exploring options</option>
-            </select>
-            <div class="err" role="alert">Please select a timeline.</div>
           </div>
           <div class="form-nav">
             <button type="button" class="btn btn-primary" id="to-step-2">Continue
@@ -932,7 +745,6 @@
           </div>
         </div>
 
-        <!-- STEP 2 -->
         <div class="step-pane" id="pane-2" role="group" aria-label="Step 2: How should we reach you">
           <div class="field" data-required>
             <label for="f-name">First and last name <span class="req">*</span></label>
@@ -959,15 +771,10 @@
             <div class="err" role="alert">Please choose how you'd like James to reach you.</div>
             <div class="hint" id="pref-hint"></div>
           </div>
-          <div class="field">
-            <label for="f-notes">Anything you'd like me to know?</label>
-            <textarea id="f-notes" name="optional_seller_context" maxlength="1000" placeholder="Optional — a sentence or two is plenty."></textarea>
-          </div>
 
-          <!-- Consent — unchecked by default, stored separately -->
           <div class="consent" data-required id="consent-terms-wrap">
             <input type="checkbox" id="c-terms" name="consent_terms">
-            <label for="c-terms">I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>. <span class="req">*</span></label>
+            <label for="c-terms">I agree to the <a href="/terms.html" target="_blank" rel="noopener">Terms &amp; Conditions</a> and <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>. <span class="req">*</span></label>
           </div>
           <div class="consent" id="consent-trans-wrap">
             <input type="checkbox" id="c-trans" name="consent_transactional">
@@ -980,30 +787,24 @@
 
           <div class="form-nav">
             <button type="button" class="btn-back" id="to-step-1">← Back</button>
-            <button type="submit" class="btn btn-primary" id="submit-btn">Show Me My Options
+            <button type="submit" class="btn btn-primary" id="submit-btn">Get My Written Offer
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </button>
           </div>
         </div>
       </form>
 
-      <!-- SUCCESS -->
       <div class="form-state ok" id="state-ok" role="status" aria-live="polite">
         <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg></div>
-        <h3>Thanks — I received your request.</h3>
-        <p>We'll review the property information and reach out using your preferred contact method. If you need us sooner, call or text (512) 368-1487.</p>
+        <h3>Thanks. I'm on it.</h3>
+        <p>Your address is in. I'll go look at the property and get you a written offer within 24 hours, usually sooner. Need me before that? Call or text (512) 368-1487.</p>
         <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-          <a href="tel:5123681487" class="btn btn-primary">Call
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 01-.1.2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
-          </a>
-          <a href="sms:5123681487" class="btn btn-ghost">Text Us
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-          </a>
+          <a href="tel:5123681487" class="btn btn-primary">Call</a>
+          <a href="sms:5123681487" class="btn btn-ghost">Text Us</a>
         </div>
         <div><button type="button" class="form-restart" id="restart-ok">Submit another property</button></div>
       </div>
 
-      <!-- FAILURE -->
       <div class="form-state fail" id="state-fail" role="alert">
         <div class="ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
         <h3>Your request didn't go through.</h3>
@@ -1012,7 +813,6 @@
         <a href="tel:5123681487" class="btn btn-ghost" style="margin-left:10px;">Call</a>
         <a href="sms:5123681487" class="btn btn-ghost" style="margin-left:8px;">Text</a>
       </div>
-
       <p class="mock-note" id="mock-note"></p>
     </div>
   </div>
@@ -1023,7 +823,7 @@
   <div class="wrap">
     <div class="foot-main">
       <div class="foot-brand">
-        <a href="#top" class="brand" aria-label="Sell Smart Austin home">
+        <a href="/" class="brand" aria-label="Sell Smart Austin home">
           <svg class="mark" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect width="400" height="400" rx="16" fill="#1B2A4A"/>
             <g transform="translate(94 128) scale(1.6)">
@@ -1048,10 +848,10 @@
       <div class="foot-col">
         <h4>Explore</h4>
         <ul>
-          <li><a href="#options">The Options</a></li>
-          <li><a href="#projects">Real Projects</a></li>
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/#options">The Options</a></li>
+          <li><a href="/#projects">Real Projects</a></li>
+          <li><a href="/#how">How It Works</a></li>
+          <li><a href="/#faq">FAQ</a></li>
           <li><a href="#intake">See My Options</a></li>
         </ul>
       </div>
@@ -1063,18 +863,6 @@
           <li><a href="#intake">Cedar Park &amp; Leander</a></li>
           <li><a href="#intake">Pflugerville &amp; Hutto</a></li>
           <li><a href="#intake">Kyle, Buda &amp; San Marcos</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Situations</h4>
-        <ul>
-          <li><a href="/cash-offer/">Get A Cash Offer</a></li>
-          <li><a href="/home-value/">What's My Home Worth?</a></li>
-          <li><a href="/inherited-property/">Inherited A House</a></li>
-          <li><a href="/facing-foreclosure/">Facing Foreclosure</a></li>
-          <li><a href="/behind-on-property-taxes/">Behind On Property Taxes</a></li>
-          <li><a href="/sell-rental-property/">Selling A Rental</a></li>
-          <li><a href="/sell-vacant-house/">Vacant House</a></li>
         </ul>
       </div>
     </div>
@@ -1122,43 +910,29 @@
   <div class="wrap foot-bottom">
     <p>© 2026 Sell Smart Austin. All rights reserved. James Konvalinka is a licensed Texas Real Estate Sales Agent sponsored by MODUS Real Estate.</p>
     <div>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
     </div>
   </div>
 </footer>
 
 <script>
-/* ============================================================================
-   SSA intake — single two-step logic path. FAIL-CLOSED prototype.
-   ---------------------------------------------------------------------------
-   No live CRM. No exposed token. Analytics + destination are disabled here and
-   only fire AFTER a confirmed real destination success once configured.
-   ============================================================================ */
 (function () {
   "use strict";
 
-  // ---- Configuration (fail-closed) ----------------------------------------
   var CONFIG = {
-    // GHL LeadConnector INBOUND WEBHOOK url. This is a capability URL, not a
-    // secret: it can only create a workflow event, it cannot read data, and it
-    // carries NO private token. The GHL workflow behind it maps fields +
-    // creates/updates the contact. NEVER put a GHL PIT / API secret here.
     ghlWebhookUrl: "https://services.leadconnectorhq.com/hooks/WjdfN8VsDVZQWNlVWn9E/webhook-trigger/b5399575-8760-4a9e-b421-67233c38e497",
-
-    // Live: real submissions post to GHL. (Set true only for local UX review.)
     prototypeMockSuccess: false,
-
-    // Analytics fire ONLY after a confirmed webhook success.
-    // googleSendTo = the "Submit lead form" conversion in Google Ads.
+    // "Submit lead form" conversion. Fires ONLY on confirmed GHL webhook success.
     tracking: { enabled: true, metaPixelId: "5191741884383418",
                 googleSendTo: "AW-18359778796/twwnCK71_tgcEOz7z7JE" },
-
     disclosureVersion: "2026-07-16",
-    leadSource: "website-inbound"
+    // NOTE: Sarah/Echo must add a lane for this value. Until then it falls back
+    // to the generic website-inbound copy (lead is still contacted).
+    leadSource: "vacant-lp",
+    submittedKey: "ssa_submitted_vacant"
   };
 
-  // ---- Attribution capture (first-touch, session-scoped) ------------------
   var ATTR_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","fbclid"];
   function captureAttribution() {
     try {
@@ -1178,20 +952,17 @@
   }
   var attribution = captureAttribution();
 
-  // ---- Analytics shim (gated; logs in prototype) --------------------------
   function trackPageView() {
-    if (!CONFIG.tracking.enabled) { console.log("[SSA][prototype] PageView (analytics disabled)"); return; }
+    if (!CONFIG.tracking.enabled) return;
     if (window.fbq) window.fbq("track", "PageView");
   }
   function trackLead() {
-    // Called ONLY after confirmed destination success.
-    if (!CONFIG.tracking.enabled) { console.log("[SSA][prototype] Lead conversion would fire now (analytics disabled)"); return; }
+    if (!CONFIG.tracking.enabled) return;
     if (window.fbq) window.fbq("track", "Lead");
     if (window.gtag && CONFIG.tracking.googleSendTo) window.gtag("event", "conversion", { send_to: CONFIG.tracking.googleSendTo });
   }
   trackPageView();
 
-  // ---- Elements ------------------------------------------------------------
   var form = document.getElementById("ssa-intake");
   var pane1 = document.getElementById("pane-1");
   var pane2 = document.getElementById("pane-2");
@@ -1204,7 +975,6 @@
   var stateFail = document.getElementById("state-fail");
   var retryBtn = document.getElementById("retry-btn");
   var restartOk = document.getElementById("restart-ok");
-  var mockNote = document.getElementById("mock-note");
   var prefSelect = document.getElementById("f-contact-pref");
   var prefHint = document.getElementById("pref-hint");
   var emailField = document.getElementById("field-email");
@@ -1213,19 +983,13 @@
   var phoneInput = document.getElementById("f-phone");
   var consentTermsWrap = document.getElementById("consent-terms-wrap");
   var consentTransWrap = document.getElementById("consent-trans-wrap");
-
   var submitting = false;
 
-  if (CONFIG.prototypeMockSuccess) {
-    mockNote.textContent = "Prototype: submissions are simulated locally. No data is sent and no lead is created.";
-  }
-
-  // ---- Validation helpers --------------------------------------------------
   function normalizePhone(raw) {
     var d = (raw || "").replace(/\D/g, "");
     if (d.length === 10) return "+1" + d;
     if (d.length === 11 && d[0] === "1") return "+" + d;
-    return null; // invalid
+    return null;
   }
   function fieldEl(input) { return input.closest(".field") || input.closest(".consent"); }
   function setInvalid(input, bad) {
@@ -1234,7 +998,6 @@
   }
   function validText(input) { var ok = input.value.trim().length > 0; setInvalid(input, !ok); return ok; }
   function validEmailValue(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
-
   function contactPref() { return (prefSelect.value || ""); }
   function emailRequired() { return contactPref() === "Email"; }
   // 2026-07-31 (James, option 1): transactional consent is ALWAYS required.
@@ -1244,7 +1007,6 @@
   // written consent must be an affirmative act, and a pre-ticked box would
   // invalidate the very consent record we rely on.
   function transactionalRequired() { return true; }
-
   function syncPrefRules() {
     emailReqMark.style.display = emailRequired() ? "inline" : "none";
     var msgs = [];
@@ -1254,7 +1016,6 @@
   }
   prefSelect.addEventListener("change", syncPrefRules);
 
-  // ---- Step 1 validation + navigation -------------------------------------
   function validateStep1() {
     var ok = true;
     pane1.querySelectorAll("[data-required]").forEach(function (f) {
@@ -1277,29 +1038,19 @@
   toStep2.addEventListener("click", function () { if (validateStep1()) goStep(2); });
   toStep1.addEventListener("click", function () { goStep(1); });
 
-  // ---- Step 2 validation ---------------------------------------------------
   function validateStep2() {
     var ok = true;
-
     if (!validText(document.getElementById("f-name"))) ok = false;
-
     var phoneOk = normalizePhone(phoneInput.value) !== null;
     setInvalid(phoneInput, !phoneOk); if (!phoneOk) ok = false;
-
-    // Email: required only if preference is Email; if provided, must be valid.
     var emailVal = emailInput.value.trim();
     var emailOk = true;
     if (emailRequired()) emailOk = validEmailValue(emailVal);
     else if (emailVal.length > 0) emailOk = validEmailValue(emailVal);
     emailField.classList.toggle("invalid", !emailOk); if (!emailOk) ok = false;
-
     if (!prefSelect.value) { setInvalid(prefSelect, true); ok = false; } else setInvalid(prefSelect, false);
-
-    // Terms/Privacy required.
     var terms = document.getElementById("c-terms");
     consentTermsWrap.classList.toggle("invalid", !terms.checked); if (!terms.checked) ok = false;
-
-    // Transactional consent required only if seller chose Text.
     var trans = document.getElementById("c-trans");
     if (transactionalRequired()) {
       consentTransWrap.classList.toggle("invalid", !trans.checked);
@@ -1310,14 +1061,12 @@
     return ok;
   }
 
-  // ---- Helpers: name split + best-effort US address parse -----------------
   function splitName(full) {
     var parts = (full || "").trim().split(/\s+/);
     if (parts.length === 1) return { first: parts[0], last: "" };
     return { first: parts[0], last: parts.slice(1).join(" ") };
   }
   function parseAddress(addr) {
-    // "123 Main St, Austin, TX 78745" -> {city, state, zip} (best-effort only).
     var out = { city: "", state: "", zip: "" };
     var segs = (addr || "").split(",").map(function (s) { return s.trim(); }).filter(Boolean);
     var tail = segs.length ? segs[segs.length - 1] : "";
@@ -1329,9 +1078,10 @@
     return out;
   }
 
-  // ---- Payload assembly ----------------------------------------------------
-  // Flat keys chosen to map 1:1 onto the existing SSA GHL custom-field keys in
-  // the inbound-webhook workflow's Create/Update Contact action.
+  // Same payload keys as the homepage form so the GHL inbound-webhook workflow
+  // maps 1:1. Fields not asked on this LP are sent empty; Sarah qualifies them
+  // by text. Routing tag stays "website-inbound" so the existing workflow and
+  // Sarah pickup are unchanged; attribution lives in ssa_lead_source + UTMs.
   function buildPayload() {
     var now = new Date().toISOString();
     var nm = splitName(document.getElementById("f-name").value);
@@ -1339,24 +1089,21 @@
     var loc = parseAddress(addr);
     var a = attribution || {};
     return {
-      // GHL standard contact fields
       firstName: nm.first,
       lastName: nm.last,
       phone: normalizePhone(phoneInput.value),
       email: emailInput.value.trim() || "",
-      // SSA custom fields (keys match contact.ssa_* in GHL)
       ssa_property_address: addr,
       ssa_property_city: loc.city,
       ssa_property_state: loc.state,
       ssa_property_zip: loc.zip,
-      ssa_seller_relationship: document.getElementById("f-relationship").value,
-      ssa_condition_seller_reported: document.getElementById("f-condition").value,
-      ssa_selling_timeline: document.getElementById("f-timeline").value,
+      ssa_seller_relationship: "",
+      ssa_condition_seller_reported: "",
+      ssa_selling_timeline: "",
       ssa_contact_preference: prefSelect.value,
-      ssa_optional_seller_context: document.getElementById("f-notes").value.trim(),
+      ssa_optional_seller_context: "",
       ssa_lead_source: CONFIG.leadSource,
       ssa_context_provenance: "seller-reported",
-      // Consent (separate booleans + timestamps + disclosure version + url)
       consent_terms: !!document.getElementById("c-terms").checked,
       consent_terms_at: document.getElementById("c-terms").checked ? now : "",
       consent_transactional: !!document.getElementById("c-trans").checked,
@@ -1365,19 +1112,15 @@
       consent_marketing_at: document.getElementById("c-mktg").checked ? now : "",
       consent_disclosure_version: CONFIG.disclosureVersion,
       consent_page_url: window.location.href,
-      // Attribution
       utm_source: a.utm_source || "", utm_medium: a.utm_medium || "",
       utm_campaign: a.utm_campaign || "", utm_content: a.utm_content || "",
       utm_term: a.utm_term || "", gclid: a.gclid || "", fbclid: a.fbclid || "",
       landing_url: a.landing_url || "", submitted_at: now,
-      // Routing tag for the workflow (do NOT tag as cold/sms-eligible/priority)
       tag: "website-inbound"
     };
   }
 
-  // ---- Destination (fail-closed) ------------------------------------------
   function sendToDestination(payload) {
-    // Real path: POST JSON to the GHL inbound-webhook URL and REQUIRE 2xx.
     if (CONFIG.ghlWebhookUrl) {
       return fetch(CONFIG.ghlWebhookUrl, {
         method: "POST",
@@ -1388,12 +1131,6 @@
         return true;
       });
     }
-    // No webhook configured.
-    if (CONFIG.prototypeMockSuccess) {
-      console.log("[SSA][prototype] Simulated GHL payload:", payload);
-      return new Promise(function (res) { setTimeout(function () { res(true); }, 650); });
-    }
-    // True fail-closed: reject.
     return Promise.reject(new Error("No GHL webhook configured"));
   }
 
@@ -1403,49 +1140,39 @@
     stateFail.classList.toggle("show", which === "fail");
   }
 
-  // ---- Submit --------------------------------------------------------------
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (submitting) return;
-    // Honeypot: bots fill the hidden field. Silently drop (show success, send nothing).
     var hp = document.getElementById("hp-field");
     if (hp && hp.value) { showState("ok"); return; }
     if (!validateStep2()) return;
-
     submitting = true;
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending…";
-
     var payload = buildPayload();
-
     sendToDestination(payload).then(function () {
-      // Confirmed success — NOW (and only now) fire the conversion.
       trackLead();
-      try { sessionStorage.setItem("ssa_submitted", "1"); } catch (e2) {}
+      try { sessionStorage.setItem(CONFIG.submittedKey, "1"); } catch (e2) {}
       showState("ok");
     }).catch(function (err) {
       console.error("[SSA] submission failed:", err && err.message);
-      // Preserve all entered values; re-enable for safe retry (no duplicate).
       showState("fail");
     }).then(function () {
       submitting = false;
       submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Show Me My Options <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+      submitBtn.innerHTML = 'Get My Written Offer <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
     });
   });
 
   retryBtn.addEventListener("click", function () { showState(null); goStep(2); });
   restartOk.addEventListener("click", function () {
-    try { sessionStorage.removeItem("ssa_submitted"); } catch (e) {}
+    try { sessionStorage.removeItem(CONFIG.submittedKey); } catch (e) {}
     form.reset(); syncPrefRules(); showState(null); goStep(1);
   });
-
-  // Persist the success state across refresh (do not silently clear it).
   try {
-    if (sessionStorage.getItem("ssa_submitted") === "1") showState("ok");
+    if (sessionStorage.getItem(CONFIG.submittedKey) === "1") showState("ok");
   } catch (e) {}
 
-  // ---- Scroll reveal (respects reduced motion) ----------------------------
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce) {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
@@ -1457,56 +1184,44 @@
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
   }
-
-  // ---- Hero project carousel ----------------------------------------------
-  (function () {
-    var slides = Array.prototype.slice.call(document.querySelectorAll(".hc-slide"));
-    var dotsWrap = document.querySelector(".hc-dots");
-    if (slides.length < 2 || !dotsWrap) return;
-    var idx = 0, dots = [];
-    slides.forEach(function (s, i) {
-      var d = document.createElement("button");
-      d.className = "hc-dot" + (i === 0 ? " active" : "");
-      d.type = "button";
-      d.setAttribute("aria-label", "Show project image " + (i + 1));
-      d.addEventListener("click", function () { show(i); });
-      dotsWrap.appendChild(d); dots.push(d);
-    });
-    function show(n) {
-      slides[idx].classList.remove("active"); dots[idx].classList.remove("active");
-      idx = (n + slides.length) % slides.length;
-      slides[idx].classList.add("active"); dots[idx].classList.add("active");
-    }
-    if (!reduce) { setInterval(function () { show(idx + 1); }, 4500); }
-  })();
-
-  // ---- Mobile hamburger menu ----------------------------------------------
-  (function () {
-    var toggle = document.getElementById("nav-toggle");
-    var menu = document.getElementById("mobile-menu");
-    if (!toggle || !menu) return;
-    function close() { menu.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
-    toggle.addEventListener("click", function () {
-      var open = menu.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", close); });
-  })();
 })();
 </script>
 
-<!-- ══════════ MOBILE STICKY CTA BAR ══════════ -->
 <div class="sticky-cta" id="sticky-cta">
-  <a href="tel:5123681487" class="sticky-call" aria-label="Call Sell Smart Austin">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1A19.5 19.5 0 013 8.8 19.8 19.8 0 010 .2 2 2 0 012 .8h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L5.6 8.9a16 16 0 006 6l1.6-1.6a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0122 16.9z"/></svg>
-    Call
-  </a>
-  <a href="sms:5123681487" class="sticky-call" aria-label="Text Sell Smart Austin">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-    Text
-  </a>
-  <a href="#intake" class="sticky-offer btn btn-primary">Get My Cash Offer</a>
+  <a href="tel:5123681487" class="sticky-call" aria-label="Call Sell Smart Austin">Call</a>
+  <a href="sms:5123681487" class="sticky-call" aria-label="Text Sell Smart Austin">Text</a>
+  <a href="#intake" class="sticky-offer btn btn-primary">Get My Written Offer</a>
 </div>
+
+<script>
+/* Real Projects carousel: arrows step one card, disabled at the ends. */
+(function () {
+  "use strict";
+  var car = document.getElementById("pcar");
+  var prev = document.getElementById("pcar-prev");
+  var next = document.getElementById("pcar-next");
+  if (!car || !prev || !next) return;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function step() {
+    var card = car.querySelector(".pcar-card");
+    return card ? card.getBoundingClientRect().width + 18 : car.clientWidth;
+  }
+  function sync() {
+    var max = car.scrollWidth - car.clientWidth;
+    prev.disabled = car.scrollLeft <= 2;
+    next.disabled = car.scrollLeft >= max - 2;
+  }
+  function go(dir) {
+    car.scrollBy({ left: dir * step(), behavior: reduce ? "auto" : "smooth" });
+  }
+  prev.addEventListener("click", function () { go(-1); });
+  next.addEventListener("click", function () { go(1); });
+  car.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  sync();
+})();
+</script>
 
 <script>
 /* Reveal safety net. Independent of the main script on purpose: if that script
